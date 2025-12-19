@@ -3,8 +3,8 @@ import { OriginRequestEnum } from '../enums';
 import { ClientEntity } from '../client/client.entity';
 import { ProductEntity } from '../product/product.entity';
 import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
-import { RequestOfferEntity } from 'src/request_offer';
-import { RequestObservationEntity } from 'src/request_observation';
+import { RequestOfferEntity } from '../request_offer/request_offer.entity';
+import { RequestObservationEntity } from '../request_observation/request_observation.entity';
 
 @Entity({ name: 'application' })
 export class ApplicationEntity {
