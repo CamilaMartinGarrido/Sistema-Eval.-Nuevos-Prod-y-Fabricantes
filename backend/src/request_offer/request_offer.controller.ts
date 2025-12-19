@@ -4,39 +4,54 @@ import {
   Post,
   Body,
   Param,
-  Put,
   Delete,
   Query,
+  DefaultValuePipe,
+  ParseIntPipe,
+  Patch,
 } from '@nestjs/common';
 import { RequestOfferService } from './request_offer.service';
-import { CreateRequestOfferDto } from './dto';
+import { CreateRequestOfferDto, RequestOfferResponseDto, UpdateRequestOfferDto } from './dtos';
+import { RequestOfferEntity } from './request_offer.entity';
 
 @Controller('request_offer')
 export class RequestOfferController {
-  constructor(private readonly svc: RequestOfferService) {}
+  constructor(private readonly requestOfferService: RequestOfferService) {}
 
   @Post()
-  create(@Body() dto: CreateRequestOfferDto) {
-    return this.svc.create(dto);
+  async createRequestOffer(
+    @Body() dto: CreateRequestOfferDto,
+  ): Promise<{ message: string; data: RequestOfferEntity }> {
+    return this.requestOfferService.create(dto);
   }
 
   @Get()
-  findAll(@Query('limit') limit: number, @Query('offset') offset: number) {
-    return this.svc.findAll(limit ? +limit : 100, offset ? +offset : 0);
+  async getRequestOffers(
+    @Query('limit', new DefaultValuePipe(100), ParseIntPipe) limit: number,
+    @Query('offset', new DefaultValuePipe(0), ParseIntPipe) offset: number,
+  ): Promise<RequestOfferResponseDto[]> {
+    return this.requestOfferService.findAll(limit, offset); 
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.svc.findOne(+id);
+  async getRequestOffer(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<RequestOfferResponseDto> {
+    return this.requestOfferService.findOne(id);
   }
 
-  @Put(':id')
-  update(@Param('id') id: string, @Body() dto: Partial<CreateRequestOfferDto>) {
-    return this.svc.update(+id, dto);
+  @Patch(':id')
+  async updateRequestOffer(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() dto: UpdateRequestOfferDto,
+  ): Promise<{ message: string }> {
+    return this.requestOfferService.update(id, dto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.svc.remove(+id);
+  async deleteRequestOffer(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<{ message: string }> {
+    return this.requestOfferService.remove(id);
   }
 }

@@ -109,7 +109,7 @@ export class ApplicationService {
       application.is_selected = dto.is_selected;
     }
 
-    const updated = await this.applicationRepository.save(application);
+    await this.applicationRepository.save(application);
 
     return { message: 'Application updated successfully' };
   }

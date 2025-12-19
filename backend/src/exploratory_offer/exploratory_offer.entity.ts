@@ -1,14 +1,7 @@
-import { ExploratoryOfferObservationEntity } from 'src/exploratory_offer_observation/exploratory_offer_observation.entity';
-import { SupplyEntity } from 'src/supply/supply.entity';
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  CreateDateColumn,
-  ManyToOne,
-  JoinColumn,
-  OneToMany,
-} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
+import { ExploratoryOfferObservationEntity } from '../exploratory_offer_observation/exploratory_offer_observation.entity';
+import { RequestOfferEntity } from '../request_offer/request_offer.entity';
+import { SupplyEntity } from '../supply/supply.entity';
 
 @Entity({ name: 'exploratory_offer' })
 export class ExploratoryOfferEntity {
@@ -18,7 +11,8 @@ export class ExploratoryOfferEntity {
   @ManyToOne(() => SupplyEntity, (supply) => supply.exploratory_offers, {
     eager: true,
     nullable: false,
-    onDelete: 'NO ACTION', // o 'RESTRICT'
+    onUpdate: 'CASCADE',
+    onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'supply_id' })
   supply: SupplyEntity;
@@ -28,4 +22,7 @@ export class ExploratoryOfferEntity {
 
   @OneToMany(() => ExploratoryOfferObservationEntity, (exp_offer_observ) => exp_offer_observ.exploratory_offer)
   exploratory_offer_observs: ExploratoryOfferObservationEntity[];
+
+  @OneToMany(() => RequestOfferEntity, request_offer => request_offer.exploratory_offer)
+  request_offers: RequestOfferEntity[];
 }

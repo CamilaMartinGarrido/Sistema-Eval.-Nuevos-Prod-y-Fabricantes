@@ -1,8 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne, OneToMany } from 'typeorm';
 import { OriginRequestEnum } from '../enums';
 import { ClientEntity } from '../client/client.entity';
 import { ProductEntity } from '../product/product.entity';
 import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
+import { RequestOfferEntity } from 'src/request_offer';
 
 @Entity({ name: 'application' })
 export class ApplicationEntity {
@@ -46,4 +47,7 @@ export class ApplicationEntity {
 
   @OneToOne(() => ClientSupplyEntity, (clientSupply) => clientSupply.application)
   client_supply: ClientSupplyEntity;
+
+  @OneToMany(() => RequestOfferEntity, request_offer => request_offer.application)
+  request_offers: RequestOfferEntity[];
 }

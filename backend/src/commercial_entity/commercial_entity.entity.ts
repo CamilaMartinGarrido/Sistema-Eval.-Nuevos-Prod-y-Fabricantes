@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, Unique } from 'typeorm';
 import { CommercialEntityRoleEntity } from './commercial_entity_role.entity';
-import { MakerProductEntity } from 'src/maker_product/maker_product.entity';
-import { SupplyEntity } from 'src/supply/supply.entity';
+import { MakerProductEntity } from '../maker_product/maker_product.entity';
+import { SupplyEntity } from '../supply/supply.entity';
 
 @Unique(['entity_name', 'entity_country'])
 @Entity({ name: 'commercial_entity' })
