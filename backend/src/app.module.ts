@@ -12,7 +12,6 @@ import { ExploratoryOfferObservationModule } from './exploratory_offer_observati
 //import { IndustrialEvaluationObservationModule } from './industrial_evaluation_observation/industrial_evaluation_observation.module';
 //import { IndustrialPurchaseModule } from './industrial_purchase/industrial_purchase.module';
 //import { IndustrialPurchaseObservationModule } from './industrial_purchase_observation/industrial_purchase_observation.module';
-import { MakerModule } from './maker/maker.module';
 import { MakerProductModule } from './maker_product/maker_product.module';
 //import { ManufacturerStatusModule } from './manufacturer_status/manufacturer_status.module';
 import { ObservationModule } from './observation/observation.module';
@@ -24,9 +23,8 @@ import { ProductModule } from './product/product.module';
 //import { SampleEvaluationModule } from './sample_evaluation/sample_evaluation.module';
 //import { SampleEvaluationObservationModule } from './sample_evaluation_observation/sample_evaluation_observation.module';
 //import { SampleModule } from './sample/sample.module';
-import { SupplierModule } from './supplier/supplier.module';
 import { SupplyModule } from './supply/supply.module';
-//import { TechnicalDocumentModule } from './technical_document/technical_document.module';
+import { TechnicalDocumentModule } from './technical_document/technical_document.module';
 //import { UserAccountModule } from './user_account/user_account.module';
 
 @Module({
@@ -34,7 +32,7 @@ import { SupplyModule } from './supply/supply.module';
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5434,
+      port: 5432,
       username: 'postgres',
       password: 'CamilaBD',
       database: 'Sistema Eval. Nuevos Prod y/o Fab',
@@ -56,7 +54,6 @@ import { SupplyModule } from './supply/supply.module';
     IndustrialEvaluationObservationModule,
     IndustrialPurchaseModule,
     IndustrialPurchaseObservationModule,*/
-    MakerModule,
     MakerProductModule,
     //ManufacturerStatusModule,
     ObservationModule,
@@ -68,10 +65,9 @@ import { SupplyModule } from './supply/supply.module';
     SampleAnalysisObservationModule,
     SampleEvaluationModule,
     SampleEvaluationObservationModule,*/
-    SupplierModule,
     SupplyModule,
-    /*TechnicalDocumentModule,
-    UserAccountModule,*/
+    TechnicalDocumentModule,
+    //UserAccountModule,
   ],
   controllers: [],
   providers: [],

@@ -11,7 +11,4 @@ export class ExploratoryOfferResponseDto {
 
   @Expose()
   is_competitive: boolean;
-
-  @Expose()
-  created_at_ExploratoryOffer: Date;
 }

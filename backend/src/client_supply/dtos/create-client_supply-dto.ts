@@ -8,4 +8,8 @@ export class CreateClientSupplyDto {
   @IsNumber()
   @IsNotEmpty()
   supply_id: number;
+
+  @IsNumber()
+  @IsNotEmpty()
+  application_id: number;
 }

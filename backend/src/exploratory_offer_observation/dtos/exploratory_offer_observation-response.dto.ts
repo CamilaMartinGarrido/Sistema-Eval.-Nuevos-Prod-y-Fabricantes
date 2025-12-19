@@ -13,7 +13,4 @@ export class ExploratoryOfferObservationResponseDto {
   @Expose()
   @Type(() => ObservationResponseDto)
   observation: ObservationResponseDto;
-
-  @Expose()
-  created_at_ExploratoryOfferObservation: Date;
 }

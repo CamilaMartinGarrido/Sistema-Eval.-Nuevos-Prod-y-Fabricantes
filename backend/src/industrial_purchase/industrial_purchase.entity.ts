@@ -24,7 +24,4 @@ export class IndustrialPurchaseEntity {
     nullable: false,
   })
   purchase_status: StateIndustrialPurchasingEnum;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at: Date;
 }

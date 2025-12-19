@@ -1,5 +1,5 @@
 import { OriginRequestEnum } from 'src/enums';
-import { IsBoolean, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsBoolean, IsNotEmpty, IsNumber, IsString, IsEnum, IsOptional } from 'class-validator';
 
 export class CreateApplicationDto {
   @IsNumber()
@@ -14,13 +14,15 @@ export class CreateApplicationDto {
   @IsNotEmpty()
   product_id: number;
 
+  @IsEnum(OriginRequestEnum)
   @IsNotEmpty()
-  origin: OriginRequestEnum;
+  origin: OriginRequestEnum; // enum validado
 
   @IsString()
   @IsNotEmpty()
-  receipt_date: string;
+  receipt_date: string; // ISO date string
 
   @IsBoolean()
-  is_selected: boolean;
+  @IsOptional()
+  is_selected?: boolean; // opcional al crear
 }

@@ -2,12 +2,13 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  CreateDateColumn,
   OneToMany,
+  Unique,
 } from 'typeorm';
 import { ApplicationEntity } from '../application/application.entity';
 import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
 
+@Unique(['client_name', 'client_country'])
 @Entity({ name: 'client' })
 export class ClientEntity {
   @PrimaryGeneratedColumn('increment')
@@ -18,9 +19,6 @@ export class ClientEntity {
 
   @Column({ type: 'varchar', nullable: false })
   client_country: string;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at_Client: Date;
 
   @OneToMany(() => ApplicationEntity, (application) => application.client)
   applications: ApplicationEntity[];

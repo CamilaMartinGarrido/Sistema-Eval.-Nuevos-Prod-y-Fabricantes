@@ -26,9 +26,6 @@ export class ExploratoryOfferEntity {
   @Column({ type: 'boolean', nullable: true })
   is_competitive: boolean;
 
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at_ExploratoryOffer: Date;
-
   @OneToMany(() => ExploratoryOfferObservationEntity, (exp_offer_observ) => exp_offer_observ.exploratory_offer)
   exploratory_offer_observs: ExploratoryOfferObservationEntity[];
 }

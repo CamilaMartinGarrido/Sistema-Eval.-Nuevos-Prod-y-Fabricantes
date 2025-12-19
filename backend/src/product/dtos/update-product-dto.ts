@@ -1,11 +1,12 @@
 import { ProductTypeEnum } from 'src/enums';
-import { IsOptional, IsNumber, IsString } from 'class-validator';
+import { IsOptional, IsNumber, IsString, IsEnum, IsBoolean } from 'class-validator';
 
 export class UpdateProductDto {
   @IsString()
   @IsOptional()
   description?: string;
 
+  @IsEnum(ProductTypeEnum)
   @IsOptional()
   product_type?: ProductTypeEnum;
 
@@ -16,4 +17,8 @@ export class UpdateProductDto {
   @IsNumber()
   @IsOptional()
   priority?: number;
+
+  @IsBoolean()
+  @IsOptional()
+  exclusive_use?: boolean;
 }

@@ -4,11 +4,14 @@ import { MakerProductController } from './maker_product.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MakerProductEntity } from './maker_product.entity';
 import { ProductEntity } from '../product/product.entity';
-import { MakerEntity } from '../maker/maker.entity';
+import { CommercialEntityEntity } from 'src/commercial_entity/commercial_entity.entity';
+import { CommercialEntityModule } from 'src/commercial_entity/commercial_entity.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([MakerProductEntity, ProductEntity, MakerEntity])
+    TypeOrmModule.forFeature(
+      [MakerProductEntity, ProductEntity, CommercialEntityEntity]),
+      CommercialEntityModule,
   ],
   providers: [MakerProductService],
   controllers: [MakerProductController],

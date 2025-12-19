@@ -23,7 +23,4 @@ export class ManufacturerStatusEntity {
     enumName: 'final_state_manufacturer_enum',
   })
   final_state: FinalStateManufacturerEnum;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at: Date;
 }

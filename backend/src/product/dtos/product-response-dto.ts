@@ -1,4 +1,5 @@
 import { Expose, Transform } from 'class-transformer';
+import { ProductTypeEnum } from 'src/enums';
 
 export class ProductResponseDto {
   @Expose()
@@ -9,7 +10,7 @@ export class ProductResponseDto {
   product_description: string;
 
   @Expose()
-  product_type: string;
+  product_type: ProductTypeEnum; // devolver enum directamente
 
   @Expose()
   @Transform(({ obj }) => obj.classification)
@@ -21,7 +22,4 @@ export class ProductResponseDto {
   @Expose()
   @Transform(({ obj }) => obj.priority)
   product_priority: number;
-
-  @Expose()
-  created_at_Product: Date;
 }

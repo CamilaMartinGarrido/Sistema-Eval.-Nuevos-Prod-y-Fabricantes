@@ -1,53 +1,76 @@
+// Rol de Entidad Comercial
+export enum RoleEnum {
+  M = 'Maker',
+  S = 'Supplier',
+}
+
+// Origen de la solicitud
 export enum OriginRequestEnum {
-  BCF = 'BCF',
+  BIOCUBAFARMA = 'BioCubaFarma (BCF)',
   CLIENTE = 'Cliente',
   PROVEEDOR = 'Proveedor',
   NM = 'NM',
-  NP = 'NP',
+  NO_PROCEDE = 'No Procede (NP)',
   EXTRAPLAN = 'Extraplan',
+  CLIENTE_EXTRAPLAN = 'Cliente (Extraplan)',
+  PROVEEDOR_EXTRAPLAN = 'Proveedor (Extraplan)',
 }
 
+// Tipo de producto
 export enum ProductTypeEnum {
-  MP = 'MP',
-  ME = 'ME',
-  R = 'R',
-  D = 'D',
+  MP = 'Materia Prima (MP)',
+  ME = 'Material de Envase (ME)',
+  R = 'Reactivo (R)',
+  D = 'Dispositivo (D)',
 }
 
+// Tipo de clasificación
+export enum ClassificationEnum {
+  IFA = 'Ingrediente Farmacéutico Activo (IFA)',
+  EXCIPIENTE = 'Excipiente Farmacéutico (Excip)',
+}
+
+// Resultado del análisis de muestra
 export enum ResultSampleAnalysisEnum {
   CONFORME = 'Conforme',
-  NO_CONFORME = 'No conforme',
+  NO_CONFORME = 'No Conforme',
 }
 
+// Tipos de documento técnico
 export enum DocumentTypeEnum {
   COA = 'COA',
-  FICHA_TECNICA = 'Ficha Tecnica',
+  FICHA_TECNICA = 'Ficha Técnica',
   PERMISO_SANITARIO = 'Permiso Sanitario',
   OTRO = 'Otro',
 }
 
+// Estado compra industrial
 export enum StateIndustrialPurchasingEnum {
   CONCLUIDA = 'Concluida',
-  PARCIALMENTE_CONCLUIDA = 'Parcialmente concluida',
-  PENDIENTE_DE_EMBARQUE = 'Pendiente de embarque',
+  PARCIALMENTE_CONCLUIDA = 'Parcialmente Concluida',
+  PENDIENTE_DE_EMBARQUE = 'Pendiente de Embarque',
 }
 
+// Resultado evaluación industrial
 export enum ResultIndustrialAnalysisEnum {
-  BUEN_DESEMPE_O = 'Buen desempeño',
+  BUEN_DESEMPEÑO = 'Buen Desempeño',
   DEFECTUOSO = 'Defectuoso',
-  NO_INFORMADO = 'No informado',
+  NO_INFORMADO = 'No Informado',
 }
 
+// Estado final fabricante
 export enum FinalStateManufacturerEnum {
-  A = 'A',
-  NA = 'NA',
-  PD = 'PD',
-  PM = 'PM',
-  PI = 'PI',
-  CONTRATO_A_RIESGO = 'Contrato a Riesgo',
+  APROBADO = 'Aprobado',
+  NO_APROBADO = 'No Aprobado',
+  PENDIENTE_DOCUMENTACION = 'Pendiente de Documentación',
+  PENDIENTE_MUESTRA = 'Pendiente de Muestra',
+  PENDIENTE_INFORME = 'Pendiente de Informe',
+  CONTRATO_A_RIESGO = 'Contrato a Riesgo (COA o muestras)',
 }
 
+// Rol de usuario
 export enum UserRoleEnum {
   ADMINISTRADOR = 'Administrador',
   OBSERVADOR = 'Observador',
+  ADMINISTRADOR_BD = 'Administrador de Base de Datos',
 }

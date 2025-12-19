@@ -30,7 +30,4 @@ export class IndustrialEvaluationEntity {
 
   @Column({ type: 'date', nullable: true })
   report_delivery_date: string;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at: Date;
 }

@@ -27,7 +27,4 @@ export class SampleEvaluationEntity {
 
   @Column({ type: 'boolean', nullable: true })
   decision_continue: boolean;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at: Date;
 }

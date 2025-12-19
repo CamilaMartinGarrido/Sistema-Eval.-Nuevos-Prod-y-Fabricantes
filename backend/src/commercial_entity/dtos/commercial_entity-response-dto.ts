@@ -1,4 +1,6 @@
 import { Expose } from 'class-transformer';
+import { RoleEnum } from 'src/enums';
+import { CommercialEntityRoleResponseDto } from './commercial_entity_role-response-dto';
 
 export class CommercialEntityResponseDto {
   @Expose()
@@ -11,5 +13,5 @@ export class CommercialEntityResponseDto {
   entity_country: string;
 
   @Expose()
-  created_at_CommercialEntity: Date;
+  roles: RoleEnum[];//CommercialEntityRoleResponseDto[]; // Roles asignados a la entidad
 }

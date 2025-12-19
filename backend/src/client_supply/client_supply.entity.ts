@@ -1,13 +1,7 @@
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne } from 'typeorm';
 import { SupplyEntity } from '../supply/supply.entity';
 import { ClientEntity } from '../client/client.entity';
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  CreateDateColumn,
-  ManyToOne,
-  JoinColumn,
-} from 'typeorm';
+import { ApplicationEntity } from '../application/application.entity';
 
 @Entity({ name: 'client_supply' })
 export class ClientSupplyEntity {
@@ -23,7 +17,7 @@ export class ClientSupplyEntity {
   @ManyToOne(() => ClientEntity, (client) => client.client_supplies, {
     eager: true,
     nullable: false,
-    onDelete: 'NO ACTION', // o 'RESTRICT'
+    onDelete: 'RESTRICT', 
   })
   @JoinColumn({ name: 'client_id' })
   client: ClientEntity;
@@ -31,11 +25,16 @@ export class ClientSupplyEntity {
   @ManyToOne(() => SupplyEntity, (supply) => supply.client_supplies, {
     eager: true,
     nullable: false,
-    onDelete: 'NO ACTION', // o 'RESTRICT'
+    onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'supply_id' })
   supply: SupplyEntity;
 
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at_ClientSupply: Date;
+  @OneToOne(() => ApplicationEntity, (app) => app.client_supply, {
+    eager: true,        
+    nullable: false,     
+    onDelete: 'RESTRICT'
+  })
+  @JoinColumn({ name: 'application_id' })
+  application: ApplicationEntity;
 }

@@ -1,6 +1,7 @@
-import { Expose, Transform, Type } from 'class-transformer';
-import { ClientResponseDto } from "src/client/dtos/client-response-dto";
-import { ProductResponseDto } from "src/product/dtos/product-response-dto";
+import { Expose, Type } from 'class-transformer';
+import { ClientResponseDto } from 'src/client/dtos/client-response-dto';
+import { ProductResponseDto } from 'src/product/dtos/product-response-dto';
+import { OriginRequestEnum } from 'src/enums';
 
 export class ApplicationResponseDto {
   @Expose()
@@ -10,16 +11,13 @@ export class ApplicationResponseDto {
   application_number: number;
 
   @Expose()
-  origin: string;
+  origin: OriginRequestEnum; // devolver enum directamente
 
   @Expose()
   receipt_date: string;
 
   @Expose()
   is_selected: boolean;
-
-  @Expose()
-  created_at_Application: Date;
 
   @Expose()
   @Type(() => ClientResponseDto)

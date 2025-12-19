@@ -1,13 +1,11 @@
-import { Expose, Transform, Type } from "class-transformer";
+import { Expose, Type } from "class-transformer";
+import { ApplicationResponseDto } from "src/application/dtos/application-response.dto";
 import { ClientResponseDto } from "src/client/dtos/client-response-dto";
-import { SupplyResponseDto } from "src/supply/dtos";
+import { SupplyResponseDto } from "src/supply/dtos/supply-response.dto";
 
 export class ClientSupplyResponseDto {
   @Expose()
   id: number;
-
-  @Expose()
-  created_at_ClientSupply: Date;
 
   @Expose()
   @Type(() => ClientResponseDto)
@@ -16,4 +14,8 @@ export class ClientSupplyResponseDto {
   @Expose()
   @Type(() => SupplyResponseDto)
   supply: SupplyResponseDto;
+
+  @Expose()
+  @Type(() => ApplicationResponseDto)
+  application: ApplicationResponseDto;
 }

@@ -14,7 +14,7 @@ export class TechnicalDocumentEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => SupplyEntity, (supply) => supply.technicalDocuments, {
+  @ManyToOne(() => SupplyEntity, (supply) => supply.technical_documents, {
     eager: true,
     nullable: false,
     onDelete: 'NO ACTION', // o 'RESTRICT'
@@ -38,7 +38,4 @@ export class TechnicalDocumentEntity {
 
   @Column({ type: 'date', nullable: true })
   receipt_date: string;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at_TechnicalDocument: Date;
 }

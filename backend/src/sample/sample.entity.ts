@@ -33,7 +33,4 @@ export class SampleEntity {
 
   @Column({ type: 'varchar' })
   sample_code: string;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at: Date;
 }

@@ -20,7 +20,4 @@ export class TechnicalDocumentResponseDto {
 
   @Expose()
   receipt_date: string;
-
-  @Expose()
-  created_at_TechnicalDocument: Date;
 }

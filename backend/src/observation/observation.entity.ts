@@ -17,9 +17,6 @@ export class ObservationEntity {
 
   @Column({ type: 'date' })
   observation_date: string;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at_Observation: Date;
   
   @OneToMany(() => ExploratoryOfferObservationEntity, (exp_offer_observ) => exp_offer_observ.observation)
   exploratory_offer_observs: ExploratoryOfferObservationEntity[];

@@ -3,7 +3,7 @@ import { IsNumber, IsOptional } from 'class-validator';
 export class UpdateSupplyDto {
   @IsNumber()
   @IsOptional()
-  supplier_id?: number;
+  supplier_entity_id?: number;
 
   @IsNumber()
   @IsOptional()

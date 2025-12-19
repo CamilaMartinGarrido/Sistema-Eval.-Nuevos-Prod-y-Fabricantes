@@ -1,7 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany } from 'typeorm';
-import { MakerEntity } from '../maker/maker.entity';
-import { SupplierEntity } from '../supplier/supplier.entity';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, Unique } from 'typeorm';
+import { CommercialEntityRoleEntity } from './commercial_entity_role.entity';
+import { MakerProductEntity } from 'src/maker_product/maker_product.entity';
+import { SupplyEntity } from 'src/supply/supply.entity';
 
+@Unique(['entity_name', 'entity_country'])
 @Entity({ name: 'commercial_entity' })
 export class CommercialEntityEntity {
   @PrimaryGeneratedColumn()
@@ -13,12 +15,12 @@ export class CommercialEntityEntity {
   @Column({ type: 'varchar' })
   entity_country: string;
 
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at_CommercialEntity: Date;
+  @OneToMany(() => CommercialEntityRoleEntity, role => role.commercial_entity)
+  roles: CommercialEntityRoleEntity[];
 
-  @OneToMany(() => MakerEntity, maker => maker.commercial_entity)
-  makers: Promise<MakerEntity[]>;
+  @OneToMany(() => MakerProductEntity, makerProduct => makerProduct.maker_entity)
+  maker_products: MakerProductEntity[];
 
-  @OneToMany(() => SupplierEntity, supplier => supplier.commercial_entity)
-  suppliers: Promise<SupplierEntity[]>;
+  @OneToMany(() => SupplyEntity, supply => supply.supplier_entity,)
+  supplies: SupplyEntity[];
 }

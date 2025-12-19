@@ -23,7 +23,7 @@ export class MakerProductController {
     @Body() dto: CreateMakerProductDto,
   ): Promise<{
     message: string;
-    data: MakerProductEntity;
+    data: Promise<MakerProductResponseDto>;
   }> {
     return this.mpService.create(dto);
   }

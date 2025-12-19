@@ -1,14 +1,9 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  CreateDateColumn,
-  OneToMany,
-} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, Unique } from 'typeorm';
 import { ProductTypeEnum } from '../enums';
 import { ApplicationEntity } from '../application/application.entity';
 import { MakerProductEntity } from '../maker_product/maker_product.entity';
 
+@Unique(['description', 'product_type', 'classification'])
 @Entity({ name: 'product' })
 export class ProductEntity {
   @PrimaryGeneratedColumn()
@@ -38,8 +33,5 @@ export class ProductEntity {
     applications: ApplicationEntity[];
   
   @OneToMany(() => MakerProductEntity, (maker_product) => maker_product.product)
-    maker_products: MakerProductEntity[];
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at_Product: Date;
+  maker_products: MakerProductEntity[];
 }

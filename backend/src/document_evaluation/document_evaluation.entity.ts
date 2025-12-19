@@ -24,7 +24,4 @@ export class DocumentEvaluationEntity {
 
   @Column({ type: 'date' })
   send_date: string;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at: Date;
 }

@@ -28,7 +28,4 @@ export class ExploratoryOfferObservationEntity {
   })
   @JoinColumn({ name: 'observation_id' })
   observation: ObservationEntity;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at_ExploratoryOfferObservation: Date;
 }

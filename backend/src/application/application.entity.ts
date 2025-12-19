@@ -1,14 +1,8 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  CreateDateColumn,
-  ManyToOne,
-  JoinColumn,
-} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne } from 'typeorm';
 import { OriginRequestEnum } from '../enums';
 import { ClientEntity } from '../client/client.entity';
 import { ProductEntity } from '../product/product.entity';
+import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
 
 @Entity({ name: 'application' })
 export class ApplicationEntity {
@@ -21,7 +15,7 @@ export class ApplicationEntity {
   @ManyToOne(() => ClientEntity, (client) => client.applications, {
     eager: true,
     nullable: false,
-    onDelete: 'NO ACTION', // o 'RESTRICT'
+    onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'client_id' })
   client: ClientEntity;
@@ -29,7 +23,7 @@ export class ApplicationEntity {
   @ManyToOne(() => ProductEntity, (product) => product.applications, {
     eager: true,
     nullable: false,
-    onDelete: 'NO ACTION', // o 'RESTRICT'
+    onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'product_id' })
   product: ProductEntity;
@@ -48,6 +42,6 @@ export class ApplicationEntity {
   @Column({ type: 'boolean', nullable: true })
   is_selected: boolean;
 
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at_Application: Date;
+  @OneToOne(() => ClientSupplyEntity, (clientSupply) => clientSupply.application)
+  client_supply: ClientSupplyEntity;
 }

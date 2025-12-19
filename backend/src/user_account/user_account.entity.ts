@@ -24,7 +24,4 @@ export class UserAccountEntity {
     nullable: false,
   })
   role: UserRoleEnum;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at: Date;
 }

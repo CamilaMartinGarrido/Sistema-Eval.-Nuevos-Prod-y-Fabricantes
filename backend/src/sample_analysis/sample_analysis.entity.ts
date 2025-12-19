@@ -27,7 +27,4 @@ export class SampleAnalysisEntity {
     nullable: false,
   })
   result: ResultSampleAnalysisEnum;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at: Date;
 }

@@ -1,5 +1,5 @@
 import { OriginRequestEnum } from 'src/enums';
-import { IsBoolean, IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsBoolean, IsNumber, IsOptional, IsString, IsEnum } from 'class-validator';
 
 export class UpdateApplicationDto {
   @IsNumber()
@@ -14,6 +14,7 @@ export class UpdateApplicationDto {
   @IsOptional()
   product_id?: number;
 
+  @IsEnum(OriginRequestEnum)
   @IsOptional()
   origin?: OriginRequestEnum;
 

@@ -3,7 +3,7 @@ import { IsNotEmpty, IsNumber } from 'class-validator';
 export class CreateSupplyDto {
   @IsNumber()
   @IsNotEmpty()
-  supplier_id: number;
+  supplier_entity_id: number;
 
   @IsNumber()
   @IsNotEmpty()

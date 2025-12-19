@@ -8,4 +8,8 @@ export class UpdateClientSupplyDto {
   @IsNumber()
   @IsOptional()
   supply_id?: number;
+
+  @IsNumber()
+  @IsOptional()
+  application_id?: number;
 }

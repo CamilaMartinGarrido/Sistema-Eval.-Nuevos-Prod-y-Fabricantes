@@ -9,7 +9,4 @@ export class ClientResponseDto {
 
   @Expose()
   client_country: string;
-
-  @Expose()
-  created_at_Client: Date;
 }

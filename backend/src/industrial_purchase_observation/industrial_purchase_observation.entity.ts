@@ -15,7 +15,4 @@ export class IndustrialPurchaseObservationEntity {
 
   @Column({ type: 'int' })
   observation_id: number;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at: Date;
 }

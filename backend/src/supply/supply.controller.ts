@@ -12,6 +12,7 @@ import {
 } from '@nestjs/common';
 import { SupplyService } from './supply.service';
 import { CreateSupplyDto, UpdateSupplyDto, SupplyResponseDto } from './dtos';
+import { SupplyEntity } from './supply.entity';
 
 @Controller('supply')
 export class SupplyController {

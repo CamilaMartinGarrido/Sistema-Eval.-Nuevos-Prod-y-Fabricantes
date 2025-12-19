@@ -22,7 +22,7 @@ export class CommercialEntityController {
   @Post()
   async createCommercialEntity(
     @Body() dto: CreateCommercialEntityDto,
-  ): Promise<{ message: string; data: CommercialEntityEntity; }> {
+  ): Promise<{ message: string; data: CommercialEntityResponseDto; }> {
     return this.commercialEntityService.create(dto);
   }
 

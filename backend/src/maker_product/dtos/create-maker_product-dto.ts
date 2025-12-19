@@ -7,5 +7,5 @@ export class CreateMakerProductDto {
 
   @IsNumber()
   @IsNotEmpty()
-  maker_id: number;
+  maker_entity_id: number;
 }

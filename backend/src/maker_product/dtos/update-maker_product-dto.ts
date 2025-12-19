@@ -7,5 +7,5 @@ export class UpdateMakerProductDto {
 
   @IsNumber()
   @IsOptional()
-  maker_id?: number;
+  maker_entity_id?: number;
 }

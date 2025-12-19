@@ -1,5 +1,6 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { MakerResponseDto } from "src/maker/dtos/maker-response-dto";
+import { CommercialEntityLightDto } from 'src/commercial_entity/dtos';
+import { CommercialEntityResponseDto } from 'src/commercial_entity/dtos/commercial_entity-response-dto';
 import { ProductResponseDto } from "src/product/dtos/product-response-dto";
 
 export class MakerProductResponseDto {
@@ -7,13 +8,10 @@ export class MakerProductResponseDto {
   id: number;
 
   @Expose()
-  created_at_MakerProduct: Date;
-
-  @Expose()
   @Type(() => ProductResponseDto)
   product: ProductResponseDto;
 
   @Expose()
-  @Type(() => MakerResponseDto)
-  maker: MakerResponseDto;
+  @Type(() => CommercialEntityLightDto)
+  maker_entity: CommercialEntityLightDto;
 }

@@ -1,12 +1,12 @@
 import { Expose } from 'class-transformer';
 
-export class ObservationResponseDto {
+export class CommercialEntityLightDto {
   @Expose()
   id: number;
 
   @Expose()
-  observation_text: string;
+  entity_name: string;
 
   @Expose()
-  observation_date: string;
+  entity_country: string;
 }

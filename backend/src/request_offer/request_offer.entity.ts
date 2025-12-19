@@ -15,7 +15,4 @@ export class RequestOfferEntity {
 
   @Column({ type: 'int' })
   exploratory_offer_id: number;
-
-  @CreateDateColumn({ type: 'timestamp' })
-  created_at: Date;
 }
