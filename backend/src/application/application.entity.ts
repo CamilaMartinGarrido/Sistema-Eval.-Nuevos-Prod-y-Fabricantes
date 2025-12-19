@@ -15,6 +15,7 @@ export class ApplicationEntity {
   @ManyToOne(() => ClientEntity, (client) => client.applications, {
     eager: true,
     nullable: false,
+    onUpdate: 'CASCADE',
     onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'client_id' })
@@ -23,6 +24,7 @@ export class ApplicationEntity {
   @ManyToOne(() => ProductEntity, (product) => product.applications, {
     eager: true,
     nullable: false,
+    onUpdate: 'CASCADE',
     onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'product_id' })

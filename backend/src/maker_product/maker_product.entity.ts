@@ -11,7 +11,8 @@ export class MakerProductEntity {
   @ManyToOne(() => ProductEntity, (product) => product.maker_products, {
     eager: true,
     nullable: false,
-    onDelete: 'RESTRICT', // o 'NO ACTION'
+    onUpdate: 'CASCADE',
+    onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'product_id' })
   product: ProductEntity;
@@ -19,6 +20,7 @@ export class MakerProductEntity {
   @ManyToOne(() => CommercialEntityEntity, (ce) => ce.maker_products, {
     eager: true,
     nullable: false,
+    onUpdate: 'CASCADE',
     onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'maker_entity_id' })

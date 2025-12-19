@@ -13,6 +13,7 @@ export class SupplyEntity {
   @ManyToOne(() => CommercialEntityEntity, (commercialEntity) => commercialEntity.supplies, {
     eager: true,
     nullable: false,
+    onUpdate: 'CASCADE',
     onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'supplier_entity_id' })
@@ -21,6 +22,7 @@ export class SupplyEntity {
   @ManyToOne(() => MakerProductEntity, (makerProduct) => makerProduct.supplies, {
     eager: true,
     nullable: false,
+    onUpdate: 'CASCADE',
     onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'maker_product_id' })

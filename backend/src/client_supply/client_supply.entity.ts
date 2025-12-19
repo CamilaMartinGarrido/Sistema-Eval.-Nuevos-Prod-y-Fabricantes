@@ -17,6 +17,7 @@ export class ClientSupplyEntity {
   @ManyToOne(() => ClientEntity, (client) => client.client_supplies, {
     eager: true,
     nullable: false,
+    onUpdate: 'CASCADE',
     onDelete: 'RESTRICT', 
   })
   @JoinColumn({ name: 'client_id' })
@@ -25,6 +26,7 @@ export class ClientSupplyEntity {
   @ManyToOne(() => SupplyEntity, (supply) => supply.client_supplies, {
     eager: true,
     nullable: false,
+    onUpdate: 'CASCADE',
     onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'supply_id' })
@@ -33,6 +35,7 @@ export class ClientSupplyEntity {
   @OneToOne(() => ApplicationEntity, (app) => app.client_supply, {
     eager: true,        
     nullable: false,     
+    onUpdate: 'CASCADE',
     onDelete: 'RESTRICT'
   })
   @JoinColumn({ name: 'application_id' })
