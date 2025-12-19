@@ -1,6 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
-import { ApplicationEntity } from 'src/application/application.entity';
-import { ExploratoryOfferEntity } from 'src/exploratory_offer/exploratory_offer.entity';
+import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { ApplicationEntity } from '../application/application.entity';
+import { ExploratoryOfferEntity } from '../exploratory_offer/exploratory_offer.entity';
 
 @Entity({ name: 'request_offer' })
 export class RequestOfferEntity {

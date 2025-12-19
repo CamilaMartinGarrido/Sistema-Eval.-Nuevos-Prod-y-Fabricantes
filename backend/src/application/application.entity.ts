@@ -4,6 +4,7 @@ import { ClientEntity } from '../client/client.entity';
 import { ProductEntity } from '../product/product.entity';
 import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
 import { RequestOfferEntity } from 'src/request_offer';
+import { RequestObservationEntity } from 'src/request_observation';
 
 @Entity({ name: 'application' })
 export class ApplicationEntity {
@@ -50,4 +51,7 @@ export class ApplicationEntity {
 
   @OneToMany(() => RequestOfferEntity, request_offer => request_offer.application)
   request_offers: RequestOfferEntity[];
+
+  @OneToMany(() => RequestObservationEntity, (request_observ) => request_observ.application)
+  request_observs: RequestObservationEntity[];
 }

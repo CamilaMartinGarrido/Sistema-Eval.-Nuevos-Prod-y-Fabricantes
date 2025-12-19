@@ -1,4 +1,5 @@
-import { ExploratoryOfferObservationEntity } from 'src/exploratory_offer_observation/exploratory_offer_observation.entity';
+import { ExploratoryOfferObservationEntity } from '../exploratory_offer_observation/exploratory_offer_observation.entity';
+import { RequestObservationEntity } from '../request_observation/request_observation.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -20,4 +21,7 @@ export class ObservationEntity {
   
   @OneToMany(() => ExploratoryOfferObservationEntity, (exp_offer_observ) => exp_offer_observ.observation)
   exploratory_offer_observs: ExploratoryOfferObservationEntity[];
+  
+  @OneToMany(() => RequestObservationEntity, (request_observ) => request_observ.observation)
+  request_observs: RequestObservationEntity[];
 }

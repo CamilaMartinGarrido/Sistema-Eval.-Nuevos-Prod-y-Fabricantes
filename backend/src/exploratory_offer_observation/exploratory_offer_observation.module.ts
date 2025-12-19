@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { ExploratoryOfferObservationService } from './exploratory_offer_observation.service';
 import { ExploratoryOfferObservationController } from './exploratory_offer_observation.controller';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { ExploratoryOfferObservationEntity } from './exploratory_offer_observation.entity';
 import { ExploratoryOfferEntity } from '../exploratory_offer/exploratory_offer.entity';
 import { ObservationEntity } from '../observation/observation.entity';

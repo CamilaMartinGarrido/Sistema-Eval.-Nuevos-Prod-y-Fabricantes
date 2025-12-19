@@ -1,12 +1,6 @@
-import { ExploratoryOfferEntity } from 'src/exploratory_offer/exploratory_offer.entity';
-import { ObservationEntity } from 'src/observation/observation.entity';
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  CreateDateColumn,
-  ManyToOne,
-  JoinColumn,
-} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { ExploratoryOfferEntity } from '../exploratory_offer/exploratory_offer.entity';
+import { ObservationEntity } from '../observation/observation.entity';
 
 @Entity({ name: 'exploratory_offer_observation' })
 export class ExploratoryOfferObservationEntity {
@@ -16,7 +10,8 @@ export class ExploratoryOfferObservationEntity {
   @ManyToOne(() => ExploratoryOfferEntity, (expOffer) => expOffer.exploratory_offer_observs, {
     eager: true,
     nullable: false,
-    onDelete: 'NO ACTION', // o 'RESTRICT'
+    onUpdate: 'CASCADE',
+    onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'exploratory_offer_id' })
   exploratory_offer: ExploratoryOfferEntity;
@@ -24,7 +19,8 @@ export class ExploratoryOfferObservationEntity {
   @ManyToOne(() => ObservationEntity, (observation) => observation.exploratory_offer_observs, {
     eager: true,
     nullable: false,
-    onDelete: 'NO ACTION', // o 'RESTRICT'
+    onUpdate: 'CASCADE',
+    onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'observation_id' })
   observation: ObservationEntity;
