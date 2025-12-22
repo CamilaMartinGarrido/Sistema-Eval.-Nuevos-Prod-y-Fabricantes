@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { ObservationService } from './observation.service';
 import { ObservationController } from './observation.controller';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { ObservationEntity } from './observation.entity';
 
 @Module({

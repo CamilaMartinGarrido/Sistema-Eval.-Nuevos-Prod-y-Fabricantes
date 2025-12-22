@@ -1,10 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany, Unique } from 'typeorm';
 import { ExploratoryOfferEntity } from '../exploratory_offer/exploratory_offer.entity';
 import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
 import { MakerProductEntity } from '../maker_product/maker_product.entity';
 import { CommercialEntityEntity } from '../commercial_entity/commercial_entity.entity';
 import { TechnicalDocumentEntity } from '../technical_document/technical_document.entity';
 
+@Unique(['supplier_entity', 'maker_product'])
 @Entity({ name: 'supply' })
 export class SupplyEntity {
   @PrimaryGeneratedColumn()

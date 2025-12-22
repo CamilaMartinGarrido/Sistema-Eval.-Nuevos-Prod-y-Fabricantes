@@ -37,18 +37,30 @@ export class ExploratoryOfferService {
     const offers = await this.exploratoryOfferRepository.find({
       take: limit,
       skip: offset,
-      relations: ['supply'],
+      relations: [
+        'supply',
+        'exploratory_offer_observs',
+        'exploratory_offer_observs.observation',
+      ],
     });
 
     return Promise.all(
-      offers.map(async (offer) => this.toResponseDto(offer)),
+      offers.map((offer) => this.toResponseDto(offer)),
     );
   }
 
   async findOne(id: number): Promise<ExploratoryOfferResponseDto> {
-    const offer = await this.exploratoryOfferRepository.findOne({ where: { id }, relations: ['supply'] });
+    const offer = await this.exploratoryOfferRepository.findOne({
+      where: { id },
+      relations: [
+        'supply',
+        'exploratory_offer_observs',
+        'exploratory_offer_observs.observation',
+      ],
+    });
+
     if (!offer) throw new NotFoundException('Exploratory Offer not found');
-    
+
     return this.toResponseDto(offer);
   }
 

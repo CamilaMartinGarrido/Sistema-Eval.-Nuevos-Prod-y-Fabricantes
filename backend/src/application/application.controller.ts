@@ -1,18 +1,7 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Patch,
-  Delete,
-  Query,
-  ParseIntPipe,
-  DefaultValuePipe,
-} from '@nestjs/common';
-import { CreateApplicationDto, UpdateApplicationDto, ApplicationResponseDto } from './dtos';
+import { Controller, Get, Post, Body, Param, Patch, Delete, Query, ParseIntPipe, DefaultValuePipe } from '@nestjs/common';
 import { ApplicationService } from './application.service';
 import { ApplicationEntity } from './application.entity';
+import { CreateApplicationDto, UpdateApplicationDto, ApplicationResponseDto } from './dtos';
 
 @Controller('application')
 export class ApplicationController {

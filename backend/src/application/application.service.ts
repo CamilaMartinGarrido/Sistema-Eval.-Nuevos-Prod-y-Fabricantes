@@ -48,7 +48,12 @@ export class ApplicationService {
     const applications = await this.applicationRepository.find({
       take: limit,
       skip: offset,
-      relations: ['client', 'product'],
+      relations: [
+        'client', 
+        'product',
+        'request_observs',
+        'request_observs.observation',      
+      ],
     });
 
     return Promise.all(
@@ -57,7 +62,14 @@ export class ApplicationService {
   }
 
   async findOne(id: number): Promise<ApplicationResponseDto> {
-    const application = await this.applicationRepository.findOne({ where: { id }, relations: ['client', 'product'] });
+    const application = await this.applicationRepository.findOne({ 
+      where: { id }, 
+      relations: [
+        'client', 
+        'product',
+        'request_observs',
+        'request_observs.observation', 
+      ] });
     if (!application) throw new NotFoundException('Application not found');
     
     return this.toResponseDto(application);

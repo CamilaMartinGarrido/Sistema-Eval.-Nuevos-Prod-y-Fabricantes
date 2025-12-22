@@ -1,18 +1,6 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Delete,
-  Query,
-  DefaultValuePipe,
-  ParseIntPipe,
-  Patch,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Query, DefaultValuePipe, ParseIntPipe, Patch } from '@nestjs/common';
 import { MakerProductService } from './maker_product.service';
 import { CreateMakerProductDto, MakerProductResponseDto, UpdateMakerProductDto } from './dtos';
-import { MakerProductEntity } from './maker_product.entity';
 
 @Controller('maker_product')
 export class MakerProductController {

@@ -4,8 +4,8 @@ import { Repository } from 'typeorm';
 import { RequestObservationEntity } from './request_observation.entity';
 import { ApplicationEntity } from '../application/application.entity';
 import { ObservationService } from '../observation/observation.service';
-import { toDto } from 'src/common/utils/mapper.util';
 import { CreateRequestObservationDto, RequestObservationResponseDto, UpdateRequestObservationDto } from './dtos';
+import { toDto } from 'src/common/utils/mapper.util';
 
 @Injectable()
 export class RequestObservationService {

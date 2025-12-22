@@ -1,2 +1,3 @@
 export { CreateClientDto } from 'src/client/dtos/create-client-dto';
 export { UpdateClientDto } from 'src/client/dtos/update-client-dto';
+export { ClientResponseDto } from 'src/client/dtos/client-response-dto';

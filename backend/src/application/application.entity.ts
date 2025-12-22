@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne, OneToMany, Unique } from 'typeorm';
 import { OriginRequestEnum } from '../enums';
 import { ClientEntity } from '../client/client.entity';
 import { ProductEntity } from '../product/product.entity';
@@ -6,6 +6,8 @@ import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
 import { RequestOfferEntity } from '../request_offer/request_offer.entity';
 import { RequestObservationEntity } from '../request_observation/request_observation.entity';
 
+@Unique(['application_number'])
+@Unique(['client', 'product', 'receipt_date'])
 @Entity({ name: 'application' })
 export class ApplicationEntity {
   @PrimaryGeneratedColumn('increment')

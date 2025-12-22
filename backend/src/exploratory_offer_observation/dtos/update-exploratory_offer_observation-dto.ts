@@ -1,11 +1,5 @@
 import { Type } from 'class-transformer';
-import { 
-  IsNumber, 
-  IsObject, 
-  IsOptional, 
-  ValidateIf, 
-  ValidateNested 
-} from 'class-validator';
+import { IsNumber, IsObject, IsOptional, ValidateIf, ValidateNested } from 'class-validator';
 import { CreateObservationDto } from 'src/observation/dtos/create-observation-dto';
 
 export class UpdateExploratoryOfferObservationDto {

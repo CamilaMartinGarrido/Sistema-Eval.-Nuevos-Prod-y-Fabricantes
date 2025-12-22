@@ -1,8 +1,9 @@
+import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany, Unique } from 'typeorm';
 import { CommercialEntityEntity } from '../commercial_entity/commercial_entity.entity';
 import { ProductEntity } from '../product/product.entity';
 import { SupplyEntity } from '../supply/supply.entity';
-import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 
+@Unique(['product', 'maker_entity'])
 @Entity({ name: 'maker_product' })
 export class MakerProductEntity {
   @PrimaryGeneratedColumn()

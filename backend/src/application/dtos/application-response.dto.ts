@@ -2,6 +2,7 @@ import { Expose, Type } from 'class-transformer';
 import { ClientResponseDto } from 'src/client/dtos/client-response-dto';
 import { ProductResponseDto } from 'src/product/dtos/product-response-dto';
 import { OriginRequestEnum } from 'src/enums';
+import { RequestObservationResponseDto } from 'src/request_observation/dtos';
 
 export class ApplicationResponseDto {
   @Expose()
@@ -26,4 +27,8 @@ export class ApplicationResponseDto {
   @Expose()
   @Type(() => ProductResponseDto)
   product: ProductResponseDto;
+
+  @Expose()
+  @Type(() => RequestObservationResponseDto)
+  request_observs: RequestObservationResponseDto[];
 }

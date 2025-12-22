@@ -1,18 +1,7 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Delete,
-  Query,
-  DefaultValuePipe,
-  ParseIntPipe,
-  Patch,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Query, DefaultValuePipe, ParseIntPipe, Patch } from '@nestjs/common';
 import { ExploratoryOfferObservationService } from './exploratory_offer_observation.service';
-import { CreateExploratoryOfferObservationDto, ExploratoryOfferObservationResponseDto, UpdateExploratoryOfferObservationDto } from './dtos';
 import { ExploratoryOfferObservationEntity } from './exploratory_offer_observation.entity';
+import { CreateExploratoryOfferObservationDto, ExploratoryOfferObservationResponseDto, UpdateExploratoryOfferObservationDto } from './dtos';
 
 @Controller('exploratory_offer_observation')
 export class ExploratoryOfferObservationController {

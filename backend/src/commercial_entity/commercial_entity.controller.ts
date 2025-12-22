@@ -1,17 +1,6 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Delete,
-  Query,
-  ParseIntPipe,
-  Patch,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Query, ParseIntPipe, Patch } from '@nestjs/common';
 import { CommercialEntityService } from './commercial_entity.service';
 import { CreateCommercialEntityDto, UpdateCommercialEntityDto, CommercialEntityResponseDto } from './dtos';
-import { CommercialEntityEntity } from './commercial_entity.entity';
 
 @Controller('commercial_entity')
 export class CommercialEntityController {

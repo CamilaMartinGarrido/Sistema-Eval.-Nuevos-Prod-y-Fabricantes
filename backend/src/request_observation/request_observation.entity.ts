@@ -1,7 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, Unique } from 'typeorm';
 import { ApplicationEntity } from '../application/application.entity';
 import { ObservationEntity } from '../observation/observation.entity';
 
+@Unique(['application', 'observation'])
 @Entity({ name: 'request_observation' })
 export class RequestObservationEntity {
   @PrimaryGeneratedColumn()

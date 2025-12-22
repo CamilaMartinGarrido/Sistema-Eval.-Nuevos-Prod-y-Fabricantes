@@ -1,18 +1,6 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Patch,
-  Delete,
-  Query,
-  DefaultValuePipe,
-  ParseIntPipe,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Patch, Delete, Query, DefaultValuePipe, ParseIntPipe } from '@nestjs/common';
 import { SupplyService } from './supply.service';
 import { CreateSupplyDto, UpdateSupplyDto, SupplyResponseDto } from './dtos';
-import { SupplyEntity } from './supply.entity';
 
 @Controller('supply')
 export class SupplyController {

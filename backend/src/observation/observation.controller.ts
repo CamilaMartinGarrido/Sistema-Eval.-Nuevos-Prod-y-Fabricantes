@@ -1,17 +1,7 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Patch,
-  Delete,
-  Query,
-  ParseIntPipe,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Patch, Delete, Query, ParseIntPipe } from '@nestjs/common';
 import { ObservationService } from './observation.service';
-import { CreateObservationDto, ObservationResponseDto, UpdateObservationDto } from './dtos';
 import { ObservationEntity } from './observation.entity';
+import { CreateObservationDto, ObservationResponseDto, UpdateObservationDto } from './dtos';
 
 @Controller('observation')
 export class ObservationController {

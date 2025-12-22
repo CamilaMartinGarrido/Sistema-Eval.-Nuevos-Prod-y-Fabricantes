@@ -2,9 +2,8 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ClientEntity } from './client.entity';
-import { CreateClientDto, UpdateClientDto } from './dtos';
+import { CreateClientDto, UpdateClientDto, ClientResponseDto } from './dtos';
 import { toDto } from 'src/common/utils/mapper.util';
-import { ClientResponseDto } from './dtos/client-response-dto';
 
 @Injectable()
 export class ClientService {

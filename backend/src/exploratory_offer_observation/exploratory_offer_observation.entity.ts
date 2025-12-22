@@ -1,7 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, Unique } from 'typeorm';
 import { ExploratoryOfferEntity } from '../exploratory_offer/exploratory_offer.entity';
 import { ObservationEntity } from '../observation/observation.entity';
 
+@Unique(['exploratory_offer', 'observation'])
 @Entity({ name: 'exploratory_offer_observation' })
 export class ExploratoryOfferObservationEntity {
   @PrimaryGeneratedColumn()

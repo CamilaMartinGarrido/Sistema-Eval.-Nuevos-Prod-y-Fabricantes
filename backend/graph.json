@@ -99,6 +99,21 @@
         "token": "ExploratoryOfferEntityRepository"
       }
     },
+    "119242711": {
+      "id": "119242711",
+      "label": "ExploratoryOfferEntityRepository",
+      "parent": "-258635664",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ExploratoryOfferEntityRepository"
+      }
+    },
     "119527257": {
       "id": "119527257",
       "label": "ExploratoryOfferObservationService",
@@ -143,7 +158,7 @@
         "transient": false,
         "exported": true,
         "token": "ExternalContextCreator",
-        "initTime": 373.84360000000015
+        "initTime": 98.09760000000006
       }
     },
     "225063248": {
@@ -160,7 +175,7 @@
         "transient": false,
         "exported": false,
         "token": "InternalCoreModule",
-        "initTime": 375.66999999999825
+        "initTime": 98.95409999999993
       }
     },
     "266839889": {
@@ -236,7 +251,7 @@
         "transient": false,
         "exported": false,
         "token": "SandboxedCodeExecutor",
-        "initTime": 374.9887000000017
+        "initTime": 105.9574
       }
     },
     "378220912": {
@@ -268,7 +283,7 @@
         "transient": false,
         "exported": true,
         "token": "DiscoveryService",
-        "initTime": 374.7714999999989
+        "initTime": 105.82140000000004
       }
     },
     "451461819": {
@@ -301,7 +316,7 @@
         "transient": false,
         "exported": false,
         "token": "ProductModule",
-        "initTime": 371.08439999999973
+        "initTime": 94.80089999999996
       }
     },
     "465123620": {
@@ -475,7 +490,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 370.97499999999854
+        "initTime": 94.39760000000001
       }
     },
     "608962879": {
@@ -492,7 +507,41 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 370.89030000000275
+        "initTime": 85.48920000000021
+      }
+    },
+    "608962880": {
+      "id": "608962880",
+      "label": "TypeOrmModule",
+      "parent": "-258635663",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "TypeOrmModule",
+        "initTime": 85.16769999999997
+      }
+    },
+    "608962881": {
+      "id": "608962881",
+      "label": "TypeOrmModule",
+      "parent": "-258635662",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "TypeOrmModule",
+        "initTime": 84.93270000000007
       }
     },
     "671882984": {
@@ -508,7 +557,23 @@
         "transient": false,
         "exported": true,
         "token": "Reflector",
-        "initTime": 375.24189999999726
+        "initTime": 98.77639999999997
+      }
+    },
+    "683945267": {
+      "id": "683945267",
+      "label": "ParseIntPipe",
+      "parent": "-1438445322",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "RequestObservationModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "ParseIntPipe",
+        "subtype": "pipe"
       }
     },
     "687352615": {
@@ -655,6 +720,58 @@
         "token": "ModuleRef"
       }
     },
+    "709820866": {
+      "id": "709820866",
+      "label": "RequestObservationController",
+      "parent": "-1438445322",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "RequestObservationModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "RequestObservationController",
+        "enhancers": [
+          {
+            "name": "DefaultValuePipe",
+            "methodKey": "getRequestObservations",
+            "subtype": "pipe"
+          },
+          {
+            "id": "683945267",
+            "methodKey": "getRequestObservations",
+            "subtype": "pipe"
+          },
+          {
+            "name": "DefaultValuePipe",
+            "methodKey": "getRequestObservations",
+            "subtype": "pipe"
+          },
+          {
+            "id": "683945267",
+            "methodKey": "getRequestObservations",
+            "subtype": "pipe"
+          },
+          {
+            "id": "683945267",
+            "methodKey": "getERequestObservation",
+            "subtype": "pipe"
+          },
+          {
+            "id": "683945267",
+            "methodKey": "updateExploratoryOffer",
+            "subtype": "pipe"
+          },
+          {
+            "id": "683945267",
+            "methodKey": "deleteRequestObservation",
+            "subtype": "pipe"
+          }
+        ]
+      }
+    },
     "731684192": {
       "id": "731684192",
       "label": "TypeOrmCoreModule",
@@ -669,7 +786,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmCoreModule",
-        "initTime": 375.2393000000011
+        "initTime": 106.5132000000001
       }
     },
     "758491785": {
@@ -698,6 +815,22 @@
         "internal": false
       }
     },
+    "773455259": {
+      "id": "773455259",
+      "label": "ApplicationConfig",
+      "parent": "-1438445322",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "RequestObservationModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
     "808008596": {
       "id": "808008596",
       "label": "CommercialEntityEntityRepository",
@@ -716,7 +849,7 @@
     "808008597": {
       "id": "808008597",
       "label": "CommercialEntityEntityRepository",
-      "parent": "-258635665",
+      "parent": "-258635663",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -741,6 +874,22 @@
         "transient": false,
         "exported": true,
         "token": "ProductEntityRepository"
+      }
+    },
+    "822669472": {
+      "id": "822669472",
+      "label": "ModuleRef",
+      "parent": "-1430800986",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "RequestOfferModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
       }
     },
     "963502593": {
@@ -772,7 +921,7 @@
         "transient": false,
         "exported": false,
         "token": "SupplyModule",
-        "initTime": 371.03519999999844
+        "initTime": 85.3137999999999
       }
     },
     "1025518868": {
@@ -911,6 +1060,22 @@
         "subtype": "pipe"
       }
     },
+    "1108781168": {
+      "id": "1108781168",
+      "label": "ModuleRef",
+      "parent": "-1438445322",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "RequestObservationModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
     "1146487857": {
       "id": "1146487857",
       "label": "ParseIntPipe",
@@ -930,7 +1095,7 @@
     "1180759958": {
       "id": "1180759958",
       "label": "MakerProductEntityRepository",
-      "parent": "-258635665",
+      "parent": "-258635663",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -940,6 +1105,21 @@
         "transient": false,
         "exported": true,
         "token": "MakerProductEntityRepository"
+      }
+    },
+    "1185605650": {
+      "id": "1185605650",
+      "label": "RequestObservationEntityRepository",
+      "parent": "-258635665",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "RequestObservationEntityRepository"
       }
     },
     "1198704545": {
@@ -997,7 +1177,7 @@
         "transient": false,
         "exported": true,
         "token": "Reflector",
-        "initTime": 376.9766000000018
+        "initTime": 107.64640000000009
       }
     },
     "1470333121": {
@@ -1076,7 +1256,7 @@
         "transient": false,
         "exported": false,
         "token": "ApplicationModule",
-        "initTime": 372.838499999998
+        "initTime": 96.88100000000009
       }
     },
     "1648486932": {
@@ -1103,6 +1283,54 @@
         "type": "provider",
         "internal": true,
         "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "1648486934": {
+      "id": "1648486934",
+      "label": "ApplicationConfig",
+      "parent": "-258635663",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "1648486935": {
+      "id": "1648486935",
+      "label": "ApplicationConfig",
+      "parent": "-258635662",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "1657946635": {
+      "id": "1657946635",
+      "label": "ApplicationConfig",
+      "parent": "-1430800986",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "RequestOfferModule",
         "durable": false,
         "static": true,
         "scope": 0,
@@ -1140,7 +1368,7 @@
         "transient": false,
         "exported": false,
         "token": "DevtoolsHttpServerHost",
-        "initTime": 377.51929999999993
+        "initTime": 108.54340000000002
       }
     },
     "1698427823": {
@@ -1172,7 +1400,7 @@
         "transient": false,
         "exported": false,
         "token": "TechnicalDocumentModule",
-        "initTime": 370.92949999999837
+        "initTime": 85.05600000000004
       }
     },
     "1709169742": {
@@ -1280,6 +1508,36 @@
         "token": "ApplicationEntityRepository"
       }
     },
+    "1883330034": {
+      "id": "1883330034",
+      "label": "ApplicationEntityRepository",
+      "parent": "-258635665",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ApplicationEntityRepository"
+      }
+    },
+    "1883330035": {
+      "id": "1883330035",
+      "label": "ApplicationEntityRepository",
+      "parent": "-258635664",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ApplicationEntityRepository"
+      }
+    },
     "1891744715": {
       "id": "1891744715",
       "label": "ApplicationConfig",
@@ -1310,7 +1568,7 @@
         "transient": false,
         "exported": true,
         "token": "REQUEST",
-        "initTime": 339.8948999999993
+        "initTime": 72.78160000000003
       }
     },
     "1949340142": {
@@ -1327,7 +1585,7 @@
         "transient": false,
         "exported": false,
         "token": "ClientModule",
-        "initTime": 372.5684000000001
+        "initTime": 96.60899999999992
       }
     },
     "1964711460": {
@@ -1348,6 +1606,22 @@
         "type": "injectable",
         "internal": false,
         "sourceModuleName": "ExploratoryOfferModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "ParseIntPipe",
+        "subtype": "pipe"
+      }
+    },
+    "1985872803": {
+      "id": "1985872803",
+      "label": "ParseIntPipe",
+      "parent": "-1430800986",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "RequestOfferModule",
         "durable": false,
         "static": true,
         "transient": false,
@@ -1450,7 +1724,7 @@
         "transient": true,
         "exported": true,
         "token": "INQUIRER",
-        "initTime": 339.88530000000173
+        "initTime": 72.76879999999983
       }
     },
     "-26938366": {
@@ -1466,7 +1740,7 @@
         "transient": false,
         "exported": true,
         "token": "ModulesContainer",
-        "initTime": 373.83920000000217
+        "initTime": 98.08950000000004
       }
     },
     "-326832201": {
@@ -1482,7 +1756,7 @@
         "transient": false,
         "exported": true,
         "token": "HttpAdapterHost",
-        "initTime": 373.8197
+        "initTime": 98.06819999999993
       }
     },
     "-702581189": {
@@ -1498,7 +1772,7 @@
         "transient": false,
         "exported": true,
         "token": "LazyModuleLoader",
-        "initTime": 373.8156999999992
+        "initTime": 98.0608000000002
       }
     },
     "-1904419534": {
@@ -1514,7 +1788,7 @@
         "transient": false,
         "exported": true,
         "token": "SerializedGraph",
-        "initTime": 373.79479999999967
+        "initTime": 97.9982
       }
     },
     "-19112576": {
@@ -1541,7 +1815,7 @@
         "transient": false,
         "exported": false,
         "token": "AppModule",
-        "initTime": 373.78250000000116
+        "initTime": 97.95719999999983
       }
     },
     "-71302842": {
@@ -1600,7 +1874,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 373.7801999999974
+        "initTime": 97.9239
       }
     },
     "-1068388246": {
@@ -1684,7 +1958,7 @@
         "transient": false,
         "exported": false,
         "token": "DevtoolsModule",
-        "initTime": 373.3259999999973
+        "initTime": 97.3762999999999
       }
     },
     "-751962311": {
@@ -1703,9 +1977,9 @@
         "token": "ModuleRef"
       }
     },
-    "-2104474429": {
-      "id": "-2104474429",
-      "label": "CONFIGURABLE_MODULE_OPTIONS[de698d430b1573f98bf33]",
+    "-824920370": {
+      "id": "-824920370",
+      "label": "CONFIGURABLE_MODULE_OPTIONS[8cb07a4f3800c277b0257]",
       "parent": "-1033621697",
       "metadata": {
         "type": "provider",
@@ -1716,7 +1990,7 @@
         "scope": 0,
         "transient": false,
         "exported": false,
-        "token": "CONFIGURABLE_MODULE_OPTIONS[de698d430b1573f98bf33]"
+        "token": "CONFIGURABLE_MODULE_OPTIONS[8cb07a4f3800c277b0257]"
       }
     },
     "-643397745": {
@@ -1743,7 +2017,7 @@
         "transient": false,
         "exported": false,
         "token": "DiscoveryModule",
-        "initTime": 372.90149999999994
+        "initTime": 96.95100000000002
       }
     },
     "-501891371": {
@@ -1791,7 +2065,7 @@
         "transient": false,
         "exported": true,
         "token": "MetadataScanner",
-        "initTime": 372.89530000000013
+        "initTime": 96.94349999999986
       }
     },
     "-1119992209": {
@@ -1917,7 +2191,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 372.64670000000115
+        "initTime": 96.68650000000002
       }
     },
     "-223917668": {
@@ -2038,7 +2312,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 372.52760000000126
+        "initTime": 96.56400000000008
       }
     },
     "-223917667": {
@@ -2071,7 +2345,7 @@
         "transient": false,
         "exported": false,
         "token": "ClientSupplyModule",
-        "initTime": 372.3701000000001
+        "initTime": 96.45830000000001
       }
     },
     "-784982419": {
@@ -2156,7 +2430,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 372.22859999999855
+        "initTime": 96.33169999999996
       }
     },
     "-223917666": {
@@ -2214,7 +2488,7 @@
         "transient": false,
         "exported": false,
         "token": "CommercialEntityModule",
-        "initTime": 372.1290000000008
+        "initTime": 96.2467999999999
       }
     },
     "-802875424": {
@@ -2289,7 +2563,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 372.05149999999776
+        "initTime": 96.18079999999986
       }
     },
     "-223917665": {
@@ -2362,7 +2636,7 @@
         "transient": false,
         "exported": false,
         "token": "ExploratoryOfferModule",
-        "initTime": 371.91010000000097
+        "initTime": 95.94380000000001
       }
     },
     "-686727842": {
@@ -2462,7 +2736,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 371.84059999999954
+        "initTime": 95.67430000000013
       }
     },
     "-223917664": {
@@ -2535,7 +2809,7 @@
         "transient": false,
         "exported": false,
         "token": "ExploratoryOfferObservationModule",
-        "initTime": 371.79829999999856
+        "initTime": 95.54510000000005
       }
     },
     "-928614522": {
@@ -2568,7 +2842,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 371.3697000000029
+        "initTime": 95.28719999999998
       }
     },
     "-223917663": {
@@ -2641,7 +2915,7 @@
         "transient": false,
         "exported": false,
         "token": "ObservationModule",
-        "initTime": 371.2927000000018
+        "initTime": 95.22029999999995
       }
     },
     "-1956379986": {
@@ -2716,7 +2990,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 371.2482999999993
+        "initTime": 95.17309999999998
       }
     },
     "-223917662": {
@@ -2764,7 +3038,7 @@
         "transient": false,
         "exported": false,
         "token": "MakerProductModule",
-        "initTime": 371.22360000000117
+        "initTime": 95.12469999999985
       }
     },
     "-76785378": {
@@ -2849,7 +3123,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 371.14700000000084
+        "initTime": 94.91589999999997
       }
     },
     "-223917661": {
@@ -2943,7 +3217,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 371.0551000000014
+        "initTime": 94.74610000000007
       }
     },
     "-223917660": {
@@ -2977,20 +3251,46 @@
         "token": "ProductEntityRepository"
       }
     },
-    "-769716755": {
-      "id": "-769716755",
-      "label": "ApplicationConfig",
-      "parent": "27136456",
+    "-1438445322": {
+      "id": "-1438445322",
+      "label": "RequestObservationModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-1192301806": {
+      "id": "-1192301806",
+      "label": "RequestObservationModule",
+      "parent": "-1438445322",
       "metadata": {
         "type": "provider",
         "internal": true,
-        "sourceModuleName": "SupplyModule",
+        "sourceModuleName": "RequestObservationModule",
         "durable": false,
         "static": true,
         "scope": 0,
         "transient": false,
         "exported": false,
-        "token": "ApplicationConfig"
+        "token": "RequestObservationModule",
+        "initTime": 94.70860000000016
+      }
+    },
+    "-83470143": {
+      "id": "-83470143",
+      "label": "RequestObservationService",
+      "parent": "-1438445322",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "RequestObservationModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "RequestObservationService"
       }
     },
     "-258635665": {
@@ -3019,10 +3319,202 @@
         "token": "ModuleRef"
       }
     },
+    "-1900599402": {
+      "id": "-1900599402",
+      "label": "ObservationEntityRepository",
+      "parent": "-258635665",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ObservationEntityRepository"
+      }
+    },
+    "-1430800986": {
+      "id": "-1430800986",
+      "label": "RequestOfferModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-1715279950": {
+      "id": "-1715279950",
+      "label": "RequestOfferModule",
+      "parent": "-1430800986",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "RequestOfferModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "RequestOfferModule",
+        "initTime": 91.13979999999992
+      }
+    },
+    "-1454687039": {
+      "id": "-1454687039",
+      "label": "RequestOfferService",
+      "parent": "-1430800986",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "RequestOfferModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "RequestOfferService"
+      }
+    },
+    "-1719481758": {
+      "id": "-1719481758",
+      "label": "RequestOfferController",
+      "parent": "-1430800986",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "RequestOfferModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "RequestOfferController",
+        "enhancers": [
+          {
+            "name": "DefaultValuePipe",
+            "methodKey": "getRequestOffers",
+            "subtype": "pipe"
+          },
+          {
+            "id": "1985872803",
+            "methodKey": "getRequestOffers",
+            "subtype": "pipe"
+          },
+          {
+            "name": "DefaultValuePipe",
+            "methodKey": "getRequestOffers",
+            "subtype": "pipe"
+          },
+          {
+            "id": "1985872803",
+            "methodKey": "getRequestOffers",
+            "subtype": "pipe"
+          },
+          {
+            "id": "1985872803",
+            "methodKey": "getRequestOffer",
+            "subtype": "pipe"
+          },
+          {
+            "id": "1985872803",
+            "methodKey": "updateRequestOffer",
+            "subtype": "pipe"
+          },
+          {
+            "id": "1985872803",
+            "methodKey": "deleteRequestOffer",
+            "subtype": "pipe"
+          }
+        ]
+      }
+    },
+    "-258635664": {
+      "id": "-258635664",
+      "label": "TypeOrmModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "-166905366": {
+      "id": "-166905366",
+      "label": "ModuleRef",
+      "parent": "-258635664",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-945378526": {
+      "id": "-945378526",
+      "label": "RequestOfferEntityRepository",
+      "parent": "-258635664",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "RequestOfferEntityRepository"
+      }
+    },
+    "-769716755": {
+      "id": "-769716755",
+      "label": "ApplicationConfig",
+      "parent": "27136456",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SupplyModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-258635663": {
+      "id": "-258635663",
+      "label": "TypeOrmModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "-166905365": {
+      "id": "-166905365",
+      "label": "ModuleRef",
+      "parent": "-258635663",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
     "-2137902541": {
       "id": "-2137902541",
       "label": "SupplyEntityRepository",
-      "parent": "-258635665",
+      "parent": "-258635663",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -3133,8 +3625,8 @@
         ]
       }
     },
-    "-258635664": {
-      "id": "-258635664",
+    "-258635662": {
+      "id": "-258635662",
       "label": "TypeOrmModule",
       "metadata": {
         "type": "module",
@@ -3143,10 +3635,10 @@
         "internal": false
       }
     },
-    "-166905366": {
-      "id": "-166905366",
+    "-166905364": {
+      "id": "-166905364",
       "label": "ModuleRef",
-      "parent": "-258635664",
+      "parent": "-258635662",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -3162,7 +3654,7 @@
     "-655427401": {
       "id": "-655427401",
       "label": "TechnicalDocumentEntityRepository",
-      "parent": "-258635664",
+      "parent": "-258635662",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -3177,7 +3669,7 @@
     "-2137902540": {
       "id": "-2137902540",
       "label": "SupplyEntityRepository",
-      "parent": "-258635664",
+      "parent": "-258635662",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -3298,6 +3790,16 @@
       },
       "id": "356899095"
     },
+    "364671710": {
+      "source": "-1430800986",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RequestOfferModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "364671710"
+    },
     "413306160": {
       "source": "-1715882928",
       "target": "-833118054",
@@ -3357,6 +3859,16 @@
         "injectionType": "decorator"
       },
       "id": "413306163"
+    },
+    "434995337": {
+      "source": "-258635662",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "434995337"
     },
     "577033691": {
       "source": "-1119992209",
@@ -3593,6 +4105,16 @@
       },
       "id": "1025330754"
     },
+    "1025660967": {
+      "source": "-1438445322",
+      "target": "-1512405941",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RequestObservationModule",
+        "targetModuleName": "ObservationModule"
+      },
+      "id": "1025660967"
+    },
     "1028357956": {
       "source": "373235992",
       "target": "-438112115",
@@ -3709,6 +4231,21 @@
       },
       "id": "1068433631"
     },
+    "1170864001": {
+      "source": "709820866",
+      "target": "683945267",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "RequestObservationModule",
+        "sourceClassName": "RequestObservationController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "RequestObservationController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "RequestObservationModule",
+        "injectionType": "decorator"
+      },
+      "id": "1170864001"
+    },
     "1228426568": {
       "source": "-19112576",
       "target": "-1119992209",
@@ -3774,6 +4311,16 @@
       },
       "id": "1454288893"
     },
+    "1472352117": {
+      "source": "-19112576",
+      "target": "-1430800986",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "RequestOfferModule"
+      },
+      "id": "1472352117"
+    },
     "1598459401": {
       "source": "545846248",
       "target": "-1026304274",
@@ -3826,6 +4373,16 @@
       },
       "id": "1635338963"
     },
+    "1693181004": {
+      "source": "-19112576",
+      "target": "-1438445322",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "RequestObservationModule"
+      },
+      "id": "1693181004"
+    },
     "1736520881": {
       "source": "1964711460",
       "target": "-1026304274",
@@ -3845,6 +4402,16 @@
         "targetModuleName": "TypeOrmCoreModule"
       },
       "id": "1773166660"
+    },
+    "1873772765": {
+      "source": "-1438445322",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RequestObservationModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "1873772765"
     },
     "1905751690": {
       "source": "1709169742",
@@ -3945,16 +4512,6 @@
         "targetModuleName": "TypeOrmCoreModule"
       },
       "id": "2048157900"
-    },
-    "2071259318": {
-      "source": "760985719",
-      "target": "-258635664",
-      "metadata": {
-        "type": "module-to-module",
-        "sourceModuleName": "TechnicalDocumentModule",
-        "targetModuleName": "TypeOrmModule"
-      },
-      "id": "2071259318"
     },
     "2090103949": {
       "source": "545846242",
@@ -4096,21 +4653,21 @@
       },
       "id": "-1609063867"
     },
-    "-788510667": {
+    "-2019463445": {
       "source": "1688619051",
-      "target": "-2104474429",
+      "target": "-824920370",
       "metadata": {
         "type": "class-to-class",
         "sourceModuleName": "DevtoolsModule",
         "sourceClassName": "DevtoolsHttpServerHost",
-        "targetClassName": "CONFIGURABLE_MODULE_OPTIONS[de698d430b1573f98bf33]",
+        "targetClassName": "CONFIGURABLE_MODULE_OPTIONS[8cb07a4f3800c277b0257]",
         "sourceClassToken": "DevtoolsHttpServerHost",
-        "targetClassToken": "CONFIGURABLE_MODULE_OPTIONS[de698d430b1573f98bf33]",
+        "targetClassToken": "CONFIGURABLE_MODULE_OPTIONS[8cb07a4f3800c277b0257]",
         "targetModuleName": "DevtoolsModule",
         "keyOrIndex": 2,
         "injectionType": "constructor"
       },
-      "id": "-788510667"
+      "id": "-2019463445"
     },
     "-692061701": {
       "source": "-19112576",
@@ -4532,15 +5089,65 @@
       },
       "id": "-245764234"
     },
-    "-1954177594": {
-      "source": "27136456",
+    "-1540243663": {
+      "source": "-1438445322",
       "target": "-258635665",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RequestObservationModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "-1540243663"
+    },
+    "-1012588235": {
+      "source": "-1438445322",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RequestObservationModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1012588235"
+    },
+    "-999429319": {
+      "source": "-1430800986",
+      "target": "-258635664",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RequestOfferModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "-999429319"
+    },
+    "-2136762092": {
+      "source": "-1430800986",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RequestOfferModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-2136762092"
+    },
+    "-1352874485": {
+      "source": "-258635664",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-1352874485"
+    },
+    "-306814652": {
+      "source": "27136456",
+      "target": "-258635663",
       "metadata": {
         "type": "module-to-module",
         "sourceModuleName": "SupplyModule",
         "targetModuleName": "TypeOrmModule"
       },
-      "id": "-1954177594"
+      "id": "-306814652"
     },
     "-2074242268": {
       "source": "27136456",
@@ -4552,6 +5159,36 @@
       },
       "id": "-2074242268"
     },
+    "-227493402": {
+      "source": "-258635663",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-227493402"
+    },
+    "-458939574": {
+      "source": "-258635663",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-458939574"
+    },
+    "-173299080": {
+      "source": "760985719",
+      "target": "-258635662",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TechnicalDocumentModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "-173299080"
+    },
     "-1973822087": {
       "source": "760985719",
       "target": "-1026304274",
@@ -4562,15 +5199,15 @@
       },
       "id": "-1973822087"
     },
-    "-1352874485": {
-      "source": "-258635664",
-      "target": "-1026304274",
+    "-1307035449": {
+      "source": "-258635662",
+      "target": "555176277",
       "metadata": {
         "type": "module-to-module",
         "sourceModuleName": "TypeOrmModule",
-        "targetModuleName": "TypeOrmCoreModule"
+        "targetModuleName": "InternalCoreModule"
       },
-      "id": "-1352874485"
+      "id": "-1307035449"
     },
     "-1867087411": {
       "source": "-88184418",
@@ -4962,6 +5599,141 @@
       },
       "id": "-847020015"
     },
+    "-81123597": {
+      "source": "709820866",
+      "target": "683945267",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "RequestObservationModule",
+        "sourceClassName": "RequestObservationController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "RequestObservationController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "RequestObservationModule",
+        "injectionType": "decorator"
+      },
+      "id": "-81123597"
+    },
+    "-81123596": {
+      "source": "709820866",
+      "target": "683945267",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "RequestObservationModule",
+        "sourceClassName": "RequestObservationController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "RequestObservationController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "RequestObservationModule",
+        "injectionType": "decorator"
+      },
+      "id": "-81123596"
+    },
+    "-81123595": {
+      "source": "709820866",
+      "target": "683945267",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "RequestObservationModule",
+        "sourceClassName": "RequestObservationController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "RequestObservationController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "RequestObservationModule",
+        "injectionType": "decorator"
+      },
+      "id": "-81123595"
+    },
+    "-81123594": {
+      "source": "709820866",
+      "target": "683945267",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "RequestObservationModule",
+        "sourceClassName": "RequestObservationController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "RequestObservationController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "RequestObservationModule",
+        "injectionType": "decorator"
+      },
+      "id": "-81123594"
+    },
+    "-1801406062": {
+      "source": "-1719481758",
+      "target": "1985872803",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "RequestOfferModule",
+        "sourceClassName": "RequestOfferController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "RequestOfferController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "RequestOfferModule",
+        "injectionType": "decorator"
+      },
+      "id": "-1801406062"
+    },
+    "-279402300": {
+      "source": "-1719481758",
+      "target": "1985872803",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "RequestOfferModule",
+        "sourceClassName": "RequestOfferController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "RequestOfferController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "RequestOfferModule",
+        "injectionType": "decorator"
+      },
+      "id": "-279402300"
+    },
+    "-279402299": {
+      "source": "-1719481758",
+      "target": "1985872803",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "RequestOfferModule",
+        "sourceClassName": "RequestOfferController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "RequestOfferController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "RequestOfferModule",
+        "injectionType": "decorator"
+      },
+      "id": "-279402299"
+    },
+    "-279402298": {
+      "source": "-1719481758",
+      "target": "1985872803",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "RequestOfferModule",
+        "sourceClassName": "RequestOfferController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "RequestOfferController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "RequestOfferModule",
+        "injectionType": "decorator"
+      },
+      "id": "-279402298"
+    },
+    "-279402297": {
+      "source": "-1719481758",
+      "target": "1985872803",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "RequestOfferModule",
+        "sourceClassName": "RequestOfferController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "RequestOfferController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "RequestOfferModule",
+        "injectionType": "decorator"
+      },
+      "id": "-279402297"
+    },
     "-1827583790": {
       "source": "1047934438",
       "target": "1671553413",
@@ -5002,9 +5774,7 @@
   "metadata": {
     "cause": {
       "type": "unknown",
-      "error": {
-        "code": "ECONNREFUSED"
-      }
+      "error": {}
     }
   }
 }

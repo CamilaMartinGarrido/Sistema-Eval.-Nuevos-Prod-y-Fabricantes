@@ -1,15 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Delete,
-  Query,
-  DefaultValuePipe,
-  ParseIntPipe,
-  Patch,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Query, DefaultValuePipe, ParseIntPipe, Patch} from '@nestjs/common';
 import { RequestObservationService } from './request_observation.service';
 import { CreateRequestObservationDto, RequestObservationResponseDto, UpdateRequestObservationDto } from './dtos';
 import { RequestObservationEntity } from './request_observation.entity';

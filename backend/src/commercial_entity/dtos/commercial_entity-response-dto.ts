@@ -1,6 +1,5 @@
 import { Expose } from 'class-transformer';
 import { RoleEnum } from 'src/enums';
-import { CommercialEntityRoleResponseDto } from './commercial_entity_role-response-dto';
 
 export class CommercialEntityResponseDto {
   @Expose()

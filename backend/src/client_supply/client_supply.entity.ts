@@ -1,18 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne, Unique } from 'typeorm';
 import { SupplyEntity } from '../supply/supply.entity';
 import { ClientEntity } from '../client/client.entity';
 import { ApplicationEntity } from '../application/application.entity';
 
+@Unique(['client', 'supply', 'application'])
 @Entity({ name: 'client_supply' })
 export class ClientSupplyEntity {
   @PrimaryGeneratedColumn()
   id: number;
-
-  @Column({ type: 'int' })
-  client_id: number;
-
-  @Column({ type: 'int' })
-  supply_id: number;
 
   @ManyToOne(() => ClientEntity, (client) => client.client_supplies, {
     eager: true,
