@@ -1,14 +1,8 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  CreateDateColumn,
-  ManyToOne,
-  JoinColumn,
-} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, Unique } from 'typeorm';
 import { DocumentTypeEnum } from '../enums';
 import { SupplyEntity } from '../supply/supply.entity';
 
+@Unique(['supply', 'document_type', 'version'])
 @Entity({ name: 'technical_document' })
 export class TechnicalDocumentEntity {
   @PrimaryGeneratedColumn()
@@ -17,7 +11,8 @@ export class TechnicalDocumentEntity {
   @ManyToOne(() => SupplyEntity, (supply) => supply.technical_documents, {
     eager: true,
     nullable: false,
-    onDelete: 'NO ACTION', // o 'RESTRICT'
+    onUpdate: 'CASCADE',
+    onDelete: 'RESTRICT',
   })
   @JoinColumn({ name: 'supply_id' })
   supply: SupplyEntity;

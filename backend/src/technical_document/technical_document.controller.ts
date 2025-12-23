@@ -1,18 +1,7 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Delete,
-  Query,
-  Patch,
-  DefaultValuePipe,
-  ParseIntPipe,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Query, Patch, DefaultValuePipe, ParseIntPipe } from '@nestjs/common';
 import { TechnicalDocumentService } from './technical_document.service';
-import { CreateTechnicalDocumentDto, TechnicalDocumentResponseDto, UpdateTechnicalDocumentDto } from './dtos';
 import { TechnicalDocumentEntity } from './technical_document.entity';
+import { CreateTechnicalDocumentDto, TechnicalDocumentResponseDto, UpdateTechnicalDocumentDto } from './dtos';
 
 @Controller('technical_document')
 export class TechnicalDocumentController {

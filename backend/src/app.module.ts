@@ -32,7 +32,7 @@ import { TechnicalDocumentModule } from './technical_document/technical_document
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5432,
+      port: 5434, //5432,
       username: 'postgres',
       password: 'CamilaBD',
       database: 'Sistema Eval. Nuevos Prod y/o Fab',

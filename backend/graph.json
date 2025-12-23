@@ -158,7 +158,7 @@
         "transient": false,
         "exported": true,
         "token": "ExternalContextCreator",
-        "initTime": 98.09760000000006
+        "initTime": 107.51029999999992
       }
     },
     "225063248": {
@@ -175,7 +175,7 @@
         "transient": false,
         "exported": false,
         "token": "InternalCoreModule",
-        "initTime": 98.95409999999993
+        "initTime": 107.88959999999997
       }
     },
     "266839889": {
@@ -251,7 +251,7 @@
         "transient": false,
         "exported": false,
         "token": "SandboxedCodeExecutor",
-        "initTime": 105.9574
+        "initTime": 109.47629999999981
       }
     },
     "378220912": {
@@ -283,7 +283,7 @@
         "transient": false,
         "exported": true,
         "token": "DiscoveryService",
-        "initTime": 105.82140000000004
+        "initTime": 109.18809999999985
       }
     },
     "451461819": {
@@ -316,7 +316,7 @@
         "transient": false,
         "exported": false,
         "token": "ProductModule",
-        "initTime": 94.80089999999996
+        "initTime": 106.10590000000002
       }
     },
     "465123620": {
@@ -490,7 +490,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 94.39760000000001
+        "initTime": 106.029
       }
     },
     "608962879": {
@@ -507,7 +507,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 85.48920000000021
+        "initTime": 105.9722999999999
       }
     },
     "608962880": {
@@ -524,7 +524,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 85.16769999999997
+        "initTime": 105.91159999999991
       }
     },
     "608962881": {
@@ -541,7 +541,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 84.93270000000007
+        "initTime": 105.86419999999998
       }
     },
     "671882984": {
@@ -557,7 +557,7 @@
         "transient": false,
         "exported": true,
         "token": "Reflector",
-        "initTime": 98.77639999999997
+        "initTime": 107.8194999999996
       }
     },
     "683945267": {
@@ -786,7 +786,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmCoreModule",
-        "initTime": 106.5132000000001
+        "initTime": 109.65299999999979
       }
     },
     "758491785": {
@@ -921,7 +921,7 @@
         "transient": false,
         "exported": false,
         "token": "SupplyModule",
-        "initTime": 85.3137999999999
+        "initTime": 105.94459999999981
       }
     },
     "1025518868": {
@@ -938,6 +938,22 @@
         "transient": false,
         "exported": false,
         "token": "ModuleRef"
+      }
+    },
+    "1040067117": {
+      "id": "1040067117",
+      "label": "CONFIGURABLE_MODULE_OPTIONS[82d2aae94474f92d87858]",
+      "parent": "-1033621697",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "DevtoolsModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "CONFIGURABLE_MODULE_OPTIONS[82d2aae94474f92d87858]"
       }
     },
     "1047934438": {
@@ -1177,7 +1193,7 @@
         "transient": false,
         "exported": true,
         "token": "Reflector",
-        "initTime": 107.64640000000009
+        "initTime": 110.17799999999988
       }
     },
     "1470333121": {
@@ -1256,7 +1272,7 @@
         "transient": false,
         "exported": false,
         "token": "ApplicationModule",
-        "initTime": 96.88100000000009
+        "initTime": 107.02739999999994
       }
     },
     "1648486932": {
@@ -1368,7 +1384,7 @@
         "transient": false,
         "exported": false,
         "token": "DevtoolsHttpServerHost",
-        "initTime": 108.54340000000002
+        "initTime": 111.62760000000026
       }
     },
     "1698427823": {
@@ -1400,7 +1416,7 @@
         "transient": false,
         "exported": false,
         "token": "TechnicalDocumentModule",
-        "initTime": 85.05600000000004
+        "initTime": 105.88570000000027
       }
     },
     "1709169742": {
@@ -1568,7 +1584,7 @@
         "transient": false,
         "exported": true,
         "token": "REQUEST",
-        "initTime": 72.78160000000003
+        "initTime": 94.8146999999999
       }
     },
     "1949340142": {
@@ -1585,7 +1601,7 @@
         "transient": false,
         "exported": false,
         "token": "ClientModule",
-        "initTime": 96.60899999999992
+        "initTime": 106.76360000000022
       }
     },
     "1964711460": {
@@ -1724,7 +1740,7 @@
         "transient": true,
         "exported": true,
         "token": "INQUIRER",
-        "initTime": 72.76879999999983
+        "initTime": 94.80879999999979
       }
     },
     "-26938366": {
@@ -1740,7 +1756,7 @@
         "transient": false,
         "exported": true,
         "token": "ModulesContainer",
-        "initTime": 98.08950000000004
+        "initTime": 107.51530000000002
       }
     },
     "-326832201": {
@@ -1756,7 +1772,7 @@
         "transient": false,
         "exported": true,
         "token": "HttpAdapterHost",
-        "initTime": 98.06819999999993
+        "initTime": 107.50669999999991
       }
     },
     "-702581189": {
@@ -1772,7 +1788,7 @@
         "transient": false,
         "exported": true,
         "token": "LazyModuleLoader",
-        "initTime": 98.0608000000002
+        "initTime": 107.50579999999991
       }
     },
     "-1904419534": {
@@ -1788,7 +1804,7 @@
         "transient": false,
         "exported": true,
         "token": "SerializedGraph",
-        "initTime": 97.9982
+        "initTime": 107.49420000000009
       }
     },
     "-19112576": {
@@ -1815,7 +1831,7 @@
         "transient": false,
         "exported": false,
         "token": "AppModule",
-        "initTime": 97.95719999999983
+        "initTime": 107.63290000000006
       }
     },
     "-71302842": {
@@ -1874,7 +1890,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 97.9239
+        "initTime": 107.65679999999975
       }
     },
     "-1068388246": {
@@ -1958,7 +1974,7 @@
         "transient": false,
         "exported": false,
         "token": "DevtoolsModule",
-        "initTime": 97.3762999999999
+        "initTime": 107.55899999999974
       }
     },
     "-751962311": {
@@ -1975,22 +1991,6 @@
         "transient": false,
         "exported": false,
         "token": "ModuleRef"
-      }
-    },
-    "-824920370": {
-      "id": "-824920370",
-      "label": "CONFIGURABLE_MODULE_OPTIONS[8cb07a4f3800c277b0257]",
-      "parent": "-1033621697",
-      "metadata": {
-        "type": "provider",
-        "internal": false,
-        "sourceModuleName": "DevtoolsModule",
-        "durable": false,
-        "static": true,
-        "scope": 0,
-        "transient": false,
-        "exported": false,
-        "token": "CONFIGURABLE_MODULE_OPTIONS[8cb07a4f3800c277b0257]"
       }
     },
     "-643397745": {
@@ -2017,7 +2017,7 @@
         "transient": false,
         "exported": false,
         "token": "DiscoveryModule",
-        "initTime": 96.95100000000002
+        "initTime": 107.1567
       }
     },
     "-501891371": {
@@ -2065,7 +2065,7 @@
         "transient": false,
         "exported": true,
         "token": "MetadataScanner",
-        "initTime": 96.94349999999986
+        "initTime": 107.06839999999966
       }
     },
     "-1119992209": {
@@ -2191,7 +2191,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 96.68650000000002
+        "initTime": 106.97249999999985
       }
     },
     "-223917668": {
@@ -2312,7 +2312,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 96.56400000000008
+        "initTime": 106.72040000000015
       }
     },
     "-223917667": {
@@ -2345,7 +2345,7 @@
         "transient": false,
         "exported": false,
         "token": "ClientSupplyModule",
-        "initTime": 96.45830000000001
+        "initTime": 106.70299999999997
       }
     },
     "-784982419": {
@@ -2430,7 +2430,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 96.33169999999996
+        "initTime": 106.62660000000005
       }
     },
     "-223917666": {
@@ -2488,7 +2488,7 @@
         "transient": false,
         "exported": false,
         "token": "CommercialEntityModule",
-        "initTime": 96.2467999999999
+        "initTime": 106.5598
       }
     },
     "-802875424": {
@@ -2563,7 +2563,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 96.18079999999986
+        "initTime": 106.51990000000023
       }
     },
     "-223917665": {
@@ -2636,7 +2636,7 @@
         "transient": false,
         "exported": false,
         "token": "ExploratoryOfferModule",
-        "initTime": 95.94380000000001
+        "initTime": 106.48709999999983
       }
     },
     "-686727842": {
@@ -2736,7 +2736,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 95.67430000000013
+        "initTime": 106.4414999999999
       }
     },
     "-223917664": {
@@ -2809,7 +2809,7 @@
         "transient": false,
         "exported": false,
         "token": "ExploratoryOfferObservationModule",
-        "initTime": 95.54510000000005
+        "initTime": 106.40980000000036
       }
     },
     "-928614522": {
@@ -2842,7 +2842,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 95.28719999999998
+        "initTime": 106.32220000000007
       }
     },
     "-223917663": {
@@ -2915,7 +2915,7 @@
         "transient": false,
         "exported": false,
         "token": "ObservationModule",
-        "initTime": 95.22029999999995
+        "initTime": 106.27219999999988
       }
     },
     "-1956379986": {
@@ -2990,7 +2990,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 95.17309999999998
+        "initTime": 106.23739999999998
       }
     },
     "-223917662": {
@@ -3038,7 +3038,7 @@
         "transient": false,
         "exported": false,
         "token": "MakerProductModule",
-        "initTime": 95.12469999999985
+        "initTime": 106.2183
       }
     },
     "-76785378": {
@@ -3123,7 +3123,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 94.91589999999997
+        "initTime": 106.15710000000036
       }
     },
     "-223917661": {
@@ -3217,7 +3217,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 94.74610000000007
+        "initTime": 106.0918999999999
       }
     },
     "-223917660": {
@@ -3275,7 +3275,7 @@
         "transient": false,
         "exported": false,
         "token": "RequestObservationModule",
-        "initTime": 94.70860000000016
+        "initTime": 106.07180000000017
       }
     },
     "-83470143": {
@@ -3358,7 +3358,7 @@
         "transient": false,
         "exported": false,
         "token": "RequestOfferModule",
-        "initTime": 91.13979999999992
+        "initTime": 106.0009
       }
     },
     "-1454687039": {
@@ -4321,6 +4321,22 @@
       },
       "id": "1472352117"
     },
+    "1526972008": {
+      "source": "1688619051",
+      "target": "1040067117",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "DevtoolsModule",
+        "sourceClassName": "DevtoolsHttpServerHost",
+        "targetClassName": "CONFIGURABLE_MODULE_OPTIONS[82d2aae94474f92d87858]",
+        "sourceClassToken": "DevtoolsHttpServerHost",
+        "targetClassToken": "CONFIGURABLE_MODULE_OPTIONS[82d2aae94474f92d87858]",
+        "targetModuleName": "DevtoolsModule",
+        "keyOrIndex": 2,
+        "injectionType": "constructor"
+      },
+      "id": "1526972008"
+    },
     "1598459401": {
       "source": "545846248",
       "target": "-1026304274",
@@ -4652,22 +4668,6 @@
         "injectionType": "constructor"
       },
       "id": "-1609063867"
-    },
-    "-2019463445": {
-      "source": "1688619051",
-      "target": "-824920370",
-      "metadata": {
-        "type": "class-to-class",
-        "sourceModuleName": "DevtoolsModule",
-        "sourceClassName": "DevtoolsHttpServerHost",
-        "targetClassName": "CONFIGURABLE_MODULE_OPTIONS[8cb07a4f3800c277b0257]",
-        "sourceClassToken": "DevtoolsHttpServerHost",
-        "targetClassToken": "CONFIGURABLE_MODULE_OPTIONS[8cb07a4f3800c277b0257]",
-        "targetModuleName": "DevtoolsModule",
-        "keyOrIndex": 2,
-        "injectionType": "constructor"
-      },
-      "id": "-2019463445"
     },
     "-692061701": {
       "source": "-19112576",
@@ -5774,7 +5774,9 @@
   "metadata": {
     "cause": {
       "type": "unknown",
-      "error": {}
+      "error": {
+        "code": "ECONNREFUSED"
+      }
     }
   }
 }
