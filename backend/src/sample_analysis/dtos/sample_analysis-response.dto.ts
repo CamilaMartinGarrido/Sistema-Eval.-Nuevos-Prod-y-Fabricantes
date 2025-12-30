@@ -2,6 +2,7 @@ import { Expose, Type } from 'class-transformer';
 import { ClientResponseDto } from 'src/client/dtos';
 import { ResultSampleAnalysisEnum } from 'src/enums';
 import { SampleResponseDto } from 'src/sample/dtos/sample-response.dto';
+import { SampleAnalysisObservationResponseDto } from 'src/sample_analysis_observation/dtos/sample_analysis_observation-response.dto';
 
 export class SampleAnalysisResponseDto {
   @Expose()
@@ -21,7 +22,7 @@ export class SampleAnalysisResponseDto {
   @Expose()
   result: ResultSampleAnalysisEnum;
 
-  /*@Expose()
+  @Expose()
   @Type(() => SampleAnalysisObservationResponseDto)
-  sample_analysis_observs: SampleAnalysisObservationResponseDto[];*/
+  sample_analysis_observs: SampleAnalysisObservationResponseDto[];
 }
