@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, Unique, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 import { SupplyEntity } from '../supply/supply.entity';
 import { SampleAnalysisEntity } from '../sample_analysis/sample_analysis.entity';
+import { SampleEvaluationEntity } from '../sample_evaluation/sample_evaluation.entity';
 
 @Unique(['supply', 'request_date', 'quantity', 'unit'])
 @Entity({ name: 'sample' })
@@ -40,4 +41,7 @@ export class SampleEntity {
 
   @OneToMany(() => SampleAnalysisEntity, analysis => analysis.sample)
   sample_analyses: SampleAnalysisEntity[];
+
+  @OneToMany(() => SampleEvaluationEntity, evaluation => evaluation.sample_analysis)
+  sample_evaluations: SampleEvaluationEntity[];
 }

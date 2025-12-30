@@ -1,45 +1,46 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Put,
-  Delete,
-  Query,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Patch, Delete, Query, DefaultValuePipe, ParseIntPipe } from '@nestjs/common';
 import { SampleEvaluationObservationService } from './sample_evaluation_observation.service';
-import { CreateSampleEvaluationObservationDto } from './dto';
+import { SampleEvaluationObservationEntity } from './sample_evaluation_observation.entity';
+import { CreateSampleEvaluationObservationDto, SampleEvaluationObservationResponseDto, UpdateSampleEvaluationObservationDto } from './dtos';
 
 @Controller('sample_evaluation_observation')
 export class SampleEvaluationObservationController {
-  constructor(private readonly svc: SampleEvaluationObservationService) {}
+  constructor(private readonly evaluationObservService: SampleEvaluationObservationService) {}
 
-  @Post()
-  create(@Body() dto: CreateSampleEvaluationObservationDto) {
-    return this.svc.create(dto);
+@Post()
+  async createSampleEvaluationObservation(
+    @Body() dto: CreateSampleEvaluationObservationDto,
+  ): Promise<{ message: string; data: SampleEvaluationObservationEntity }> {
+    return this.evaluationObservService.create(dto);
   }
 
   @Get()
-  findAll(@Query('limit') limit: number, @Query('offset') offset: number) {
-    return this.svc.findAll(limit ? +limit : 100, offset ? +offset : 0);
+  async getSampleEvaluationObservations(
+    @Query('limit', new DefaultValuePipe(100), ParseIntPipe) limit: number,
+    @Query('offset', new DefaultValuePipe(0), ParseIntPipe) offset: number,
+  ): Promise<SampleEvaluationObservationResponseDto[]> {
+    return this.evaluationObservService.findAll(limit, offset); 
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.svc.findOne(+id);
+  async getSampleEvaluationObservation(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<SampleEvaluationObservationResponseDto> {
+    return this.evaluationObservService.findOne(id);
   }
 
-  @Put(':id')
-  update(
-    @Param('id') id: string,
-    @Body() dto: Partial<CreateSampleEvaluationObservationDto>,
-  ) {
-    return this.svc.update(+id, dto);
+  @Patch(':id')
+  async updateSampleEvaluation(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() dto: UpdateSampleEvaluationObservationDto,
+  ): Promise<{ message: string }> {
+    return this.evaluationObservService.update(id, dto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.svc.remove(+id);
+  async deleteSampleEvaluationObservation(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<{ message: string }> {
+    return this.evaluationObservService.remove(id);
   }
 }

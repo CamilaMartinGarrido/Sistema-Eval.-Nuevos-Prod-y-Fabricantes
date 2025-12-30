@@ -3,6 +3,7 @@ import { SupplyEntity } from '../supply/supply.entity';
 import { ClientEntity } from '../client/client.entity';
 import { ApplicationEntity } from '../application/application.entity';
 import { DocumentEvaluationEntity } from '../document_evaluation/document_evaluation.entity';
+import { SampleEvaluationEntity } from '../sample_evaluation/sample_evaluation.entity';
 
 @Unique(['client', 'supply', 'application'])
 @Entity({ name: 'client_supply' })
@@ -39,4 +40,7 @@ export class ClientSupplyEntity {
 
   @OneToMany(() => DocumentEvaluationEntity, document => document.client_supply)
   document_evals: DocumentEvaluationEntity[];
+
+  @OneToMany(() => SampleEvaluationEntity, evaluation => evaluation.client_supply)
+  sample_evaluations: SampleEvaluationEntity[];
 }

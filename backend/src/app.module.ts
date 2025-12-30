@@ -21,8 +21,8 @@ import { RequestOfferModule } from './request_offer/request_offer.module';
 import { SampleModule } from './sample/sample.module';
 import { SampleAnalysisModule } from './sample_analysis/sample_analysis.module';
 import { SampleAnalysisObservationModule } from './sample_analysis_observation/sample_analysis_observation.module';
-//import { SampleEvaluationModule } from './sample_evaluation/sample_evaluation.module';
-//import { SampleEvaluationObservationModule } from './sample_evaluation_observation/sample_evaluation_observation.module';
+import { SampleEvaluationModule } from './sample_evaluation/sample_evaluation.module';
+import { SampleEvaluationObservationModule } from './sample_evaluation_observation/sample_evaluation_observation.module';
 import { SupplyModule } from './supply/supply.module';
 import { TechnicalDocumentModule } from './technical_document/technical_document.module';
 //import { UserAccountModule } from './user_account/user_account.module';
@@ -63,8 +63,8 @@ import { TechnicalDocumentModule } from './technical_document/technical_document
     SampleModule,
     SampleAnalysisModule,
     SampleAnalysisObservationModule,
-    /*SampleEvaluationModule,
-    SampleEvaluationObservationModule,*/
+    SampleEvaluationModule,
+    SampleEvaluationObservationModule,
     SupplyModule,
     TechnicalDocumentModule,
     //UserAccountModule,
