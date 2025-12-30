@@ -8,7 +8,7 @@ import { ResultIndustrialAnalysisEnum } from '../enums';
 
 @Entity({ name: 'industrial_evaluation' })
 export class IndustrialEvaluationEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @Column({ type: 'int' })

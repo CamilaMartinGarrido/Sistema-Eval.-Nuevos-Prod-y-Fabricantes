@@ -4,11 +4,12 @@ import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
 import { MakerProductEntity } from '../maker_product/maker_product.entity';
 import { CommercialEntityEntity } from '../commercial_entity/commercial_entity.entity';
 import { TechnicalDocumentEntity } from '../technical_document/technical_document.entity';
+import { SampleEntity } from '../sample/sample.entity';
 
 @Unique(['supplier_entity', 'maker_product'])
 @Entity({ name: 'supply' })
 export class SupplyEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @ManyToOne(() => CommercialEntityEntity, (commercialEntity) => commercialEntity.supplies, {
@@ -37,4 +38,7 @@ export class SupplyEntity {
 
   @OneToMany(() => TechnicalDocumentEntity, document => document.supply)
   technical_documents: TechnicalDocumentEntity[];
+
+  @OneToMany(() => SampleEntity, sample => sample.supply)
+  samples: SampleEntity[];
 }

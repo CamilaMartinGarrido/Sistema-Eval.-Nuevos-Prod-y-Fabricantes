@@ -24,7 +24,7 @@ export class ClientSupplyService {
     private readonly appRepository: Repository<ApplicationEntity>,
   ) {}
 
-  async create(dto: CreateClientSupplyDto): Promise<{ message: string; data: Promise<ClientSupplyResponseDto> }> {
+  async create(dto: CreateClientSupplyDto): Promise<{ message: string; data: ClientSupplyEntity }> {
     const client = await this.clientRepository.findOne({ where: { id: dto.client_id } });
     if (!client) throw new NotFoundException('Client not found');
             
@@ -44,7 +44,7 @@ export class ClientSupplyService {
         
     return {
       message: 'ClientSupply created successfully',
-      data: this.toResponseDto(saved),
+      data: saved,
     }
   }
 

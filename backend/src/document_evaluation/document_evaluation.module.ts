@@ -1,11 +1,13 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { DocumentEvaluationService } from './document_evaluation.service';
 import { DocumentEvaluationController } from './document_evaluation.controller';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { DocumentEvaluationEntity } from './document_evaluation.entity';
+import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
+import { TechnicalDocumentEntity } from '../technical_document/technical_document.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([DocumentEvaluationEntity])],
+  imports: [TypeOrmModule.forFeature([DocumentEvaluationEntity, ClientSupplyEntity, TechnicalDocumentEntity])],
   providers: [DocumentEvaluationService],
   controllers: [DocumentEvaluationController],
 })

@@ -6,7 +6,7 @@ import { SupplyEntity } from '../supply/supply.entity';
 @Unique(['supply'])
 @Entity({ name: 'exploratory_offer' })
 export class ExploratoryOfferEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @ManyToOne(() => SupplyEntity, (supply) => supply.exploratory_offers, {

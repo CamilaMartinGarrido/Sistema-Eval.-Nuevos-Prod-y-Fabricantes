@@ -1,11 +1,12 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, Unique } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, Unique, OneToMany } from 'typeorm';
 import { DocumentTypeEnum } from '../enums';
 import { SupplyEntity } from '../supply/supply.entity';
+import { DocumentEvaluationEntity } from '../document_evaluation/document_evaluation.entity';
 
 @Unique(['supply', 'document_type', 'version'])
 @Entity({ name: 'technical_document' })
 export class TechnicalDocumentEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @ManyToOne(() => SupplyEntity, (supply) => supply.technical_documents, {
@@ -33,4 +34,7 @@ export class TechnicalDocumentEntity {
 
   @Column({ type: 'date', nullable: true })
   receipt_date: string;
+
+  @OneToMany(() => DocumentEvaluationEntity, document => document.technical_document)
+  document_evals: DocumentEvaluationEntity[];
 }

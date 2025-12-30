@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Body, Param, Delete, Query, DefaultValuePipe, ParseIntPipe, Patch } from '@nestjs/common';
 import { ClientSupplyService } from './client_supply.service';
 import { ClientSupplyResponseDto, CreateClientSupplyDto, UpdateClientSupplyDto } from './dtos';
+import { ClientSupplyEntity } from './client_supply.entity';
 
 @Controller('client_supply')
 export class ClientSupplyController {
@@ -11,7 +12,7 @@ export class ClientSupplyController {
     @Body() dto: CreateClientSupplyDto,
   ): Promise<{
     message: string;
-    data: Promise<ClientSupplyResponseDto>;
+    data: ClientSupplyEntity;
   }> {
     return this.csService.create(dto);
   }

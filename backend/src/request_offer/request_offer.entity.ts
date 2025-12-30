@@ -5,7 +5,7 @@ import { ExploratoryOfferEntity } from '../exploratory_offer/exploratory_offer.e
 @Unique(['application', 'exploratory_offer'])
 @Entity({ name: 'request_offer' })
 export class RequestOfferEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @ManyToOne(() => ApplicationEntity, (app) => app.request_offers, {

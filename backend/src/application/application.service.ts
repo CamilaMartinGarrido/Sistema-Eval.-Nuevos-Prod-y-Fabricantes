@@ -80,7 +80,6 @@ export class ApplicationService {
   }
 
   async update(id: number, dto: UpdateApplicationDto) {
-    // Cargar la aplicación con sus relaciones
     const application = await this.applicationRepository.findOne({
       where: { id },
       relations: ['client', 'product'],
@@ -90,21 +89,18 @@ export class ApplicationService {
       throw new NotFoundException('Application not found');
     }
 
-    // Cambiar cliente si viene client_id (no actualizar sus datos)
     if (dto.client_id) {
       const client = await this.clientRepository.findOne({ where: { id: dto.client_id } });
       if (!client) throw new NotFoundException('Client not found');
       application.client = client;
     }
 
-    // Cambiar producto si viene product_id (no actualizar sus datos)
     if (dto.product_id) {
       const product = await this.productRepository.findOne({ where: { id: dto.product_id } });
       if (!product) throw new NotFoundException('Product not found');
       application.product = product;
     }
 
-    // Actualizar SOLO los campos propios de Application
     if (dto.application_number !== undefined) {
       application.application_number = dto.application_number;
     }

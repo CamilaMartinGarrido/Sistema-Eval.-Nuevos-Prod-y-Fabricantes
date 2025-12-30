@@ -1,42 +1,46 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Put,
-  Delete,
-  Query,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Query, DefaultValuePipe, ParseIntPipe, Patch } from '@nestjs/common';
 import { SampleService } from './sample.service';
-import { CreateSampleDto } from './dto';
+import { SampleEntity } from './sample.entity';
+import { CreateSampleDto, SampleResponseDto, UpdateSampleDto } from './dtos';
 
 @Controller('sample')
 export class SampleController {
-  constructor(private readonly svc: SampleService) {}
+  constructor(private readonly sampleService: SampleService) {}
 
   @Post()
-  create(@Body() dto: CreateSampleDto) {
-    return this.svc.create(dto);
+  async createSample(
+    @Body() dto: CreateSampleDto,
+  ): Promise<{ message: string; data: SampleEntity }> {
+    return this.sampleService.create(dto);
   }
 
   @Get()
-  findAll(@Query('limit') limit: number, @Query('offset') offset: number) {
-    return this.svc.findAll(limit ? +limit : 100, offset ? +offset : 0);
+  async getSamples(
+    @Query('limit', new DefaultValuePipe(100), ParseIntPipe) limit: number,
+    @Query('offset', new DefaultValuePipe(0), ParseIntPipe) offset: number,
+  ): Promise<SampleResponseDto[]> {
+    return this.sampleService.findAll(limit, offset); 
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.svc.findOne(+id);
+  async getSample(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<SampleResponseDto> {
+    return this.sampleService.findOne(id);
   }
 
-  @Put(':id')
-  update(@Param('id') id: string, @Body() dto: Partial<CreateSampleDto>) {
-    return this.svc.update(+id, dto);
+  @Patch(':id')
+  async updateSample(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() dto: UpdateSampleDto,
+  ): Promise<{ message: string }> {
+    return this.sampleService.update(id, dto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.svc.remove(+id);
+  async deleteSample(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<{ message: string }> {
+    return this.sampleService.remove(id);
   }
 }

@@ -8,7 +8,7 @@ import { UserRoleEnum } from '../enums';
 
 @Entity({ name: 'user_account' })
 export class UserAccountEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @Column({ type: 'varchar' })

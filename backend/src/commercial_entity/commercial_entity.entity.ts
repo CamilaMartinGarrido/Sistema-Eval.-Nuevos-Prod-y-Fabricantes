@@ -6,7 +6,7 @@ import { SupplyEntity } from '../supply/supply.entity';
 @Unique(['entity_name', 'entity_country'])
 @Entity({ name: 'commercial_entity' })
 export class CommercialEntityEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @Column({ type: 'varchar' })

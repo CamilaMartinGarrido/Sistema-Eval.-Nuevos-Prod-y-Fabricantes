@@ -12,7 +12,7 @@ export class ApplicationResponseDto {
   application_number: number;
 
   @Expose()
-  origin: OriginRequestEnum; // devolver enum directamente
+  origin: OriginRequestEnum;
 
   @Expose()
   receipt_date: string;

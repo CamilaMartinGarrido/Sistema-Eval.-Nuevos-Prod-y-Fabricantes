@@ -1,10 +1,11 @@
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { SampleAnalysisObservationEntity } from '../sample_analysis_observation/sample_analysis_observation.entity';
 import { ExploratoryOfferObservationEntity } from '../exploratory_offer_observation/exploratory_offer_observation.entity';
 import { RequestObservationEntity } from '../request_observation/request_observation.entity';
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 
 @Entity({ name: 'observation' })
 export class ObservationEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @Column({ type: 'text' })
@@ -18,4 +19,7 @@ export class ObservationEntity {
   
   @OneToMany(() => RequestObservationEntity, (request_observ) => request_observ.observation)
   request_observs: RequestObservationEntity[];
+
+  @OneToMany(() => SampleAnalysisObservationEntity, (sample_analysis_observ) => sample_analysis_observ.observation)
+  sample_analysis_observs: SampleAnalysisObservationEntity[];
 }

@@ -1,45 +1,46 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Put,
-  Delete,
-  Query,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Query, DefaultValuePipe, ParseIntPipe, Patch } from '@nestjs/common';
 import { SampleAnalysisObservationService } from './sample_analysis_observation.service';
-import { CreateSampleAnalysisObservationDto } from './dto';
+import { SampleAnalysisObservationEntity } from './sample_analysis_observation.entity';
+import { CreateSampleAnalysisObservationDto, SampleAnalysisObservationResponseDto, UpdateSampleAnalysisObservationDto } from './dtos';
 
 @Controller('sample_analysis_observation')
 export class SampleAnalysisObservationController {
-  constructor(private readonly svc: SampleAnalysisObservationService) {}
+  constructor(private readonly analysisObservService: SampleAnalysisObservationService) {}
 
-  @Post()
-  create(@Body() dto: CreateSampleAnalysisObservationDto) {
-    return this.svc.create(dto);
+@Post()
+  async createSampleAnalysisObservation(
+    @Body() dto: CreateSampleAnalysisObservationDto,
+  ): Promise<{ message: string; data: SampleAnalysisObservationEntity }> {
+    return this.analysisObservService.create(dto);
   }
 
   @Get()
-  findAll(@Query('limit') limit: number, @Query('offset') offset: number) {
-    return this.svc.findAll(limit ? +limit : 100, offset ? +offset : 0);
+  async getSampleAnalysisObservations(
+    @Query('limit', new DefaultValuePipe(100), ParseIntPipe) limit: number,
+    @Query('offset', new DefaultValuePipe(0), ParseIntPipe) offset: number,
+  ): Promise<SampleAnalysisObservationResponseDto[]> {
+    return this.analysisObservService.findAll(limit, offset); 
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.svc.findOne(+id);
+  async getSampleAnalysisObservation(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<SampleAnalysisObservationResponseDto> {
+    return this.analysisObservService.findOne(id);
   }
 
-  @Put(':id')
-  update(
-    @Param('id') id: string,
-    @Body() dto: Partial<CreateSampleAnalysisObservationDto>,
-  ) {
-    return this.svc.update(+id, dto);
+  @Patch(':id')
+  async updateSampleAnalysis(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() dto: UpdateSampleAnalysisObservationDto,
+  ): Promise<{ message: string }> {
+    return this.analysisObservService.update(id, dto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.svc.remove(+id);
+  async deleteSampleAnalysisObservation(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<{ message: string }> {
+    return this.analysisObservService.remove(id);
   }
 }

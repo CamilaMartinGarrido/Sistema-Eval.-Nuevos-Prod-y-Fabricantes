@@ -21,7 +21,6 @@ export class ExploratoryOfferObservationService {
   ) {}
 
   async create(dto: CreateExploratoryOfferObservationDto): Promise<{ message: string; data: ExploratoryOfferObservationEntity }> {
-    // 1. Obtener la Exploratory Offer
     const exploratory_offer = await this.expOfferRepository.findOne({
       where: { id: dto.exploratory_offer_id },
     });
@@ -30,22 +29,18 @@ export class ExploratoryOfferObservationService {
       throw new NotFoundException('Exploratory Offer not found');
     }
 
-    // 2. Obtener o crear Observation
     let observation;
 
     if (dto.observation_id) {
-      // Caso A: Se pasa observation_id
       observation = await this.observationService.findOneEntity(dto.observation_id);
 
     } else if (dto.observation) {
-      // Caso B: Se pasa una nueva observation → createOrGet()
       observation = await this.observationService.createOrGet(dto.observation);
 
     } else {
       throw new BadRequestException('Observation data is required');
     }
 
-    // 3. Crear relación
     const link = this.exploratoryOfferObservationRepository.create({
       exploratory_offer,
       observation,
@@ -94,7 +89,6 @@ export class ExploratoryOfferObservationService {
       throw new NotFoundException('Exploratory Offer Observation not found');
     }
 
-    // Cambiar exploratory_offer
     if (dto.exploratory_offer_id) {
       const offer = await this.expOfferRepository.findOne({
         where: { id: dto.exploratory_offer_id },
@@ -105,13 +99,11 @@ export class ExploratoryOfferObservationService {
       link.exploratory_offer = offer;
     }
 
-    // Cambiar Observation por ID
     if (dto.observation_id) {
       const obs = await this.observationService.findOneEntity(dto.observation_id);
       link.observation = obs;
     }
 
-    // Cambiar Observation por datos (actualizar o crear)
     if (dto.observation) {
       const updatedObs = await this.observationService.createOrGet(dto.observation);
       link.observation = updatedObs;

@@ -5,7 +5,7 @@ import { ObservationEntity } from '../observation/observation.entity';
 @Unique(['application', 'observation'])
 @Entity({ name: 'request_observation' })
 export class RequestObservationEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @ManyToOne(() => ApplicationEntity, (app) => app.request_observs, {

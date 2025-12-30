@@ -7,7 +7,7 @@ import {
 
 @Entity({ name: 'industrial_purchase_observation' })
 export class IndustrialPurchaseObservationEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @Column({ type: 'int' })

@@ -8,7 +8,7 @@ import { FinalStateManufacturerEnum } from '../enums';
 
 @Entity({ name: 'manufacturer_status' })
 export class ManufacturerStatusEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @Column({ type: 'int' })

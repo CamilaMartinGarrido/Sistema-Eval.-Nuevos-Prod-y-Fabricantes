@@ -6,7 +6,7 @@ import { MakerProductEntity } from '../maker_product/maker_product.entity';
 @Unique(['description', 'product_type', 'classification'])
 @Entity({ name: 'product' })
 export class ProductEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @Column({ type: 'varchar' })

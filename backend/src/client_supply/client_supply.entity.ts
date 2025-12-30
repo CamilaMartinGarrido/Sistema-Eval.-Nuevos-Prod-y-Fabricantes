@@ -1,12 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne, Unique } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToOne, Unique, OneToMany } from 'typeorm';
 import { SupplyEntity } from '../supply/supply.entity';
 import { ClientEntity } from '../client/client.entity';
 import { ApplicationEntity } from '../application/application.entity';
+import { DocumentEvaluationEntity } from '../document_evaluation/document_evaluation.entity';
 
 @Unique(['client', 'supply', 'application'])
 @Entity({ name: 'client_supply' })
 export class ClientSupplyEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @ManyToOne(() => ClientEntity, (client) => client.client_supplies, {
@@ -35,4 +36,7 @@ export class ClientSupplyEntity {
   })
   @JoinColumn({ name: 'application_id' })
   application: ApplicationEntity;
+
+  @OneToMany(() => DocumentEvaluationEntity, document => document.client_supply)
+  document_evals: DocumentEvaluationEntity[];
 }

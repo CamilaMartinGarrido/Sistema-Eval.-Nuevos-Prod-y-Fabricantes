@@ -78,14 +78,12 @@ export class ExploratoryOfferService {
       throw new NotFoundException('Exploratory Offer not found');
     }
 
-    // Cambiar supply si viene supply_id (no actualizar sus datos)
     if (dto.supply_id) {
       const supply = await this.supplyRepository.findOne({ where: { id: dto.supply_id } });
       if (!supply) throw new NotFoundException('Supply not found');
       offer.supply = supply;
     }
 
-    // Actualizar SOLO los campos propios de Exploratory Offer
     if (dto.is_competitive !== undefined) {
       offer.is_competitive = dto.is_competitive;
     }
@@ -104,7 +102,6 @@ export class ExploratoryOfferService {
       throw new NotFoundException('Exploratory Offer not found');
     }
 
-    // Eliminar solo la exploratory offer, sin tocar supply
     await this.exploratoryOfferRepository.remove(offer);
 
     return { message: 'Exploratory Offer deleted successfully' };

@@ -7,7 +7,7 @@ import {
 
 @Entity({ name: 'sample_evaluation_observation' })
 export class SampleEvaluationObservationEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @Column({ type: 'int' })
