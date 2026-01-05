@@ -18,6 +18,12 @@ export class ExploratoryOfferEntity {
   @JoinColumn({ name: 'supply_id' })
   supply: SupplyEntity;
 
+  @Column({ type: 'integer', nullable: true })
+  supplier_price: number;
+  
+   @Column({ type: 'integer', nullable: true })
+  last_purchase_price: number;
+
   @Column({ type: 'boolean', nullable: true })
   is_competitive: boolean;
 

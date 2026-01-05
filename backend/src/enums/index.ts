@@ -18,16 +18,12 @@ export enum OriginRequestEnum {
 
 // Tipo de producto
 export enum ProductTypeEnum {
-  MP = 'Materia Prima (MP)',
-  ME = 'Material de Envase (ME)',
-  R = 'Reactivo (R)',
-  D = 'Dispositivo (D)',
-}
-
-// Tipo de clasificación
-export enum ClassificationEnum {
-  IFA = 'Ingrediente Farmacéutico Activo (IFA)',
-  EXCIPIENTE = 'Excipiente Farmacéutico (Excip)',
+  MP_IFA = 'Materia Prima (Ingrediente Farmacéutico Activo)',
+  MP_EF = 'Materia Prima (Excipiente Farmacéutico)',
+  MP_C = 'Materia Prima (Cápsula)',
+  ME = 'Material de Envase',
+  R = 'Reactivo',
+  D = 'Dispositivo',
 }
 
 // Resultado del análisis de muestra

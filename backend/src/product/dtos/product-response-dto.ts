@@ -10,11 +10,7 @@ export class ProductResponseDto {
   product_description: string;
 
   @Expose()
-  product_type: ProductTypeEnum; // devolver enum directamente
-
-  @Expose()
-  @Transform(({ obj }) => obj.classification)
-  product_classification: string;
+  product_type: ProductTypeEnum;
 
   @Expose()
   exclusive_use: boolean;

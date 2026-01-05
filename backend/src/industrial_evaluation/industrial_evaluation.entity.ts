@@ -1,20 +1,24 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  CreateDateColumn,
-} from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, Unique, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 import { ResultIndustrialAnalysisEnum } from '../enums';
+import { IndustrialPurchaseEntity } from 'src/industrial_purchase/industrial_purchase.entity';
+import { IndustrialEvaluationObservationEntity } from 'src/industrial_evaluation_observation/industrial_evaluation_observation.entity';
 
+@Unique(['industrial_purchase'])
 @Entity({ name: 'industrial_evaluation' })
 export class IndustrialEvaluationEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column({ type: 'int' })
-  industrial_purchase_id: number;
+  @ManyToOne(() => IndustrialPurchaseEntity, (purchase) => purchase.industrial_evaluations, {
+    eager: true,
+    nullable: false,
+    onUpdate: 'CASCADE',
+    onDelete: 'RESTRICT',
+  })
+  @JoinColumn({ name: 'industrial_purchase_id' })
+  industrial_purchase: IndustrialPurchaseEntity;
 
-  @Column({ type: 'date', nullable: true })
+  @Column({ type: 'date' })
   send_batch_date: string;
 
   @Column({ type: 'date', nullable: true })
@@ -24,10 +28,13 @@ export class IndustrialEvaluationEntity {
     type: 'enum',
     enum: ResultIndustrialAnalysisEnum,
     enumName: 'result_industrial_analysis_enum',
-    nullable: false,
+    nullable: true,
   })
   analysis_result: ResultIndustrialAnalysisEnum;
 
   @Column({ type: 'date', nullable: true })
   report_delivery_date: string;
+
+  @OneToMany(() => IndustrialEvaluationObservationEntity, (industrial_evaluation_observ) => industrial_evaluation_observ.industrial_evaluation)
+  industrial_evaluation_observs: IndustrialEvaluationObservationEntity[];
 }

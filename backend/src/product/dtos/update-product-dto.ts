@@ -10,10 +10,6 @@ export class UpdateProductDto {
   @IsOptional()
   product_type?: ProductTypeEnum;
 
-  @IsString()
-  @IsOptional()
-  classification?: string;
-
   @IsNumber()
   @IsOptional()
   priority?: number;

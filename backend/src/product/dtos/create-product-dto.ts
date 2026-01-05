@@ -8,16 +8,12 @@ export class CreateProductDto {
 
   @IsEnum(ProductTypeEnum)
   @IsNotEmpty()
-  product_type: ProductTypeEnum; // Enum validado
-
-  @IsString()
-  @IsNotEmpty()
-  classification: string;
+  product_type: ProductTypeEnum;
 
   @IsNumber()
   @IsNotEmpty()
   priority: number;
 
   @IsNotEmpty()
-  exclusive_use: boolean; // boolean obligatorio
+  exclusive_use: boolean;
 }

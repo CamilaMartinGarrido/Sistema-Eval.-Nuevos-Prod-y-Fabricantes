@@ -3,7 +3,7 @@ import { ProductTypeEnum } from '../enums';
 import { ApplicationEntity } from '../application/application.entity';
 import { MakerProductEntity } from '../maker_product/maker_product.entity';
 
-@Unique(['description', 'product_type', 'classification'])
+@Unique(['description', 'product_type'])
 @Entity({ name: 'product' })
 export class ProductEntity {
   @PrimaryGeneratedColumn('increment')
@@ -19,9 +19,6 @@ export class ProductEntity {
     nullable: false,
   })
   product_type: ProductTypeEnum;
-
-  @Column({ type: 'varchar' })
-  classification: string;
 
   @Column({ type: 'boolean' })
   exclusive_use: boolean;

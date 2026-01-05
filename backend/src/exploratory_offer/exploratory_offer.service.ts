@@ -84,6 +84,14 @@ export class ExploratoryOfferService {
       offer.supply = supply;
     }
 
+    if (dto.supplier_price !== undefined) {
+      offer.supplier_price = dto.supplier_price;
+    } 
+
+    if (dto.last_purchase_price !== undefined) {
+      offer.last_purchase_price = dto.last_purchase_price;
+    }
+
     if (dto.is_competitive !== undefined) {
       offer.is_competitive = dto.is_competitive;
     }

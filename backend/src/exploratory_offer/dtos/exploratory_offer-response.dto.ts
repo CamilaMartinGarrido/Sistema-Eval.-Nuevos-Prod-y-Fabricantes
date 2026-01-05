@@ -11,6 +11,12 @@ export class ExploratoryOfferResponseDto {
   supply: SupplyResponseDto;
 
   @Expose()
+  supplier_price: number;
+      
+  @Expose()
+  last_purchase_price: number;
+
+  @Expose()
   is_competitive: boolean;
 
   @Expose()

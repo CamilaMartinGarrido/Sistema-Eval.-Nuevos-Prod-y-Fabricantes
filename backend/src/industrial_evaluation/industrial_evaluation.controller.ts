@@ -1,45 +1,46 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Put,
-  Delete,
-  Query,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Patch, Delete, Query, DefaultValuePipe, ParseIntPipe } from '@nestjs/common';
 import { IndustrialEvaluationService } from './industrial_evaluation.service';
-import { CreateIndustrialEvaluationDto } from './dto';
+import { IndustrialEvaluationEntity } from './industrial_evaluation.entity';
+import { CreateIndustrialEvaluationDto, IndustrialEvaluationResponseDto, UpdateIndustrialEvaluationDto } from './dtos';
 
 @Controller('industrial_evaluation')
 export class IndustrialEvaluationController {
-  constructor(private readonly svc: IndustrialEvaluationService) {}
+  constructor(private readonly evaluationService: IndustrialEvaluationService) {}
 
   @Post()
-  create(@Body() dto: CreateIndustrialEvaluationDto) {
-    return this.svc.create(dto);
+  async createIndustrialEvaluation(
+    @Body() dto: CreateIndustrialEvaluationDto,
+  ): Promise<{ message: string; data: IndustrialEvaluationEntity }> {
+    return this.evaluationService.create(dto);
   }
 
   @Get()
-  findAll(@Query('limit') limit: number, @Query('offset') offset: number) {
-    return this.svc.findAll(limit ? +limit : 100, offset ? +offset : 0);
+  async getIndustrialEvaluations(
+    @Query('limit', new DefaultValuePipe(100), ParseIntPipe) limit: number,
+    @Query('offset', new DefaultValuePipe(0), ParseIntPipe) offset: number,
+  ): Promise<IndustrialEvaluationResponseDto[]> {
+    return this.evaluationService.findAll(limit, offset); 
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.svc.findOne(+id);
+  async getIndustrialEvaluation(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<IndustrialEvaluationResponseDto> {
+    return this.evaluationService.findOne(id);
   }
 
-  @Put(':id')
-  update(
-    @Param('id') id: string,
-    @Body() dto: Partial<CreateIndustrialEvaluationDto>,
-  ) {
-    return this.svc.update(+id, dto);
+  @Patch(':id')
+  async updateIndustrialEvaluation(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() dto: UpdateIndustrialEvaluationDto,
+  ): Promise<{ message: string }> {
+    return this.evaluationService.update(id, dto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.svc.remove(+id);
+  async deleteIndustrialEvaluation(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<{ message: string }> {
+    return this.evaluationService.remove(id);
   }
 }
