@@ -2,6 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { SampleAnalysisObservationEntity } from '../sample_analysis_observation/sample_analysis_observation.entity';
 import { ExploratoryOfferObservationEntity } from '../exploratory_offer_observation/exploratory_offer_observation.entity';
 import { RequestObservationEntity } from '../request_observation/request_observation.entity';
+import { IndustrialPurchaseObservationEntity } from '../industrial_purchase_observation/industrial_purchase_observation.entity';
 
 @Entity({ name: 'observation' })
 export class ObservationEntity {
@@ -22,4 +23,7 @@ export class ObservationEntity {
 
   @OneToMany(() => SampleAnalysisObservationEntity, (sample_analysis_observ) => sample_analysis_observ.observation)
   sample_analysis_observs: SampleAnalysisObservationEntity[];
+
+  @OneToMany(() => IndustrialPurchaseObservationEntity, (industrial_purchase_observ) => industrial_purchase_observ.observation)
+  industrial_purchase_observs: IndustrialPurchaseObservationEntity[];
 }
