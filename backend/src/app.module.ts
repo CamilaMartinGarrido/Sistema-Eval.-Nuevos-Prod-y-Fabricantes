@@ -8,8 +8,8 @@ import { CommercialEntityModule } from './commercial_entity/commercial_entity.mo
 import { DocumentEvaluationModule } from './document_evaluation/document_evaluation.module';
 import { ExploratoryOfferModule } from './exploratory_offer/exploratory_offer.module';
 import { ExploratoryOfferObservationModule } from './exploratory_offer_observation/exploratory_offer_observation.module';
-import { IndustrialEvaluationModule } from './industrial_evaluation/industrial_evaluation.module';
-import { IndustrialEvaluationObservationModule } from './industrial_evaluation_observation/industrial_evaluation_observation.module';
+//import { IndustrialEvaluationModule } from './industrial_evaluation/industrial_evaluation.module';
+//import { IndustrialEvaluationObservationModule } from './industrial_evaluation_observation/industrial_evaluation_observation.module';
 import { IndustrialPurchaseModule } from './industrial_purchase/industrial_purchase.module';
 import { IndustrialPurchaseObservationModule } from './industrial_purchase_observation/industrial_purchase_observation.module';
 import { MakerProductModule } from './maker_product/maker_product.module';
@@ -32,7 +32,7 @@ import { TechnicalDocumentModule } from './technical_document/technical_document
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: 5432, /*5434,*/
+      port: /*5432, */5434,
       username: 'postgres',
       password: 'CamilaBD',
       database: 'Sistema Eval. Nuevos Prod y/o Fab',
@@ -50,12 +50,10 @@ import { TechnicalDocumentModule } from './technical_document/technical_document
     DocumentEvaluationModule,
     ExploratoryOfferModule,
     ExploratoryOfferObservationModule,
-    IndustrialEvaluationModule,
-    IndustrialEvaluationObservationModule,
-    IndustrialPurchaseModule,
+    /*IndustrialEvaluationModule,
+    IndustrialEvaluationObservationModule,*/
     IndustrialPurchaseObservationModule,
     MakerProductModule,
-    //ManufacturerStatusModule,
     ObservationModule,
     ProductModule,
     RequestObservationModule,
