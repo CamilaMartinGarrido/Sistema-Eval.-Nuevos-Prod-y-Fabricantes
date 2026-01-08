@@ -2,6 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToMany, Unique } from 'typeo
 import { CommercialEntityRoleEntity } from './commercial_entity_role.entity';
 import { MakerProductEntity } from '../maker_product/maker_product.entity';
 import { SupplyEntity } from '../supply/supply.entity';
+import { SupplierPurchaseEntity } from '../supplier_purchase/supplier_purchase.entity';
 
 @Unique(['entity_name', 'entity_country'])
 @Entity({ name: 'commercial_entity' })
@@ -23,4 +24,7 @@ export class CommercialEntityEntity {
 
   @OneToMany(() => SupplyEntity, supply => supply.supplier_entity,)
   supplies: SupplyEntity[];
+
+  @OneToMany(() => SupplierPurchaseEntity, supplier_purchase => supplier_purchase.supplier)
+  supplier_purchases: SupplierPurchaseEntity[];
 }

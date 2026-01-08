@@ -100,6 +100,58 @@
         "internal": false
       }
     },
+    "102038064": {
+      "id": "102038064",
+      "label": "IndustrialEvaluationObservationController",
+      "parent": "1280485046",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "IndustrialEvaluationObservationController",
+        "enhancers": [
+          {
+            "name": "DefaultValuePipe",
+            "methodKey": "getIndustrialEvaluationObservations",
+            "subtype": "pipe"
+          },
+          {
+            "id": "995628441",
+            "methodKey": "getIndustrialEvaluationObservations",
+            "subtype": "pipe"
+          },
+          {
+            "name": "DefaultValuePipe",
+            "methodKey": "getIndustrialEvaluationObservations",
+            "subtype": "pipe"
+          },
+          {
+            "id": "995628441",
+            "methodKey": "getIndustrialEvaluationObservations",
+            "subtype": "pipe"
+          },
+          {
+            "id": "995628441",
+            "methodKey": "getIndustrialEvaluationObservation",
+            "subtype": "pipe"
+          },
+          {
+            "id": "995628441",
+            "methodKey": "updateIndustrialEvaluation",
+            "subtype": "pipe"
+          },
+          {
+            "id": "995628441",
+            "methodKey": "deleteIndustrialEvaluationObservation",
+            "subtype": "pipe"
+          }
+        ]
+      }
+    },
     "115252771": {
       "id": "115252771",
       "label": "ParseIntPipe",
@@ -134,7 +186,7 @@
     "119242711": {
       "id": "119242711",
       "label": "ExploratoryOfferEntityRepository",
-      "parent": "-258635660",
+      "parent": "-258635658",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -205,7 +257,7 @@
         "transient": false,
         "exported": true,
         "token": "ExternalContextCreator",
-        "initTime": 44.55430000000001
+        "initTime": 505.59059999999954
       }
     },
     "225063248": {
@@ -222,7 +274,17 @@
         "transient": false,
         "exported": false,
         "token": "InternalCoreModule",
-        "initTime": 45.66149999999993
+        "initTime": 506.54009999999835
+      }
+    },
+    "254463022": {
+      "id": "254463022",
+      "label": "IndustrialEvaluationModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
       }
     },
     "266839889": {
@@ -288,7 +350,7 @@
     "307203032": {
       "id": "307203032",
       "label": "ClientEntityRepository",
-      "parent": "-258635658",
+      "parent": "-258635656",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -303,7 +365,7 @@
     "307203033": {
       "id": "307203033",
       "label": "ClientEntityRepository",
-      "parent": "-258635656",
+      "parent": "-258635633",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -313,6 +375,21 @@
         "transient": false,
         "exported": true,
         "token": "ClientEntityRepository"
+      }
+    },
+    "314571969": {
+      "id": "314571969",
+      "label": "SupplierPurchaseService",
+      "parent": "-1664647930",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "SupplierPurchaseModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "SupplierPurchaseService"
       }
     },
     "338946367": {
@@ -354,7 +431,7 @@
         "transient": false,
         "exported": false,
         "token": "SandboxedCodeExecutor",
-        "initTime": 45.697999999999865
+        "initTime": 507.5570000000007
       }
     },
     "378220912": {
@@ -386,7 +463,7 @@
         "transient": false,
         "exported": true,
         "token": "DiscoveryService",
-        "initTime": 44.993799999999965
+        "initTime": 507.41129999999976
       }
     },
     "432036001": {
@@ -434,7 +511,7 @@
         "transient": false,
         "exported": false,
         "token": "ProductModule",
-        "initTime": 41.834499999999935
+        "initTime": 502.3387999999977
       }
     },
     "465123620": {
@@ -612,7 +689,7 @@
     "599750952": {
       "id": "599750952",
       "label": "ClientSupplyEntityRepository",
-      "parent": "-258635665",
+      "parent": "-258635664",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -627,7 +704,7 @@
     "599750953": {
       "id": "599750953",
       "label": "ClientSupplyEntityRepository",
-      "parent": "-258635656",
+      "parent": "-258635633",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -637,6 +714,22 @@
         "transient": false,
         "exported": true,
         "token": "ClientSupplyEntityRepository"
+      }
+    },
+    "607976613": {
+      "id": "607976613",
+      "label": "CONFIGURABLE_MODULE_OPTIONS[8679976f16f486a1eb189]",
+      "parent": "-1033621697",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "DevtoolsModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "CONFIGURABLE_MODULE_OPTIONS[8679976f16f486a1eb189]"
       }
     },
     "608962878": {
@@ -653,7 +746,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 41.81719999999996
+        "initTime": 502.7722999999969
       }
     },
     "608962879": {
@@ -670,7 +763,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 41.687400000000025
+        "initTime": 502.67039999999906
       }
     },
     "608962880": {
@@ -687,7 +780,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 41.618799999999965
+        "initTime": 502.5652999999984
       }
     },
     "608962881": {
@@ -704,7 +797,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 41.571300000000065
+        "initTime": 502.45720000000074
       }
     },
     "608962882": {
@@ -721,7 +814,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 41.52469999999994
+        "initTime": 502.3721000000005
       }
     },
     "608962883": {
@@ -738,7 +831,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 41.45499999999993
+        "initTime": 502.3091999999997
       }
     },
     "608962884": {
@@ -755,7 +848,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 41.39529999999991
+        "initTime": 502.1922999999988
       }
     },
     "608962885": {
@@ -772,7 +865,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 41.328500000000076
+        "initTime": 502.0493999999999
       }
     },
     "608962886": {
@@ -789,7 +882,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 41.212099999999964
+        "initTime": 501.96230000000287
       }
     },
     "608962887": {
@@ -806,7 +899,129 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 41.147699999999986
+        "initTime": 501.8786
+      }
+    },
+    "608962909": {
+      "id": "608962909",
+      "label": "TypeOrmModule",
+      "parent": "-258635634",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "TypeOrmModule",
+        "initTime": 501.726200000001
+      }
+    },
+    "608962910": {
+      "id": "608962910",
+      "label": "TypeOrmModule",
+      "parent": "-258635633",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "TypeOrmModule",
+        "initTime": 501.5558999999994
+      }
+    },
+    "608962911": {
+      "id": "608962911",
+      "label": "TypeOrmModule",
+      "parent": "-258635632",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "TypeOrmModule",
+        "initTime": 501.4167000000016
+      }
+    },
+    "608962912": {
+      "id": "608962912",
+      "label": "TypeOrmModule",
+      "parent": "-258635631",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "TypeOrmModule",
+        "initTime": 501.3122999999978
+      }
+    },
+    "608962913": {
+      "id": "608962913",
+      "label": "TypeOrmModule",
+      "parent": "-258635630",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "TypeOrmModule",
+        "initTime": 501.09839999999895
+      }
+    },
+    "608962914": {
+      "id": "608962914",
+      "label": "TypeOrmModule",
+      "parent": "-258635629",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "TypeOrmModule",
+        "initTime": 501.0041999999994
+      }
+    },
+    "618510865": {
+      "id": "618510865",
+      "label": "IndustrialPurchaseObservationModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "659752316": {
+      "id": "659752316",
+      "label": "ManufacturerStatusModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
       }
     },
     "671882984": {
@@ -822,7 +1037,7 @@
         "transient": false,
         "exported": true,
         "token": "Reflector",
-        "initTime": 45.41969999999992
+        "initTime": 506.3112999999976
       }
     },
     "682580140": {
@@ -839,7 +1054,7 @@
         "transient": false,
         "exported": false,
         "token": "SampleModule",
-        "initTime": 41.593399999999974
+        "initTime": 502.0040000000008
       }
     },
     "683945267": {
@@ -1068,7 +1283,22 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmCoreModule",
-        "initTime": 46.159400000000005
+        "initTime": 508.0224999999991
+      }
+    },
+    "744179288": {
+      "id": "744179288",
+      "label": "IndustrialEvaluationObservationEntityRepository",
+      "parent": "-258635665",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "IndustrialEvaluationObservationEntityRepository"
       }
     },
     "758491785": {
@@ -1132,7 +1362,7 @@
     "808008596": {
       "id": "808008596",
       "label": "CommercialEntityEntityRepository",
-      "parent": "-258635663",
+      "parent": "-258635662",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -1147,7 +1377,22 @@
     "808008597": {
       "id": "808008597",
       "label": "CommercialEntityEntityRepository",
-      "parent": "-258635633",
+      "parent": "-258635631",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "CommercialEntityEntityRepository"
+      }
+    },
+    "808008598": {
+      "id": "808008598",
+      "label": "CommercialEntityEntityRepository",
+      "parent": "-258635630",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -1272,7 +1517,7 @@
         "transient": false,
         "exported": false,
         "token": "SampleEvaluationObservationModule",
-        "initTime": 41.363000000000056
+        "initTime": 501.4951000000001
       }
     },
     "963502593": {
@@ -1304,13 +1549,29 @@
         "transient": false,
         "exported": false,
         "token": "SupplyModule",
-        "initTime": 41.25209999999993
+        "initTime": 501.1740000000027
+      }
+    },
+    "995628441": {
+      "id": "995628441",
+      "label": "ParseIntPipe",
+      "parent": "1280485046",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "ParseIntPipe",
+        "subtype": "pipe"
       }
     },
     "996566601": {
       "id": "996566601",
       "label": "SampleEvaluationEntityRepository",
-      "parent": "-258635656",
+      "parent": "-258635633",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -1336,6 +1597,22 @@
         "transient": false,
         "exported": false,
         "token": "ModuleRef"
+      }
+    },
+    "1041116721": {
+      "id": "1041116721",
+      "label": "ApplicationConfig",
+      "parent": "1280485046",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
       }
     },
     "1047934438": {
@@ -1612,7 +1889,22 @@
     "1180759958": {
       "id": "1180759958",
       "label": "MakerProductEntityRepository",
-      "parent": "-258635633",
+      "parent": "-258635661",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "MakerProductEntityRepository"
+      }
+    },
+    "1180759959": {
+      "id": "1180759959",
+      "label": "MakerProductEntityRepository",
+      "parent": "-258635630",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -1627,7 +1919,7 @@
     "1185605650": {
       "id": "1185605650",
       "label": "RequestObservationEntityRepository",
-      "parent": "-258635661",
+      "parent": "-258635659",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -1784,10 +2076,20 @@
         "token": "ModuleRef"
       }
     },
+    "1280485046": {
+      "id": "1280485046",
+      "label": "IndustrialEvaluationObservationModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
     "1324917543": {
       "id": "1324917543",
       "label": "IndustrialPurchaseEntityRepository",
-      "parent": "-258635665",
+      "parent": "-258635664",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -1802,7 +2104,7 @@
     "1324917544": {
       "id": "1324917544",
       "label": "IndustrialPurchaseEntityRepository",
-      "parent": "-258635664",
+      "parent": "-258635663",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -1833,7 +2135,7 @@
     "1332259657": {
       "id": "1332259657",
       "label": "SampleEvaluationObservationEntityRepository",
-      "parent": "-258635634",
+      "parent": "-258635632",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -1861,10 +2163,25 @@
         "subtype": "pipe"
       }
     },
+    "1353361730": {
+      "id": "1353361730",
+      "label": "SupplierPurchaseEntityRepository",
+      "parent": "545846246",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "SupplierPurchaseEntityRepository"
+      }
+    },
     "1370037289": {
       "id": "1370037289",
       "label": "SampleAnalysisEntityRepository",
-      "parent": "-258635658",
+      "parent": "-258635656",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -1958,7 +2275,7 @@
         "transient": false,
         "exported": true,
         "token": "Reflector",
-        "initTime": 47.144799999999805
+        "initTime": 509.2060999999994
       }
     },
     "1470333121": {
@@ -2010,7 +2327,7 @@
     "1494463145": {
       "id": "1494463145",
       "label": "TechnicalDocumentEntityRepository",
-      "parent": "-258635632",
+      "parent": "-258635629",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -2068,7 +2385,17 @@
         "transient": false,
         "exported": false,
         "token": "ApplicationModule",
-        "initTime": 43.20919999999978
+        "initTime": 504.3581000000013
+      }
+    },
+    "1550468019": {
+      "id": "1550468019",
+      "label": "IndustrialPurchaseModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
       }
     },
     "1603708093": {
@@ -2111,7 +2438,7 @@
         "transient": false,
         "exported": false,
         "token": "SampleAnalysisObservationModule",
-        "initTime": 41.49759999999992
+        "initTime": 501.83480000000054
       }
     },
     "1648486932": {
@@ -2322,6 +2649,54 @@
         "token": "ApplicationConfig"
       }
     },
+    "1648486966": {
+      "id": "1648486966",
+      "label": "ApplicationConfig",
+      "parent": "-258635631",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "1648486967": {
+      "id": "1648486967",
+      "label": "ApplicationConfig",
+      "parent": "-258635630",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "1648486968": {
+      "id": "1648486968",
+      "label": "ApplicationConfig",
+      "parent": "-258635629",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
     "1657946635": {
       "id": "1657946635",
       "label": "ApplicationConfig",
@@ -2352,7 +2727,7 @@
         "transient": false,
         "exported": false,
         "token": "SampleEvaluationModule",
-        "initTime": 41.42769999999996
+        "initTime": 501.6222000000016
       }
     },
     "1671553413": {
@@ -2384,7 +2759,7 @@
         "transient": false,
         "exported": false,
         "token": "DevtoolsHttpServerHost",
-        "initTime": 48.77999999999997
+        "initTime": 514.6158000000032
       }
     },
     "1698427823": {
@@ -2416,7 +2791,7 @@
         "transient": false,
         "exported": false,
         "token": "TechnicalDocumentModule",
-        "initTime": 41.180700000000115
+        "initTime": 501.04699999999866
       }
     },
     "1702727056": {
@@ -2575,7 +2950,7 @@
         "transient": false,
         "exported": false,
         "token": "IndustrialEvaluationModule",
-        "initTime": 109.50559999999996
+        "initTime": 502.9375
       }
     },
     "1860366691": {
@@ -2592,6 +2967,21 @@
         "exported": false,
         "token": "ParseIntPipe",
         "subtype": "pipe"
+      }
+    },
+    "1877224901": {
+      "id": "1877224901",
+      "label": "IndustrialEvaluationObservationService",
+      "parent": "1280485046",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "IndustrialEvaluationObservationService"
       }
     },
     "1883330033": {
@@ -2612,7 +3002,7 @@
     "1883330034": {
       "id": "1883330034",
       "label": "ApplicationEntityRepository",
-      "parent": "-258635661",
+      "parent": "-258635659",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -2627,7 +3017,7 @@
     "1883330035": {
       "id": "1883330035",
       "label": "ApplicationEntityRepository",
-      "parent": "-258635660",
+      "parent": "-258635658",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -2637,6 +3027,39 @@
         "transient": false,
         "exported": true,
         "token": "ApplicationEntityRepository"
+      }
+    },
+    "1886160003": {
+      "id": "1886160003",
+      "label": "ParseIntPipe",
+      "parent": "-1664647930",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "SupplierPurchaseModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "ParseIntPipe",
+        "subtype": "pipe"
+      }
+    },
+    "1891312158": {
+      "id": "1891312158",
+      "label": "ManufacturerStatusModule",
+      "parent": "659752316",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ManufacturerStatusModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ManufacturerStatusModule",
+        "initTime": 502.4122000000025
       }
     },
     "1891744715": {
@@ -2658,7 +3081,7 @@
     "1900251497": {
       "id": "1900251497",
       "label": "SampleAnalysisObservationEntityRepository",
-      "parent": "-258635657",
+      "parent": "-258635634",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -2686,6 +3109,22 @@
         "token": "ModuleRef"
       }
     },
+    "1917538027": {
+      "id": "1917538027",
+      "label": "ApplicationConfig",
+      "parent": "-1664647930",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SupplierPurchaseModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
     "1919157847": {
       "id": "1919157847",
       "label": "REQUEST",
@@ -2700,7 +3139,22 @@
         "transient": false,
         "exported": true,
         "token": "REQUEST",
-        "initTime": 37.01430000000005
+        "initTime": 469.8054999999986
+      }
+    },
+    "1941041333": {
+      "id": "1941041333",
+      "label": "IndustrialPurchaseEntityRepository",
+      "parent": "545846249",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "IndustrialPurchaseEntityRepository"
       }
     },
     "1941989889": {
@@ -2732,7 +3186,7 @@
         "transient": false,
         "exported": false,
         "token": "ClientModule",
-        "initTime": 42.93810000000008
+        "initTime": 504.0580999999984
       }
     },
     "1964711460": {
@@ -3016,7 +3470,7 @@
         "transient": true,
         "exported": true,
         "token": "INQUIRER",
-        "initTime": 37.00130000000013
+        "initTime": 469.7954000000027
       }
     },
     "-26938366": {
@@ -3032,7 +3486,7 @@
         "transient": false,
         "exported": true,
         "token": "ModulesContainer",
-        "initTime": 44.54549999999995
+        "initTime": 505.5715999999993
       }
     },
     "-326832201": {
@@ -3048,7 +3502,7 @@
         "transient": false,
         "exported": true,
         "token": "HttpAdapterHost",
-        "initTime": 44.52729999999997
+        "initTime": 505.53659999999945
       }
     },
     "-702581189": {
@@ -3064,7 +3518,7 @@
         "transient": false,
         "exported": true,
         "token": "LazyModuleLoader",
-        "initTime": 44.52149999999983
+        "initTime": 505.5141000000003
       }
     },
     "-1904419534": {
@@ -3080,7 +3534,7 @@
         "transient": false,
         "exported": true,
         "token": "SerializedGraph",
-        "initTime": 44.500999999999976
+        "initTime": 505.47459999999774
       }
     },
     "-19112576": {
@@ -3107,7 +3561,7 @@
         "transient": false,
         "exported": false,
         "token": "AppModule",
-        "initTime": 44.56839999999988
+        "initTime": 505.45750000000044
       }
     },
     "-71302842": {
@@ -3166,7 +3620,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 44.55820000000017
+        "initTime": 505.4485999999997
       }
     },
     "-1068388246": {
@@ -3250,7 +3704,7 @@
         "transient": false,
         "exported": false,
         "token": "DevtoolsModule",
-        "initTime": 44.38740000000007
+        "initTime": 504.8813000000009
       }
     },
     "-751962311": {
@@ -3267,22 +3721,6 @@
         "transient": false,
         "exported": false,
         "token": "ModuleRef"
-      }
-    },
-    "-643452085": {
-      "id": "-643452085",
-      "label": "CONFIGURABLE_MODULE_OPTIONS[ac67f396ba568ffce8072]",
-      "parent": "-1033621697",
-      "metadata": {
-        "type": "provider",
-        "internal": false,
-        "sourceModuleName": "DevtoolsModule",
-        "durable": false,
-        "static": true,
-        "scope": 0,
-        "transient": false,
-        "exported": false,
-        "token": "CONFIGURABLE_MODULE_OPTIONS[ac67f396ba568ffce8072]"
       }
     },
     "-643397745": {
@@ -3309,7 +3747,7 @@
         "transient": false,
         "exported": false,
         "token": "DiscoveryModule",
-        "initTime": 43.46679999999992
+        "initTime": 504.4320999999982
       }
     },
     "-501891371": {
@@ -3357,7 +3795,7 @@
         "transient": false,
         "exported": true,
         "token": "MetadataScanner",
-        "initTime": 43.29769999999985
+        "initTime": 504.4227000000028
       }
     },
     "-1119992209": {
@@ -3483,7 +3921,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 43.10730000000012
+        "initTime": 504.14570000000094
       }
     },
     "-223917668": {
@@ -3604,7 +4042,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 42.862699999999904
+        "initTime": 504.0133999999998
       }
     },
     "-223917667": {
@@ -3637,7 +4075,7 @@
         "transient": false,
         "exported": false,
         "token": "ClientSupplyModule",
-        "initTime": 42.83710000000019
+        "initTime": 503.90300000000207
       }
     },
     "-784982419": {
@@ -3722,7 +4160,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 42.75199999999995
+        "initTime": 503.77330000000075
       }
     },
     "-223917666": {
@@ -3780,7 +4218,7 @@
         "transient": false,
         "exported": false,
         "token": "CommercialEntityModule",
-        "initTime": 42.65239999999994
+        "initTime": 503.6823000000004
       }
     },
     "-802875424": {
@@ -3855,7 +4293,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 42.60940000000005
+        "initTime": 503.5907999999981
       }
     },
     "-223917665": {
@@ -3928,7 +4366,7 @@
         "transient": false,
         "exported": false,
         "token": "DocumentEvaluationModule",
-        "initTime": 42.57529999999997
+        "initTime": 503.4480000000003
       }
     },
     "-257450698": {
@@ -3945,7 +4383,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 42.52690000000007
+        "initTime": 503.35429999999906
       }
     },
     "-223917664": {
@@ -4018,7 +4456,7 @@
         "transient": false,
         "exported": false,
         "token": "ExploratoryOfferModule",
-        "initTime": 42.48219999999992
+        "initTime": 503.29179999999906
       }
     },
     "-686727842": {
@@ -4118,7 +4556,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 42.440000000000055
+        "initTime": 503.23219999999856
       }
     },
     "-223917663": {
@@ -4191,7 +4629,7 @@
         "transient": false,
         "exported": false,
         "token": "ExploratoryOfferObservationModule",
-        "initTime": 42.401800000000094
+        "initTime": 503.1779000000024
       }
     },
     "-928614522": {
@@ -4224,7 +4662,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 42.065000000000055
+        "initTime": 503.05769999999757
       }
     },
     "-223917662": {
@@ -4297,7 +4735,7 @@
         "transient": false,
         "exported": false,
         "token": "ObservationModule",
-        "initTime": 42.006200000000035
+        "initTime": 502.9946999999993
       }
     },
     "-1956379986": {
@@ -4372,7 +4810,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 41.952200000000175
+        "initTime": 502.9602999999988
       }
     },
     "-223917661": {
@@ -4452,7 +4890,7 @@
         "transient": false,
         "exported": false,
         "token": "TypeOrmModule",
-        "initTime": 109.39899999999989
+        "initTime": 502.8950999999979
       }
     },
     "-223917660": {
@@ -4486,6 +4924,95 @@
         "token": "IndustrialEvaluationEntityRepository"
       }
     },
+    "-1842477600": {
+      "id": "-1842477600",
+      "label": "IndustrialEvaluationObservationModule",
+      "parent": "1280485046",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "IndustrialEvaluationObservationModule",
+        "initTime": 502.85799999999654
+      }
+    },
+    "-1191279236": {
+      "id": "-1191279236",
+      "label": "ModuleRef",
+      "parent": "1280485046",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-258635665": {
+      "id": "-258635665",
+      "label": "TypeOrmModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "-166905367": {
+      "id": "-166905367",
+      "label": "ModuleRef",
+      "parent": "-258635665",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-837227572": {
+      "id": "-837227572",
+      "label": "IndustrialEvaluationEntityRepository",
+      "parent": "-258635665",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "IndustrialEvaluationEntityRepository"
+      }
+    },
+    "-1900599402": {
+      "id": "-1900599402",
+      "label": "ObservationEntityRepository",
+      "parent": "-258635665",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ObservationEntityRepository"
+      }
+    },
     "-554686068": {
       "id": "-554686068",
       "label": "IndustrialPurchaseModule",
@@ -4500,7 +5027,7 @@
         "transient": false,
         "exported": false,
         "token": "IndustrialPurchaseModule",
-        "initTime": 109.31960000000026
+        "initTime": 502.72069999999803
       }
     },
     "-197272787": {
@@ -4566,8 +5093,8 @@
         "subtype": "pipe"
       }
     },
-    "-258635665": {
-      "id": "-258635665",
+    "-258635664": {
+      "id": "-258635664",
       "label": "TypeOrmModule",
       "metadata": {
         "type": "module",
@@ -4576,10 +5103,10 @@
         "internal": false
       }
     },
-    "-166905367": {
-      "id": "-166905367",
+    "-166905366": {
+      "id": "-166905366",
       "label": "ModuleRef",
-      "parent": "-258635665",
+      "parent": "-258635664",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -4606,7 +5133,7 @@
         "transient": false,
         "exported": false,
         "token": "IndustrialPurchaseObservationModule",
-        "initTime": 109.14280000000008
+        "initTime": 502.6349999999984
       }
     },
     "-295792041": {
@@ -4641,8 +5168,8 @@
         "token": "ApplicationConfig"
       }
     },
-    "-258635664": {
-      "id": "-258635664",
+    "-258635663": {
+      "id": "-258635663",
       "label": "TypeOrmModule",
       "metadata": {
         "type": "module",
@@ -4651,10 +5178,10 @@
         "internal": false
       }
     },
-    "-166905366": {
-      "id": "-166905366",
+    "-166905365": {
+      "id": "-166905365",
       "label": "ModuleRef",
-      "parent": "-258635664",
+      "parent": "-258635663",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -4670,7 +5197,7 @@
     "-1940609699": {
       "id": "-1940609699",
       "label": "IndustrialPurchaseObservationEntityRepository",
-      "parent": "-258635664",
+      "parent": "-258635663",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -4682,10 +5209,10 @@
         "token": "IndustrialPurchaseObservationEntityRepository"
       }
     },
-    "-1900599402": {
-      "id": "-1900599402",
+    "-1900599401": {
+      "id": "-1900599401",
       "label": "ObservationEntityRepository",
-      "parent": "-258635664",
+      "parent": "-258635663",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -4711,7 +5238,7 @@
         "transient": false,
         "exported": false,
         "token": "MakerProductModule",
-        "initTime": 41.92290000000003
+        "initTime": 502.51680000000124
       }
     },
     "-76785378": {
@@ -4782,26 +5309,20 @@
         ]
       }
     },
-    "-258635663": {
-      "id": "-258635663",
+    "-258635662": {
+      "id": "-258635662",
       "label": "TypeOrmModule",
       "metadata": {
-        "type": "provider",
-        "internal": true,
-        "sourceModuleName": "TypeOrmModule",
-        "durable": false,
-        "static": true,
-        "scope": 0,
-        "transient": false,
-        "exported": false,
-        "token": "TypeOrmModule",
-        "initTime": 41.8608999999999
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
       }
     },
-    "-166905365": {
-      "id": "-166905365",
+    "-166905364": {
+      "id": "-166905364",
       "label": "ModuleRef",
-      "parent": "-258635663",
+      "parent": "-258635662",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -4817,7 +5338,7 @@
     "-1464691484": {
       "id": "-1464691484",
       "label": "MakerProductEntityRepository",
-      "parent": "-258635663",
+      "parent": "-258635662",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -4832,7 +5353,7 @@
     "-601265550": {
       "id": "-601265550",
       "label": "ProductEntityRepository",
-      "parent": "-258635663",
+      "parent": "-258635662",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -4842,6 +5363,162 @@
         "transient": false,
         "exported": true,
         "token": "ProductEntityRepository"
+      }
+    },
+    "-1087988490": {
+      "id": "-1087988490",
+      "label": "ModuleRef",
+      "parent": "659752316",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ManufacturerStatusModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-1423314399": {
+      "id": "-1423314399",
+      "label": "ApplicationConfig",
+      "parent": "659752316",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "ManufacturerStatusModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ApplicationConfig"
+      }
+    },
+    "-1797104767": {
+      "id": "-1797104767",
+      "label": "ManufacturerStatusService",
+      "parent": "659752316",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "ManufacturerStatusModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "ManufacturerStatusService"
+      }
+    },
+    "-1512824391": {
+      "id": "-1512824391",
+      "label": "ParseIntPipe",
+      "parent": "659752316",
+      "metadata": {
+        "type": "injectable",
+        "internal": false,
+        "sourceModuleName": "ManufacturerStatusModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "ParseIntPipe",
+        "subtype": "pipe"
+      }
+    },
+    "-846559794": {
+      "id": "-846559794",
+      "label": "ManufacturerStatusController",
+      "parent": "659752316",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "ManufacturerStatusModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "ManufacturerStatusController",
+        "enhancers": [
+          {
+            "name": "DefaultValuePipe",
+            "methodKey": "getManufacturerStates",
+            "subtype": "pipe"
+          },
+          {
+            "id": "-1512824391",
+            "methodKey": "getManufacturerStates",
+            "subtype": "pipe"
+          },
+          {
+            "name": "DefaultValuePipe",
+            "methodKey": "getManufacturerStates",
+            "subtype": "pipe"
+          },
+          {
+            "id": "-1512824391",
+            "methodKey": "getManufacturerStates",
+            "subtype": "pipe"
+          },
+          {
+            "id": "-1512824391",
+            "methodKey": "getManufacturerStatus",
+            "subtype": "pipe"
+          },
+          {
+            "id": "-1512824391",
+            "methodKey": "updateManufacturerStatus",
+            "subtype": "pipe"
+          },
+          {
+            "id": "-1512824391",
+            "methodKey": "deleteManufacturerStatus",
+            "subtype": "pipe"
+          }
+        ]
+      }
+    },
+    "-258635661": {
+      "id": "-258635661",
+      "label": "TypeOrmModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "-166905363": {
+      "id": "-166905363",
+      "label": "ModuleRef",
+      "parent": "-258635661",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-306627380": {
+      "id": "-306627380",
+      "label": "ManufacturerStatusEntityRepository",
+      "parent": "-258635661",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ManufacturerStatusEntityRepository"
       }
     },
     "-1518443319": {
@@ -4875,8 +5552,8 @@
         "token": "ProductService"
       }
     },
-    "-258635662": {
-      "id": "-258635662",
+    "-258635660": {
+      "id": "-258635660",
       "label": "TypeOrmModule",
       "metadata": {
         "type": "module",
@@ -4885,10 +5562,10 @@
         "internal": false
       }
     },
-    "-166905364": {
-      "id": "-166905364",
+    "-166905362": {
+      "id": "-166905362",
       "label": "ModuleRef",
-      "parent": "-258635662",
+      "parent": "-258635660",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -4904,7 +5581,7 @@
     "-601265549": {
       "id": "-601265549",
       "label": "ProductEntityRepository",
-      "parent": "-258635662",
+      "parent": "-258635660",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -4940,7 +5617,7 @@
         "transient": false,
         "exported": false,
         "token": "RequestObservationModule",
-        "initTime": 41.79880000000003
+        "initTime": 502.28960000000006
       }
     },
     "-83470143": {
@@ -4958,8 +5635,8 @@
         "token": "RequestObservationService"
       }
     },
-    "-258635661": {
-      "id": "-258635661",
+    "-258635659": {
+      "id": "-258635659",
       "label": "TypeOrmModule",
       "metadata": {
         "type": "module",
@@ -4968,10 +5645,10 @@
         "internal": false
       }
     },
-    "-166905363": {
-      "id": "-166905363",
+    "-166905361": {
+      "id": "-166905361",
       "label": "ModuleRef",
-      "parent": "-258635661",
+      "parent": "-258635659",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -4984,10 +5661,10 @@
         "token": "ModuleRef"
       }
     },
-    "-1900599401": {
-      "id": "-1900599401",
+    "-1900599400": {
+      "id": "-1900599400",
       "label": "ObservationEntityRepository",
-      "parent": "-258635661",
+      "parent": "-258635659",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -5023,7 +5700,7 @@
         "transient": false,
         "exported": false,
         "token": "RequestOfferModule",
-        "initTime": 41.64779999999996
+        "initTime": 502.10529999999926
       }
     },
     "-1454687039": {
@@ -5093,8 +5770,8 @@
         ]
       }
     },
-    "-258635660": {
-      "id": "-258635660",
+    "-258635658": {
+      "id": "-258635658",
       "label": "TypeOrmModule",
       "metadata": {
         "type": "module",
@@ -5103,10 +5780,10 @@
         "internal": false
       }
     },
-    "-166905362": {
-      "id": "-166905362",
+    "-166905360": {
+      "id": "-166905360",
       "label": "ModuleRef",
-      "parent": "-258635660",
+      "parent": "-258635658",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -5122,7 +5799,7 @@
     "-945378526": {
       "id": "-945378526",
       "label": "RequestOfferEntityRepository",
-      "parent": "-258635660",
+      "parent": "-258635658",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -5165,8 +5842,8 @@
         "subtype": "pipe"
       }
     },
-    "-258635659": {
-      "id": "-258635659",
+    "-258635657": {
+      "id": "-258635657",
       "label": "TypeOrmModule",
       "metadata": {
         "type": "module",
@@ -5175,10 +5852,10 @@
         "internal": false
       }
     },
-    "-166905361": {
-      "id": "-166905361",
+    "-166905359": {
+      "id": "-166905359",
       "label": "ModuleRef",
-      "parent": "-258635659",
+      "parent": "-258635657",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -5194,7 +5871,7 @@
     "-2039883867": {
       "id": "-2039883867",
       "label": "SampleEntityRepository",
-      "parent": "-258635659",
+      "parent": "-258635657",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -5209,7 +5886,7 @@
     "-2137902541": {
       "id": "-2137902541",
       "label": "SupplyEntityRepository",
-      "parent": "-258635659",
+      "parent": "-258635657",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -5235,7 +5912,7 @@
         "transient": false,
         "exported": false,
         "token": "SampleAnalysisModule",
-        "initTime": 41.55130000000008
+        "initTime": 501.9282000000021
       }
     },
     "-1406460831": {
@@ -5269,8 +5946,8 @@
         "subtype": "pipe"
       }
     },
-    "-258635658": {
-      "id": "-258635658",
+    "-258635656": {
+      "id": "-258635656",
       "label": "TypeOrmModule",
       "metadata": {
         "type": "module",
@@ -5279,10 +5956,10 @@
         "internal": false
       }
     },
-    "-166905360": {
-      "id": "-166905360",
+    "-166905358": {
+      "id": "-166905358",
       "label": "ModuleRef",
-      "parent": "-258635658",
+      "parent": "-258635656",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -5298,7 +5975,7 @@
     "-1823306217": {
       "id": "-1823306217",
       "label": "SampleEntityRepository",
-      "parent": "-258635658",
+      "parent": "-258635656",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -5351,8 +6028,8 @@
         "token": "SampleAnalysisObservationService"
       }
     },
-    "-258635657": {
-      "id": "-258635657",
+    "-258635634": {
+      "id": "-258635634",
       "label": "TypeOrmModule",
       "metadata": {
         "type": "module",
@@ -5361,10 +6038,10 @@
         "internal": false
       }
     },
-    "-166905359": {
-      "id": "-166905359",
+    "-166905336": {
+      "id": "-166905336",
       "label": "ModuleRef",
-      "parent": "-258635657",
+      "parent": "-258635634",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -5380,7 +6057,7 @@
     "-1949122149": {
       "id": "-1949122149",
       "label": "SampleAnalysisEntityRepository",
-      "parent": "-258635657",
+      "parent": "-258635634",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -5392,10 +6069,10 @@
         "token": "SampleAnalysisEntityRepository"
       }
     },
-    "-1900599400": {
-      "id": "-1900599400",
+    "-1900599399": {
+      "id": "-1900599399",
       "label": "ObservationEntityRepository",
-      "parent": "-258635657",
+      "parent": "-258635634",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -5465,8 +6142,8 @@
         "subtype": "pipe"
       }
     },
-    "-258635656": {
-      "id": "-258635656",
+    "-258635633": {
+      "id": "-258635633",
       "label": "TypeOrmModule",
       "metadata": {
         "type": "module",
@@ -5475,10 +6152,10 @@
         "internal": false
       }
     },
-    "-166905358": {
-      "id": "-166905358",
+    "-166905335": {
+      "id": "-166905335",
       "label": "ModuleRef",
-      "parent": "-258635656",
+      "parent": "-258635633",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -5494,7 +6171,7 @@
     "-1949122148": {
       "id": "-1949122148",
       "label": "SampleAnalysisEntityRepository",
-      "parent": "-258635656",
+      "parent": "-258635633",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -5522,8 +6199,8 @@
         "token": "ModuleRef"
       }
     },
-    "-258635634": {
-      "id": "-258635634",
+    "-258635632": {
+      "id": "-258635632",
       "label": "TypeOrmModule",
       "metadata": {
         "type": "module",
@@ -5532,10 +6209,10 @@
         "internal": false
       }
     },
-    "-166905336": {
-      "id": "-166905336",
+    "-166905334": {
+      "id": "-166905334",
       "label": "ModuleRef",
-      "parent": "-258635634",
+      "parent": "-258635632",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -5551,7 +6228,7 @@
     "-77200453": {
       "id": "-77200453",
       "label": "SampleEvaluationEntityRepository",
-      "parent": "-258635634",
+      "parent": "-258635632",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -5563,10 +6240,10 @@
         "token": "SampleEvaluationEntityRepository"
       }
     },
-    "-1900599399": {
-      "id": "-1900599399",
+    "-1900599398": {
+      "id": "-1900599398",
       "label": "ObservationEntityRepository",
-      "parent": "-258635634",
+      "parent": "-258635632",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -5576,6 +6253,157 @@
         "transient": false,
         "exported": true,
         "token": "ObservationEntityRepository"
+      }
+    },
+    "-1664647930": {
+      "id": "-1664647930",
+      "label": "SupplierPurchaseModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": false,
+        "internal": false
+      }
+    },
+    "-184121614": {
+      "id": "-184121614",
+      "label": "SupplierPurchaseModule",
+      "parent": "-1664647930",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SupplierPurchaseModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "SupplierPurchaseModule",
+        "initTime": 501.362000000001
+      }
+    },
+    "-777082112": {
+      "id": "-777082112",
+      "label": "ModuleRef",
+      "parent": "-1664647930",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "SupplierPurchaseModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-102522462": {
+      "id": "-102522462",
+      "label": "SupplierPurchaseController",
+      "parent": "-1664647930",
+      "metadata": {
+        "type": "controller",
+        "internal": false,
+        "sourceModuleName": "SupplierPurchaseModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": false,
+        "token": "SupplierPurchaseController",
+        "enhancers": [
+          {
+            "name": "DefaultValuePipe",
+            "methodKey": "getSupplierPurchases",
+            "subtype": "pipe"
+          },
+          {
+            "id": "1886160003",
+            "methodKey": "getSupplierPurchases",
+            "subtype": "pipe"
+          },
+          {
+            "name": "DefaultValuePipe",
+            "methodKey": "getSupplierPurchases",
+            "subtype": "pipe"
+          },
+          {
+            "id": "1886160003",
+            "methodKey": "getSupplierPurchases",
+            "subtype": "pipe"
+          },
+          {
+            "id": "1886160003",
+            "methodKey": "getSupplierPurchase",
+            "subtype": "pipe"
+          },
+          {
+            "id": "1886160003",
+            "methodKey": "updateSupplierPurchase",
+            "subtype": "pipe"
+          },
+          {
+            "id": "1886160003",
+            "methodKey": "deleteSupplierPurchase",
+            "subtype": "pipe"
+          }
+        ]
+      }
+    },
+    "-258635631": {
+      "id": "-258635631",
+      "label": "TypeOrmModule",
+      "metadata": {
+        "type": "module",
+        "global": false,
+        "dynamic": true,
+        "internal": false
+      }
+    },
+    "-166905333": {
+      "id": "-166905333",
+      "label": "ModuleRef",
+      "parent": "-258635631",
+      "metadata": {
+        "type": "provider",
+        "internal": true,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "scope": 0,
+        "transient": false,
+        "exported": false,
+        "token": "ModuleRef"
+      }
+    },
+    "-794465164": {
+      "id": "-794465164",
+      "label": "SupplierPurchaseEntityRepository",
+      "parent": "-258635631",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "SupplierPurchaseEntityRepository"
+      }
+    },
+    "-601265548": {
+      "id": "-601265548",
+      "label": "ProductEntityRepository",
+      "parent": "-258635631",
+      "metadata": {
+        "type": "provider",
+        "internal": false,
+        "sourceModuleName": "TypeOrmModule",
+        "durable": false,
+        "static": true,
+        "transient": false,
+        "exported": true,
+        "token": "ProductEntityRepository"
       }
     },
     "-769716755": {
@@ -5594,8 +6422,8 @@
         "token": "ApplicationConfig"
       }
     },
-    "-258635633": {
-      "id": "-258635633",
+    "-258635630": {
+      "id": "-258635630",
       "label": "TypeOrmModule",
       "metadata": {
         "type": "module",
@@ -5604,10 +6432,10 @@
         "internal": false
       }
     },
-    "-166905335": {
-      "id": "-166905335",
+    "-166905332": {
+      "id": "-166905332",
       "label": "ModuleRef",
-      "parent": "-258635633",
+      "parent": "-258635630",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -5623,7 +6451,7 @@
     "-2137902540": {
       "id": "-2137902540",
       "label": "SupplyEntityRepository",
-      "parent": "-258635633",
+      "parent": "-258635630",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -5734,8 +6562,8 @@
         ]
       }
     },
-    "-258635632": {
-      "id": "-258635632",
+    "-258635629": {
+      "id": "-258635629",
       "label": "TypeOrmModule",
       "metadata": {
         "type": "module",
@@ -5744,10 +6572,10 @@
         "internal": false
       }
     },
-    "-166905334": {
-      "id": "-166905334",
+    "-166905331": {
+      "id": "-166905331",
       "label": "ModuleRef",
-      "parent": "-258635632",
+      "parent": "-258635629",
       "metadata": {
         "type": "provider",
         "internal": true,
@@ -5763,7 +6591,7 @@
     "-2137902539": {
       "id": "-2137902539",
       "label": "SupplyEntityRepository",
-      "parent": "-258635632",
+      "parent": "-258635629",
       "metadata": {
         "type": "provider",
         "internal": false,
@@ -5786,6 +6614,16 @@
         "targetModuleName": "SampleAnalysisObservationModule"
       },
       "id": "5570410"
+    },
+    "16676853": {
+      "source": "-1708038907",
+      "target": "-258635634",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SampleAnalysisObservationModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "16676853"
     },
     "42406577": {
       "source": "1625761347",
@@ -5857,6 +6695,41 @@
       },
       "id": "97988402"
     },
+    "129085225": {
+      "source": "-102522462",
+      "target": "1886160003",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "SupplierPurchaseModule",
+        "sourceClassName": "SupplierPurchaseController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "SupplierPurchaseController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "SupplierPurchaseModule",
+        "injectionType": "decorator"
+      },
+      "id": "129085225"
+    },
+    "137307656": {
+      "source": "1280485046",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "137307656"
+    },
+    "154763098": {
+      "source": "-1664647930",
+      "target": "-258635631",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SupplierPurchaseModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "154763098"
+    },
     "166687833": {
       "source": "-19112576",
       "target": "-780315120",
@@ -5866,6 +6739,16 @@
         "targetModuleName": "DocumentEvaluationModule"
       },
       "id": "166687833"
+    },
+    "170738728": {
+      "source": "1280485046",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "170738728"
     },
     "178693614": {
       "source": "-258635634",
@@ -5913,6 +6796,36 @@
         "targetModuleName": "IndustrialPurchaseModule"
       },
       "id": "227816413"
+    },
+    "241073253": {
+      "source": "2142064229",
+      "target": "-258635632",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SampleEvaluationObservationModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "241073253"
+    },
+    "267161444": {
+      "source": "1280485046",
+      "target": "-258635665",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "267161444"
+    },
+    "295227237": {
+      "source": "-258635631",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "295227237"
     },
     "327564375": {
       "source": "-19112576",
@@ -5983,16 +6896,6 @@
         "injectionType": "decorator"
       },
       "id": "333604871"
-    },
-    "353698743": {
-      "source": "1964711460",
-      "target": "-258635663",
-      "metadata": {
-        "type": "module-to-module",
-        "sourceModuleName": "MakerProductModule",
-        "targetModuleName": "TypeOrmModule"
-      },
-      "id": "353698743"
     },
     "356899095": {
       "source": "760985719",
@@ -6119,25 +7022,20 @@
       },
       "id": "473737020"
     },
-    "529892643": {
-      "source": "2142064229",
-      "target": "-258635634",
+    "535696039": {
+      "source": "102038064",
+      "target": "995628441",
       "metadata": {
-        "type": "module-to-module",
-        "sourceModuleName": "SampleEvaluationObservationModule",
-        "targetModuleName": "TypeOrmModule"
+        "type": "class-to-class",
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "sourceClassName": "IndustrialEvaluationObservationController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "IndustrialEvaluationObservationController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "IndustrialEvaluationObservationModule",
+        "injectionType": "decorator"
       },
-      "id": "529892643"
-    },
-    "542976572": {
-      "source": "338946367",
-      "target": "-258635658",
-      "metadata": {
-        "type": "module-to-module",
-        "sourceModuleName": "SampleAnalysisModule",
-        "targetModuleName": "TypeOrmModule"
-      },
-      "id": "542976572"
+      "id": "535696039"
     },
     "577033691": {
       "source": "-1119992209",
@@ -6148,16 +7046,6 @@
         "targetModuleName": "InternalCoreModule"
       },
       "id": "577033691"
-    },
-    "591612748": {
-      "source": "1625761347",
-      "target": "-258635659",
-      "metadata": {
-        "type": "module-to-module",
-        "sourceModuleName": "SampleModule",
-        "targetModuleName": "TypeOrmModule"
-      },
-      "id": "591612748"
     },
     "598682327": {
       "source": "1132106260",
@@ -6294,6 +7182,16 @@
       },
       "id": "798861832"
     },
+    "798924773": {
+      "source": "-19112576",
+      "target": "1280485046",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "IndustrialEvaluationObservationModule"
+      },
+      "id": "798924773"
+    },
     "808657383": {
       "source": "-418422320",
       "target": "-1956379986",
@@ -6363,6 +7261,16 @@
         "targetModuleName": "TypeOrmCoreModule"
       },
       "id": "879231749"
+    },
+    "904241483": {
+      "source": "1550468019",
+      "target": "-258635664",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "IndustrialPurchaseModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "904241483"
     },
     "986299906": {
       "source": "-1512405941",
@@ -6479,16 +7387,6 @@
         "injectionType": "constructor"
       },
       "id": "1028357956"
-    },
-    "1031056429": {
-      "source": "-1438445322",
-      "target": "-258635661",
-      "metadata": {
-        "type": "module-to-module",
-        "sourceModuleName": "RequestObservationModule",
-        "targetModuleName": "TypeOrmModule"
-      },
-      "id": "1031056429"
     },
     "1033762794": {
       "source": "545846245",
@@ -6680,6 +7578,16 @@
       },
       "id": "1228426568"
     },
+    "1235563932": {
+      "source": "-258635629",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1235563932"
+    },
     "1249521770": {
       "source": "-2040511040",
       "target": "555176277",
@@ -6704,6 +7612,16 @@
         "injectionType": "decorator"
       },
       "id": "1294617532"
+    },
+    "1304056849": {
+      "source": "-19112576",
+      "target": "659752316",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "ManufacturerStatusModule"
+      },
+      "id": "1304056849"
     },
     "1308531632": {
       "source": "-258635658",
@@ -6735,16 +7653,6 @@
       },
       "id": "1328930248"
     },
-    "1335158284": {
-      "source": "1550468019",
-      "target": "-258635665",
-      "metadata": {
-        "type": "module-to-module",
-        "sourceModuleName": "IndustrialPurchaseModule",
-        "targetModuleName": "TypeOrmModule"
-      },
-      "id": "1335158284"
-    },
     "1374769284": {
       "source": "-258635632",
       "target": "555176277",
@@ -6764,6 +7672,16 @@
         "targetModuleName": "TypeOrmCoreModule"
       },
       "id": "1398618956"
+    },
+    "1431571359": {
+      "source": "-1664647930",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SupplierPurchaseModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "1431571359"
     },
     "1439600260": {
       "source": "-19112576",
@@ -6785,6 +7703,16 @@
       },
       "id": "1454288893"
     },
+    "1457195236": {
+      "source": "27136456",
+      "target": "-258635630",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SupplyModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "1457195236"
+    },
     "1472352117": {
       "source": "-19112576",
       "target": "-1430800986",
@@ -6795,21 +7723,30 @@
       },
       "id": "1472352117"
     },
-    "1480049127": {
-      "source": "1688619051",
-      "target": "-643452085",
+    "1472480024": {
+      "source": "254463022",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "IndustrialEvaluationModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "1472480024"
+    },
+    "1576007257": {
+      "source": "1111071346",
+      "target": "-237646549",
       "metadata": {
         "type": "class-to-class",
-        "sourceModuleName": "DevtoolsModule",
-        "sourceClassName": "DevtoolsHttpServerHost",
-        "targetClassName": "CONFIGURABLE_MODULE_OPTIONS[ac67f396ba568ffce8072]",
-        "sourceClassToken": "DevtoolsHttpServerHost",
-        "targetClassToken": "CONFIGURABLE_MODULE_OPTIONS[ac67f396ba568ffce8072]",
-        "targetModuleName": "DevtoolsModule",
-        "keyOrIndex": 2,
-        "injectionType": "constructor"
+        "sourceModuleName": "IndustrialEvaluationModule",
+        "sourceClassName": "IndustrialEvaluationController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "IndustrialEvaluationController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "IndustrialEvaluationModule",
+        "injectionType": "decorator"
       },
-      "id": "1480049127"
+      "id": "1576007257"
     },
     "1598459401": {
       "source": "545846248",
@@ -6837,6 +7774,16 @@
         "internal": true
       },
       "id": "1606060785"
+    },
+    "1611145515": {
+      "source": "1709169742",
+      "target": "-258635660",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ProductModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "1611145515"
     },
     "1619373950": {
       "source": "1375602908",
@@ -6922,6 +7869,16 @@
         "targetModuleName": "InternalCoreModule"
       },
       "id": "1635338963"
+    },
+    "1664020813": {
+      "source": "760985719",
+      "target": "-258635629",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TechnicalDocumentModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "1664020813"
     },
     "1692121058": {
       "source": "254463022",
@@ -7033,6 +7990,16 @@
       },
       "id": "1773166660"
     },
+    "1825148858": {
+      "source": "338946367",
+      "target": "-258635656",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "SampleAnalysisModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "1825148858"
+    },
     "1873772765": {
       "source": "-1438445322",
       "target": "-1026304274",
@@ -7143,6 +8110,16 @@
       },
       "id": "1931590692"
     },
+    "1946164820": {
+      "source": "-258635629",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "1946164820"
+    },
     "1966563436": {
       "source": "-258635632",
       "target": "-1026304274",
@@ -7213,6 +8190,16 @@
       },
       "id": "1977050177"
     },
+    "2006676939": {
+      "source": "618510865",
+      "target": "-258635663",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "IndustrialPurchaseObservationModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "2006676939"
+    },
     "2048157900": {
       "source": "-258635665",
       "target": "-1026304274",
@@ -7223,15 +8210,15 @@
       },
       "id": "2048157900"
     },
-    "2082501865": {
-      "source": "1709169742",
-      "target": "-258635662",
+    "2073243635": {
+      "source": "-1664647930",
+      "target": "-1026304274",
       "metadata": {
         "type": "module-to-module",
-        "sourceModuleName": "ProductModule",
-        "targetModuleName": "TypeOrmModule"
+        "sourceModuleName": "SupplierPurchaseModule",
+        "targetModuleName": "TypeOrmCoreModule"
       },
-      "id": "2082501865"
+      "id": "2073243635"
     },
     "2090103949": {
       "source": "545846242",
@@ -7373,6 +8360,22 @@
       },
       "id": "-1609063867"
     },
+    "-334435140": {
+      "source": "1688619051",
+      "target": "607976613",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "DevtoolsModule",
+        "sourceClassName": "DevtoolsHttpServerHost",
+        "targetClassName": "CONFIGURABLE_MODULE_OPTIONS[8679976f16f486a1eb189]",
+        "sourceClassToken": "DevtoolsHttpServerHost",
+        "targetClassToken": "CONFIGURABLE_MODULE_OPTIONS[8679976f16f486a1eb189]",
+        "targetModuleName": "DevtoolsModule",
+        "keyOrIndex": 2,
+        "injectionType": "constructor"
+      },
+      "id": "-334435140"
+    },
     "-692061701": {
       "source": "-19112576",
       "target": "-1033621697",
@@ -7492,6 +8495,16 @@
         "targetModuleName": "SampleEvaluationModule"
       },
       "id": "-1143217925"
+    },
+    "-1536148106": {
+      "source": "-19112576",
+      "target": "-1664647930",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "AppModule",
+        "targetModuleName": "SupplierPurchaseModule"
+      },
+      "id": "-1536148106"
     },
     "-553637683": {
       "source": "-19112576",
@@ -7813,6 +8826,16 @@
       },
       "id": "-1785636518"
     },
+    "-894289084": {
+      "source": "1280485046",
+      "target": "-1512405941",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "targetModuleName": "ObservationModule"
+      },
+      "id": "-894289084"
+    },
     "-1580627908": {
       "source": "1550468019",
       "target": "-1026304274",
@@ -7823,15 +8846,15 @@
       },
       "id": "-1580627908"
     },
-    "-949526934": {
-      "source": "618510865",
-      "target": "-258635664",
+    "-1352874485": {
+      "source": "-258635664",
+      "target": "-1026304274",
       "metadata": {
         "type": "module-to-module",
-        "sourceModuleName": "IndustrialPurchaseObservationModule",
-        "targetModuleName": "TypeOrmModule"
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
       },
-      "id": "-949526934"
+      "id": "-1352874485"
     },
     "-1609371499": {
       "source": "618510865",
@@ -7853,26 +8876,6 @@
       },
       "id": "-987429033"
     },
-    "-1352874485": {
-      "source": "-258635664",
-      "target": "-1026304274",
-      "metadata": {
-        "type": "module-to-module",
-        "sourceModuleName": "TypeOrmModule",
-        "targetModuleName": "TypeOrmCoreModule"
-      },
-      "id": "-1352874485"
-    },
-    "-911988959": {
-      "source": "1964711460",
-      "target": "555176277",
-      "metadata": {
-        "type": "module-to-module",
-        "sourceModuleName": "MakerProductModule",
-        "targetModuleName": "InternalCoreModule"
-      },
-      "id": "-911988959"
-    },
     "-227493402": {
       "source": "-258635663",
       "target": "555176277",
@@ -7892,6 +8895,66 @@
         "targetModuleName": "TypeOrmCoreModule"
       },
       "id": "-458939574"
+    },
+    "-932783562": {
+      "source": "1964711460",
+      "target": "-258635662",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "MakerProductModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "-932783562"
+    },
+    "-911988959": {
+      "source": "1964711460",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "MakerProductModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-911988959"
+    },
+    "-1307035449": {
+      "source": "-258635662",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1307035449"
+    },
+    "-1158643586": {
+      "source": "659752316",
+      "target": "-258635661",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ManufacturerStatusModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "-1158643586"
+    },
+    "-1892930630": {
+      "source": "659752316",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ManufacturerStatusModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1892930630"
+    },
+    "-1592725384": {
+      "source": "659752316",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "ManufacturerStatusModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-1592725384"
     },
     "-570090502": {
       "source": "1709169742",
@@ -7913,15 +8976,25 @@
       },
       "id": "-245764234"
     },
-    "-1307035449": {
-      "source": "-258635662",
-      "target": "555176277",
+    "-2072102137": {
+      "source": "-258635660",
+      "target": "-1026304274",
       "metadata": {
         "type": "module-to-module",
         "sourceModuleName": "TypeOrmModule",
-        "targetModuleName": "InternalCoreModule"
+        "targetModuleName": "TypeOrmCoreModule"
       },
-      "id": "-1307035449"
+      "id": "-2072102137"
+    },
+    "-290095402": {
+      "source": "-1438445322",
+      "target": "-258635659",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "RequestObservationModule",
+        "targetModuleName": "TypeOrmModule"
+      },
+      "id": "-290095402"
     },
     "-1012588235": {
       "source": "-1438445322",
@@ -7933,15 +9006,25 @@
       },
       "id": "-1012588235"
     },
-    "-1850391243": {
+    "-1446240801": {
+      "source": "-258635659",
+      "target": "555176277",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "InternalCoreModule"
+      },
+      "id": "-1446240801"
+    },
+    "-1374713186": {
       "source": "-1430800986",
-      "target": "-258635660",
+      "target": "-258635658",
       "metadata": {
         "type": "module-to-module",
         "sourceModuleName": "RequestOfferModule",
         "targetModuleName": "TypeOrmModule"
       },
-      "id": "-1850391243"
+      "id": "-1374713186"
     },
     "-2136762092": {
       "source": "-1430800986",
@@ -7953,15 +9036,15 @@
       },
       "id": "-2136762092"
     },
-    "-2072102137": {
-      "source": "-258635660",
-      "target": "-1026304274",
+    "-2055991606": {
+      "source": "1625761347",
+      "target": "-258635657",
       "metadata": {
         "type": "module-to-module",
-        "sourceModuleName": "TypeOrmModule",
-        "targetModuleName": "TypeOrmCoreModule"
+        "sourceModuleName": "SampleModule",
+        "targetModuleName": "TypeOrmModule"
       },
-      "id": "-2072102137"
+      "id": "-2055991606"
     },
     "-1554387039": {
       "source": "1625761347",
@@ -7973,15 +9056,15 @@
       },
       "id": "-1554387039"
     },
-    "-1446240801": {
-      "source": "-258635659",
-      "target": "555176277",
+    "-2092500753": {
+      "source": "-258635657",
+      "target": "-1026304274",
       "metadata": {
         "type": "module-to-module",
         "sourceModuleName": "TypeOrmModule",
-        "targetModuleName": "InternalCoreModule"
+        "targetModuleName": "TypeOrmCoreModule"
       },
-      "id": "-1446240801"
+      "id": "-2092500753"
     },
     "-552275222": {
       "source": "338946367",
@@ -7993,15 +9076,25 @@
       },
       "id": "-552275222"
     },
-    "-1662939180": {
-      "source": "-1708038907",
-      "target": "-258635657",
+    "-389899646": {
+      "source": "-258635656",
+      "target": "555176277",
       "metadata": {
         "type": "module-to-module",
-        "sourceModuleName": "SampleAnalysisObservationModule",
-        "targetModuleName": "TypeOrmModule"
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "InternalCoreModule"
       },
-      "id": "-1662939180"
+      "id": "-389899646"
+    },
+    "-1198565842": {
+      "source": "-258635656",
+      "target": "-1026304274",
+      "metadata": {
+        "type": "module-to-module",
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
+      },
+      "id": "-1198565842"
     },
     "-1291549073": {
       "source": "-1708038907",
@@ -8033,25 +9126,25 @@
       },
       "id": "-1303435117"
     },
-    "-2092500753": {
-      "source": "-258635657",
-      "target": "-1026304274",
+    "-761113918": {
+      "source": "-258635634",
+      "target": "555176277",
       "metadata": {
         "type": "module-to-module",
         "sourceModuleName": "TypeOrmModule",
-        "targetModuleName": "TypeOrmCoreModule"
+        "targetModuleName": "InternalCoreModule"
       },
-      "id": "-2092500753"
+      "id": "-761113918"
     },
-    "-1185287628": {
+    "-2014433037": {
       "source": "-1190388769",
-      "target": "-258635656",
+      "target": "-258635633",
       "metadata": {
         "type": "module-to-module",
         "sourceModuleName": "SampleEvaluationModule",
         "targetModuleName": "TypeOrmModule"
       },
-      "id": "-1185287628"
+      "id": "-2014433037"
     },
     "-1855583324": {
       "source": "-1190388769",
@@ -8073,25 +9166,15 @@
       },
       "id": "-280841522"
     },
-    "-389899646": {
-      "source": "-258635656",
+    "-1840655965": {
+      "source": "-258635633",
       "target": "555176277",
       "metadata": {
         "type": "module-to-module",
         "sourceModuleName": "TypeOrmModule",
         "targetModuleName": "InternalCoreModule"
       },
-      "id": "-389899646"
-    },
-    "-1198565842": {
-      "source": "-258635656",
-      "target": "-1026304274",
-      "metadata": {
-        "type": "module-to-module",
-        "sourceModuleName": "TypeOrmModule",
-        "targetModuleName": "TypeOrmCoreModule"
-      },
-      "id": "-1198565842"
+      "id": "-1840655965"
     },
     "-824948181": {
       "source": "2142064229",
@@ -8103,25 +9186,15 @@
       },
       "id": "-824948181"
     },
-    "-761113918": {
-      "source": "-258635634",
-      "target": "555176277",
+    "-1434468949": {
+      "source": "-258635631",
+      "target": "-1026304274",
       "metadata": {
         "type": "module-to-module",
         "sourceModuleName": "TypeOrmModule",
-        "targetModuleName": "InternalCoreModule"
+        "targetModuleName": "TypeOrmCoreModule"
       },
-      "id": "-761113918"
-    },
-    "-1013849177": {
-      "source": "27136456",
-      "target": "-258635633",
-      "metadata": {
-        "type": "module-to-module",
-        "sourceModuleName": "SupplyModule",
-        "targetModuleName": "TypeOrmModule"
-      },
-      "id": "-1013849177"
+      "id": "-1434468949"
     },
     "-2074242268": {
       "source": "27136456",
@@ -8133,25 +9206,25 @@
       },
       "id": "-2074242268"
     },
-    "-1840655965": {
-      "source": "-258635633",
+    "-784314810": {
+      "source": "-258635630",
       "target": "555176277",
       "metadata": {
         "type": "module-to-module",
         "sourceModuleName": "TypeOrmModule",
         "targetModuleName": "InternalCoreModule"
       },
-      "id": "-1840655965"
+      "id": "-784314810"
     },
-    "-1466049483": {
-      "source": "760985719",
-      "target": "-258635632",
+    "-540534038": {
+      "source": "-258635630",
+      "target": "-1026304274",
       "metadata": {
         "type": "module-to-module",
-        "sourceModuleName": "TechnicalDocumentModule",
-        "targetModuleName": "TypeOrmModule"
+        "sourceModuleName": "TypeOrmModule",
+        "targetModuleName": "TypeOrmCoreModule"
       },
-      "id": "-1466049483"
+      "id": "-540534038"
     },
     "-1973822087": {
       "source": "760985719",
@@ -8583,6 +9656,66 @@
       },
       "id": "-1580478514"
     },
+    "-592179047": {
+      "source": "102038064",
+      "target": "995628441",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "sourceClassName": "IndustrialEvaluationObservationController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "IndustrialEvaluationObservationController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "IndustrialEvaluationObservationModule",
+        "injectionType": "decorator"
+      },
+      "id": "-592179047"
+    },
+    "-592179046": {
+      "source": "102038064",
+      "target": "995628441",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "sourceClassName": "IndustrialEvaluationObservationController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "IndustrialEvaluationObservationController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "IndustrialEvaluationObservationModule",
+        "injectionType": "decorator"
+      },
+      "id": "-592179046"
+    },
+    "-592179045": {
+      "source": "102038064",
+      "target": "995628441",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "sourceClassName": "IndustrialEvaluationObservationController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "IndustrialEvaluationObservationController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "IndustrialEvaluationObservationModule",
+        "injectionType": "decorator"
+      },
+      "id": "-592179045"
+    },
+    "-592179044": {
+      "source": "102038064",
+      "target": "995628441",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "IndustrialEvaluationObservationModule",
+        "sourceClassName": "IndustrialEvaluationObservationController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "IndustrialEvaluationObservationController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "IndustrialEvaluationObservationModule",
+        "injectionType": "decorator"
+      },
+      "id": "-592179044"
+    },
     "-1396254115": {
       "source": "2025462204",
       "target": "-622108688",
@@ -8732,6 +9865,81 @@
         "injectionType": "decorator"
       },
       "id": "-973512414"
+    },
+    "-1904246826": {
+      "source": "-846559794",
+      "target": "-1512824391",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ManufacturerStatusModule",
+        "sourceClassName": "ManufacturerStatusController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "ManufacturerStatusController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "ManufacturerStatusModule",
+        "injectionType": "decorator"
+      },
+      "id": "-1904246826"
+    },
+    "-325128696": {
+      "source": "-846559794",
+      "target": "-1512824391",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ManufacturerStatusModule",
+        "sourceClassName": "ManufacturerStatusController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "ManufacturerStatusController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "ManufacturerStatusModule",
+        "injectionType": "decorator"
+      },
+      "id": "-325128696"
+    },
+    "-325128695": {
+      "source": "-846559794",
+      "target": "-1512824391",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ManufacturerStatusModule",
+        "sourceClassName": "ManufacturerStatusController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "ManufacturerStatusController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "ManufacturerStatusModule",
+        "injectionType": "decorator"
+      },
+      "id": "-325128695"
+    },
+    "-325128694": {
+      "source": "-846559794",
+      "target": "-1512824391",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ManufacturerStatusModule",
+        "sourceClassName": "ManufacturerStatusController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "ManufacturerStatusController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "ManufacturerStatusModule",
+        "injectionType": "decorator"
+      },
+      "id": "-325128694"
+    },
+    "-325128693": {
+      "source": "-846559794",
+      "target": "-1512824391",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "ManufacturerStatusModule",
+        "sourceClassName": "ManufacturerStatusController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "ManufacturerStatusController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "ManufacturerStatusModule",
+        "injectionType": "decorator"
+      },
+      "id": "-325128693"
     },
     "-313730212": {
       "source": "494908464",
@@ -9047,6 +10255,66 @@
         "injectionType": "decorator"
       },
       "id": "-1957437763"
+    },
+    "-503147365": {
+      "source": "-102522462",
+      "target": "1886160003",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "SupplierPurchaseModule",
+        "sourceClassName": "SupplierPurchaseController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "SupplierPurchaseController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "SupplierPurchaseModule",
+        "injectionType": "decorator"
+      },
+      "id": "-503147365"
+    },
+    "-503147364": {
+      "source": "-102522462",
+      "target": "1886160003",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "SupplierPurchaseModule",
+        "sourceClassName": "SupplierPurchaseController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "SupplierPurchaseController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "SupplierPurchaseModule",
+        "injectionType": "decorator"
+      },
+      "id": "-503147364"
+    },
+    "-503147363": {
+      "source": "-102522462",
+      "target": "1886160003",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "SupplierPurchaseModule",
+        "sourceClassName": "SupplierPurchaseController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "SupplierPurchaseController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "SupplierPurchaseModule",
+        "injectionType": "decorator"
+      },
+      "id": "-503147363"
+    },
+    "-503147362": {
+      "source": "-102522462",
+      "target": "1886160003",
+      "metadata": {
+        "type": "class-to-class",
+        "sourceModuleName": "SupplierPurchaseModule",
+        "sourceClassName": "SupplierPurchaseController",
+        "targetClassName": "ParseIntPipe",
+        "sourceClassToken": "SupplierPurchaseController",
+        "targetClassToken": "ParseIntPipe",
+        "targetModuleName": "SupplierPurchaseModule",
+        "injectionType": "decorator"
+      },
+      "id": "-503147362"
     },
     "-1827583790": {
       "source": "1047934438",

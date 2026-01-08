@@ -1,45 +1,46 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Put,
-  Delete,
-  Query,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Patch, Delete, Query, DefaultValuePipe, ParseIntPipe } from '@nestjs/common';
 import { ManufacturerStatusService } from './manufacturer_status.service';
-import { CreateManufacturerStatusDto } from './dto';
+import { ManufacturerStatusEntity } from './manufacturer_status.entity';
+import { CreateManufacturerStatusDto, ManufacturerStatusResponseDto, UpdateManufacturerStatusDto } from './dtos';
 
 @Controller('manufacturer_status')
 export class ManufacturerStatusController {
-  constructor(private readonly svc: ManufacturerStatusService) {}
+  constructor(private readonly statusService: ManufacturerStatusService) {}
 
   @Post()
-  create(@Body() dto: CreateManufacturerStatusDto) {
-    return this.svc.create(dto);
+  async createManufacturerStatus(
+    @Body() dto: CreateManufacturerStatusDto,
+  ): Promise<{ message: string; data: ManufacturerStatusEntity }> {
+    return this.statusService.create(dto);
   }
 
   @Get()
-  findAll(@Query('limit') limit: number, @Query('offset') offset: number) {
-    return this.svc.findAll(limit ? +limit : 100, offset ? +offset : 0);
+  async getManufacturerStates(
+    @Query('limit', new DefaultValuePipe(100), ParseIntPipe) limit: number,
+    @Query('offset', new DefaultValuePipe(0), ParseIntPipe) offset: number,
+  ): Promise<ManufacturerStatusResponseDto[]> {
+    return this.statusService.findAll(limit, offset); 
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.svc.findOne(+id);
+  async getManufacturerStatus(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<ManufacturerStatusResponseDto> {
+    return this.statusService.findOne(id);
   }
 
-  @Put(':id')
-  update(
-    @Param('id') id: string,
-    @Body() dto: Partial<CreateManufacturerStatusDto>,
-  ) {
-    return this.svc.update(+id, dto);
+  @Patch(':id')
+  async updateManufacturerStatus(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() dto: UpdateManufacturerStatusDto,
+  ): Promise<{ message: string }> {
+    return this.statusService.update(id, dto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.svc.remove(+id);
+  async deleteManufacturerStatus(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<{ message: string }> {
+    return this.statusService.remove(id);
   }
 }

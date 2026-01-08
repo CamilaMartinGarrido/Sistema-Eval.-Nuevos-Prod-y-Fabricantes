@@ -1,6 +1,8 @@
 import { Expose, Type } from 'class-transformer';
 import { SupplyResponseDto } from 'src/supply/dtos/supply-response.dto';
+import { SupplierPurchaseResponseDto } from 'src/supplier_purchase/dtos/supplier_purchase-response.dto';
 import { ExploratoryOfferObservationResponseDto } from 'src/exploratory_offer_observation/dtos/exploratory_offer_observation-response.dto';
+
 
 export class ExploratoryOfferResponseDto {
   @Expose()
@@ -11,13 +13,14 @@ export class ExploratoryOfferResponseDto {
   supply: SupplyResponseDto;
 
   @Expose()
-  supplier_price: number;
+  offered_price: number;
       
   @Expose()
-  last_purchase_price: number;
+  @Type(() => SupplierPurchaseResponseDto)
+  reference_purchase: SupplierPurchaseResponseDto;
 
   @Expose()
-  is_competitive: boolean;
+  analysis_date: string;
 
   @Expose()
   @Type(() => ExploratoryOfferObservationResponseDto)

@@ -2,6 +2,7 @@ import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany, Uniqu
 import { CommercialEntityEntity } from '../commercial_entity/commercial_entity.entity';
 import { ProductEntity } from '../product/product.entity';
 import { SupplyEntity } from '../supply/supply.entity';
+import { ManufacturerStatusEntity } from '../manufacturer_status/manufacturer_status.entity';
 
 @Unique(['product', 'maker_entity'])
 @Entity({ name: 'maker_product' })
@@ -29,4 +30,7 @@ export class MakerProductEntity {
 
   @OneToMany(() => SupplyEntity, (supply) => supply.maker_product)
   supplies: SupplyEntity[];
+
+  @OneToMany(() => ManufacturerStatusEntity, (status) => status.maker_product)
+  manufacturer_states: ManufacturerStatusEntity[];
 }
