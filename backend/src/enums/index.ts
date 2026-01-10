@@ -1,9 +1,3 @@
-// Rol de Entidad Comercial
-export enum RoleEnum {
-  M = 'Maker',
-  S = 'Supplier',
-}
-
 // Origen de la solicitud
 export enum OriginRequestEnum {
   BIOCUBAFARMA = 'BioCubaFarma (BCF)',
@@ -26,10 +20,10 @@ export enum ProductTypeEnum {
   D = 'Dispositivo',
 }
 
-// Resultado del análisis de muestra
-export enum ResultSampleAnalysisEnum {
-  CONFORME = 'Conforme',
-  NO_CONFORME = 'No Conforme',
+// Rol de Entidad Comercial
+export enum EntityRoleEnum {
+  F = 'Fabricante',
+  P = 'Proveedor',
 }
 
 // Tipos de documento técnico
@@ -38,6 +32,12 @@ export enum DocumentTypeEnum {
   FICHA_TECNICA = 'Ficha Técnica',
   PERMISO_SANITARIO = 'Permiso Sanitario',
   OTRO = 'Otro',
+}
+
+// Resultado del análisis de muestra
+export enum ResultSampleAnalysisEnum {
+  CONFORME = 'Conforme',
+  NO_CONFORME = 'No Conforme',
 }
 
 // Estado compra industrial

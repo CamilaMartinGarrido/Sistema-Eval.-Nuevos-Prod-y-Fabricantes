@@ -2,6 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToMany, Unique } from 'typeo
 import { ProductTypeEnum } from '../enums';
 import { ApplicationEntity } from '../application/application.entity';
 import { MakerProductEntity } from '../maker_product/maker_product.entity';
+import { SupplierPurchaseEntity } from '../supplier_purchase/supplier_purchase.entity';
 
 @Unique(['description', 'product_type'])
 @Entity({ name: 'product' })
@@ -27,8 +28,11 @@ export class ProductEntity {
   priority: number;
 
   @OneToMany(() => ApplicationEntity, (application) => application.product)
-    applications: ApplicationEntity[];
+  applications: ApplicationEntity[];
   
   @OneToMany(() => MakerProductEntity, (maker_product) => maker_product.product)
   maker_products: MakerProductEntity[];
+
+  @OneToMany(() => SupplierPurchaseEntity, supplier_purchase => supplier_purchase.product)
+  supplier_purchases: SupplierPurchaseEntity[];
 }

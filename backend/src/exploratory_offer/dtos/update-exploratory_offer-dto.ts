@@ -1,4 +1,4 @@
-import { IsBoolean, IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class UpdateExploratoryOfferDto {
   @IsNumber()
@@ -7,13 +7,13 @@ export class UpdateExploratoryOfferDto {
 
   @IsNumber()
   @IsOptional()
-  supplier_price?: number;
+  offered_price?: number;
     
   @IsNumber()
   @IsOptional()
-  last_purchase_price?: number;
+  reference_purchase_id?: number;
 
-  @IsBoolean()
+  @IsString()
   @IsOptional()
-  is_competitive?: boolean;
+  analysis_date?: string;
 }

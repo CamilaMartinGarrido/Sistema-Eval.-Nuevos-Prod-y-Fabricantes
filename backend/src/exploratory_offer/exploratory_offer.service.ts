@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ExploratoryOfferEntity } from './exploratory_offer.entity';
 import { SupplyEntity } from 'src/supply/supply.entity';
+import { SupplierPurchaseEntity } from 'src/supplier_purchase/supplier_purchase.entity';
 import { CreateExploratoryOfferDto, UpdateExploratoryOfferDto, ExploratoryOfferResponseDto } from './dtos';
 import { toDto } from 'src/common/utils/mapper.util';
 
@@ -14,15 +15,23 @@ export class ExploratoryOfferService {
 
     @InjectRepository(SupplyEntity)
     private readonly supplyRepository: Repository<SupplyEntity>,
+
+    @InjectRepository(SupplierPurchaseEntity)
+    private readonly supplierPurchaseRepository: Repository<SupplierPurchaseEntity>,
   ) {}
 
   async create(dto: CreateExploratoryOfferDto): Promise<{ message: string; data: ExploratoryOfferEntity }> {
     const supply = await this.supplyRepository.findOne({ where: { id: dto.supply_id } });
     if (!supply) throw new NotFoundException('Supply not found');
 
+    const reference_purchase = await this.supplierPurchaseRepository.findOne({ where: { id: dto.reference_purchase_id } });
+    if (!reference_purchase) throw new NotFoundException('Supplier Purchase not found');
+
     const offer = this.exploratoryOfferRepository.create({
       supply,
-      is_competitive: dto.is_competitive,
+      reference_purchase,
+      offered_price: dto.offered_price,
+      analysis_date: dto.analysis_date
     });
 
     const created = await this.exploratoryOfferRepository.save(offer);
@@ -39,6 +48,7 @@ export class ExploratoryOfferService {
       skip: offset,
       relations: [
         'supply',
+        'reference_purchase',
         'exploratory_offer_observs',
         'exploratory_offer_observs.observation',
       ],
@@ -54,6 +64,7 @@ export class ExploratoryOfferService {
       where: { id },
       relations: [
         'supply',
+        'reference_purchase',
         'exploratory_offer_observs',
         'exploratory_offer_observs.observation',
       ],
@@ -71,7 +82,7 @@ export class ExploratoryOfferService {
   async update(id: number, dto: UpdateExploratoryOfferDto) {
     const offer = await this.exploratoryOfferRepository.findOne({
       where: { id },
-      relations: ['supply'],
+      relations: ['supply', 'reference_purchase'],
     });
 
     if (!offer) {
@@ -84,16 +95,18 @@ export class ExploratoryOfferService {
       offer.supply = supply;
     }
 
-    if (dto.supplier_price !== undefined) {
-      offer.supplier_price = dto.supplier_price;
-    } 
-
-    if (dto.last_purchase_price !== undefined) {
-      offer.last_purchase_price = dto.last_purchase_price;
+    if (dto.reference_purchase_id) {
+      const reference_purchase = await this.supplierPurchaseRepository.findOne({ where: { id: dto.reference_purchase_id } });
+      if (!reference_purchase) throw new NotFoundException('Supplier Purchase not found');
+      offer.reference_purchase = reference_purchase;
     }
 
-    if (dto.is_competitive !== undefined) {
-      offer.is_competitive = dto.is_competitive;
+    if (dto.offered_price !== undefined) {
+      offer.offered_price = dto.offered_price;
+    } 
+
+    if (dto.analysis_date !== undefined) {
+      offer.analysis_date = dto.analysis_date;
     }
 
     await this.exploratoryOfferRepository.save(offer);

@@ -8,8 +8,8 @@ import { RequestObservationEntity } from '../request_observation/request_observa
 @Unique(['client', 'product', 'receipt_date'])
 @Index('idx_application_client', ['client'])
 @Index('idx_application_receipt_date', ['receipt_date'])
-@Entity({ name: 'application' })
-export class ApplicationEntity {
+@Entity({ name: 'application_product' })
+export class ApplicationProductEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
 

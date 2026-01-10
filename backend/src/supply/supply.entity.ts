@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany, Unique } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany, Unique, Index } from 'typeorm';
 import { ExploratoryOfferEntity } from '../exploratory_offer/exploratory_offer.entity';
 import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
 import { MakerProductEntity } from '../maker_product/maker_product.entity';
@@ -8,6 +8,8 @@ import { SampleEntity } from '../sample/sample.entity';
 
 @Unique(['supplier_entity', 'maker_product'])
 @Entity({ name: 'supply' })
+@Index('idx_supply_supplier', ['supplier_entity'])
+@Index('idx_supply_maker_product', ['maker_product'])
 export class SupplyEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;

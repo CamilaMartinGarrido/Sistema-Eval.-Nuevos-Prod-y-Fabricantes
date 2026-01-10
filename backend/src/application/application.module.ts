@@ -4,11 +4,10 @@ import { ApplicationService } from './application.service';
 import { ApplicationController } from './application.controller';
 import { ApplicationEntity } from './application.entity';
 import { ClientEntity } from '../client/client.entity';
-import { ProductEntity } from '../product/product.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([ApplicationEntity, ClientEntity, ProductEntity]),
+    TypeOrmModule.forFeature([ApplicationEntity, ClientEntity]),
   ],
   providers: [ApplicationService],
   controllers: [ApplicationController],

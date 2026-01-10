@@ -1,4 +1,4 @@
-import { IsBoolean, IsNotEmpty, IsNumber, IsOptional } from 'class-validator';
+import { IsBoolean, IsNotEmpty, IsNumber } from 'class-validator';
 
 export class CreateExploratoryOfferDto {
   @IsNumber()
@@ -6,14 +6,14 @@ export class CreateExploratoryOfferDto {
   supply_id: number;
 
   @IsNumber()
-  @IsOptional()
-  supplier_price?: number;
+  @IsNotEmpty()
+  offered_price: number;
     
   @IsNumber()
-  @IsOptional()
-  last_purchase_price?: number;
+  @IsNotEmpty()
+  reference_purchase_id: number;
 
   @IsBoolean()
-  @IsOptional()
-  is_competitive?: boolean;
+  @IsNotEmpty()
+  analysis_date: string;
 }
