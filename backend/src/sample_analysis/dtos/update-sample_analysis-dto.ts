@@ -1,5 +1,4 @@
-import { IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
-import { ResultSampleAnalysisEnum } from 'src/enums';
+import { IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class UpdateSampleAnalysisDto {
   @IsNumber()
@@ -14,7 +13,15 @@ export class UpdateSampleAnalysisDto {
   @IsOptional()
   analysis_date?: string;
 
-  @IsEnum(ResultSampleAnalysisEnum)
+  @IsString()
   @IsOptional()
-  result?: ResultSampleAnalysisEnum;
+  analysis_name?: string;
+
+  @IsString()
+  @IsOptional()
+  analysis_result_details?: string;
+
+  @IsString()
+  @IsOptional()
+  raw_data_path?: string;
 }

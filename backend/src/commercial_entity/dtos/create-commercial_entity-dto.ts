@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsString, IsOptional, IsArray, IsEnum } from 'class-validator';
-import { RoleEnum } from 'src/enums';
+import { EntityRoleEnum } from 'src/enums';
 
 export class CreateCommercialEntityDto {
   @IsString()
@@ -12,6 +12,6 @@ export class CreateCommercialEntityDto {
 
   @IsOptional()
   @IsArray()
-  @IsEnum(RoleEnum, { each: true })
-  roles?: RoleEnum[];
+  @IsEnum(EntityRoleEnum, { each: true })
+  roles?: EntityRoleEnum[];
 }

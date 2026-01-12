@@ -1,6 +1,6 @@
 import { Expose, Type } from 'class-transformer';
-import { ClientResponseDto } from 'src/client/dtos/client-response-dto';
-import { ClientSupplyResponseDto } from 'src/client_supply/dtos/client_supply-response.dto';
+import { ResultSampleEvaluationEnum } from 'src/enums';
+import { EvaluationProcessResponseDto } from 'src/evaluation_process/dtos/evaluation_process-response.dto';
 import { SampleAnalysisResponseDto } from 'src/sample_analysis/dtos/sample_analysis-response.dto';
 import { SampleEvaluationObservationResponseDto } from 'src/sample_evaluation_observation/dtos/sample_evaluation_observation-response.dto';
 
@@ -9,8 +9,8 @@ export class SampleEvaluationResponseDto {
   id: number;
 
   @Expose()
-  @Type(() => ClientSupplyResponseDto)
-  client_supply: ClientSupplyResponseDto;
+  @Type(() => EvaluationProcessResponseDto)
+  evaluation_process: EvaluationProcessResponseDto;
 
   @Expose()
   @Type(() => SampleAnalysisResponseDto)
@@ -20,11 +20,13 @@ export class SampleEvaluationResponseDto {
   self_performed: boolean;
   
   @Expose()
-  @Type(() => ClientResponseDto)
-  source_client: ClientResponseDto;
+  send_analysis_date: string;
 
   @Expose()
   evaluation_date: string;
+
+  @Expose()
+  result: ResultSampleEvaluationEnum;
 
   @Expose()
   decision_continue: boolean;

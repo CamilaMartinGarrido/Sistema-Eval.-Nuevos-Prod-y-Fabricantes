@@ -1,17 +1,29 @@
-import { IsBoolean, IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsBoolean, IsDecimal, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class UpdateExploratoryOfferDto {
   @IsNumber()
   @IsOptional()
-  supply_id?: number;
+  evaluation_process_id?: number;
 
-  @IsNumber()
+  @IsDecimal({ decimal_digits: '0,2' })
   @IsOptional()
-  supplier_price?: number;
+  offered_price?: string;
     
   @IsNumber()
   @IsOptional()
-  last_purchase_price?: number;
+  reference_purchase_id?: number;
+
+  @IsDecimal({ decimal_digits: '0,2' })
+  @IsOptional()
+  price_difference?: string;
+
+  @IsDecimal({ decimal_digits: '0,2' })
+  @IsOptional()
+  percentage_difference?: string;
+
+  @IsString()
+  @IsOptional()
+  analysis_date?: string;
 
   @IsBoolean()
   @IsOptional()

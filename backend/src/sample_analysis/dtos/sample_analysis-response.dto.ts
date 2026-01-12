@@ -1,6 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { ClientResponseDto } from 'src/client/dtos';
-import { ResultSampleAnalysisEnum } from 'src/enums';
+import { ClientResponseDto } from 'src/client/dtos/client-response-dto';
 import { SampleResponseDto } from 'src/sample/dtos/sample-response.dto';
 import { SampleAnalysisObservationResponseDto } from 'src/sample_analysis_observation/dtos/sample_analysis_observation-response.dto';
 
@@ -20,7 +19,13 @@ export class SampleAnalysisResponseDto {
   analysis_date: string;
   
   @Expose()
-  result: ResultSampleAnalysisEnum;
+  analysis_name: string;
+
+  @Expose()
+  analysis_result_details: string;
+
+  @Expose()
+  raw_data_path: string;
 
   @Expose()
   @Type(() => SampleAnalysisObservationResponseDto)

@@ -31,7 +31,9 @@ export class SampleAnalysisService {
       sample,
       performed_by_client,
       analysis_date: dto.analysis_date,
-      result: dto.result
+      analysis_name: dto.analysis_name,
+      analysis_result_details: dto.analysis_result_details,
+      raw_data_path: dto.raw_data_path
     });
 
     const created = await this.sampleAnalysisRepository.save(analysis);
@@ -105,8 +107,16 @@ export class SampleAnalysisService {
       analysis.analysis_date = dto.analysis_date;
     }
 
-    if (dto. result !== undefined) {
-      analysis.result = dto.result;
+    if (dto.analysis_name !== undefined) {
+      analysis.analysis_name = dto.analysis_name;
+    }
+
+    if (dto.analysis_result_details !== undefined) {
+      analysis.analysis_result_details = dto.analysis_result_details;
+    }
+
+    if (dto.raw_data_path !== undefined) {
+      analysis.raw_data_path = dto.raw_data_path;
     }
 
     await this.sampleAnalysisRepository.save(analysis);

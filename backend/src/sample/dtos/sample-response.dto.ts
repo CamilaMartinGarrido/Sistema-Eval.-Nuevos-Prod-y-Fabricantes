@@ -22,7 +22,7 @@ export class SampleResponseDto {
   date_receipt_client: string;
   
   @Expose()
-  quantity: number;
+  quantity: string;
   
   @Expose()
   unit: string;

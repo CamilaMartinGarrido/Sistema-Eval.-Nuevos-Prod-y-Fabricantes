@@ -1,6 +1,7 @@
 import { Expose, Type } from 'class-transformer';
 import { IndustrialPurchaseResponseDto } from 'src/industrial_purchase/dtos/industrial_purchase-response.dto';
 import { ResultIndustrialAnalysisEnum } from 'src/enums';
+import { IndustrialEvaluationObservationResponseDto } from 'src/industrial_evaluation_observation/dtos/industrial_evaluation_observation-response.dto';
 
 export class IndustrialEvaluationResponseDto {
   @Expose()
@@ -22,7 +23,7 @@ export class IndustrialEvaluationResponseDto {
   @Expose()
   report_delivery_date: string;
 
-  /*@Expose()
+  @Expose()
   @Type(() => IndustrialEvaluationObservationResponseDto)
-  industrial_evaluation_observs: IndustrialEvaluationObservationResponseDto[];*/
+  industrial_evaluation_observs: IndustrialEvaluationObservationResponseDto[];
 }

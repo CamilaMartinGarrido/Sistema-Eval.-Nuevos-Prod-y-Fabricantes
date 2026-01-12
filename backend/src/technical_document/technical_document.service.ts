@@ -22,8 +22,10 @@ export class TechnicalDocumentService {
 
     const document = this.technicalDocumentRepository.create({
       supply,
+      document_name: dto.document_name,
       document_type: dto.document_type,
       version: dto.version,
+      file_path: dto.file_path,
       request_date: dto.request_date,
       receipt_date: dto.receipt_date,
     });
@@ -70,20 +72,26 @@ export class TechnicalDocumentService {
       throw new NotFoundException('Technical Document not found');
     }
 
-    // Cambiar supply si viene supply_id (no actualizar sus datos)
     if (dto.supply_id) {
       const supply = await this.supplyRepository.findOne({ where: { id: dto.supply_id } });
       if (!supply) throw new NotFoundException('Supply not found');
       document.supply = supply;
     }
 
-    // Actualizar SOLO los campos propios de  Technical Document
+    if (dto.document_name !== undefined) {
+      document.document_name = dto.document_name;
+    }
+
     if (dto.document_type !== undefined) {
       document.document_type = dto.document_type;
     }
 
     if (dto.version !== undefined) {
       document.version = dto.version;
+    }
+
+    if (dto.file_path !== undefined) {
+      document.file_path = dto.file_path;
     }
 
     if (dto.request_date !== undefined) {
@@ -108,7 +116,6 @@ export class TechnicalDocumentService {
       throw new NotFoundException('Technical Document not found');
     }
 
-    // Eliminar solo el technical document, sin tocar supply
     await this.technicalDocumentRepository.remove(document);
 
     return { message: 'Technical Document deleted successfully' };

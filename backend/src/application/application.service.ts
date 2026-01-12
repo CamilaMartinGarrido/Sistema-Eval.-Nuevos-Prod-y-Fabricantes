@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ApplicationEntity } from './application.entity';
 import { ClientEntity } from '../client/client.entity';
-import { ProductEntity } from '../product/product.entity';
 import { CreateApplicationDto, UpdateApplicationDto, ApplicationResponseDto } from './dtos';
 import { toDto } from 'src/common/utils/mapper.util';
 
@@ -15,17 +14,11 @@ export class ApplicationService {
 
     @InjectRepository(ClientEntity)
     private readonly clientRepository: Repository<ClientEntity>,
-
-    @InjectRepository(ProductEntity)
-    private readonly productRepository: Repository<ProductEntity>,
   ) {}
 
   async create(dto: CreateApplicationDto): Promise<{ message: string; data: ApplicationEntity }> {
     const client = await this.clientRepository.findOne({ where: { id: dto.client_id } });
     if (!client) throw new NotFoundException('Client not found');
-
-    const product = await this.productRepository.findOne({ where: { id: dto.product_id } });
-    if (!product) throw new NotFoundException('Product not found');
 
     const application = this.applicationRepository.create({
       application_number: dto.application_number,
@@ -33,7 +26,6 @@ export class ApplicationService {
       receipt_date: dto.receipt_date,
       is_selected: dto.is_selected,
       client,
-      product,
     });
 
     const created = await this.applicationRepository.save(application);
@@ -49,8 +41,9 @@ export class ApplicationService {
       take: limit,
       skip: offset,
       relations: [
-        'client', 
-        'product',
+        'client',
+        'app_products',    
+        'app_products.product',
         'request_observs',
         'request_observs.observation',      
       ],
@@ -65,8 +58,9 @@ export class ApplicationService {
     const application = await this.applicationRepository.findOne({ 
       where: { id }, 
       relations: [
-        'client', 
-        'product',
+        'client',
+        'app_products',
+        'app_products.product',
         'request_observs',
         'request_observs.observation', 
       ] });
@@ -82,7 +76,7 @@ export class ApplicationService {
   async update(id: number, dto: UpdateApplicationDto) {
     const application = await this.applicationRepository.findOne({
       where: { id },
-      relations: ['client', 'product'],
+      relations: ['client'],
     });
 
     if (!application) {
@@ -93,12 +87,6 @@ export class ApplicationService {
       const client = await this.clientRepository.findOne({ where: { id: dto.client_id } });
       if (!client) throw new NotFoundException('Client not found');
       application.client = client;
-    }
-
-    if (dto.product_id) {
-      const product = await this.productRepository.findOne({ where: { id: dto.product_id } });
-      if (!product) throw new NotFoundException('Product not found');
-      application.product = product;
     }
 
     if (dto.application_number !== undefined) {
@@ -131,7 +119,6 @@ export class ApplicationService {
       throw new NotFoundException('Application not found');
     }
 
-    // Eliminar solo la solicitud, sin tocar cliente ni producto
     await this.applicationRepository.remove(application);
 
     return { message: 'Application deleted successfully' };

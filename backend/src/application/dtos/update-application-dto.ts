@@ -10,10 +10,6 @@ export class UpdateApplicationDto {
   @IsOptional()
   client_id?: number;
 
-  @IsNumber()
-  @IsOptional()
-  product_id?: number;
-
   @IsEnum(OriginRequestEnum)
   @IsOptional()
   origin?: OriginRequestEnum;

@@ -1,9 +1,10 @@
-import { IsNotEmpty, IsNumber, IsString, IsBoolean, IsOptional } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString, IsBoolean, IsOptional, IsEnum } from 'class-validator';
+import { ResultSampleEvaluationEnum } from 'src/enums';
 
 export class CreateSampleEvaluationDto {
   @IsNumber()
   @IsNotEmpty()
-  client_supply_id: number;
+  evaluation_process_id: number;
 
   @IsNumber()
   @IsNotEmpty()
@@ -13,15 +14,19 @@ export class CreateSampleEvaluationDto {
   @IsNotEmpty()
   self_performed: boolean;
 
-  @IsNumber()
+  @IsString()
   @IsOptional()
-  source_client?: number;
+  send_analysis_date?: string;
 
   @IsString()
-  @IsNotEmpty()
-  evaluation_date: string;
+  @IsOptional()
+  evaluation_date?: string;
+
+  @IsEnum(ResultSampleEvaluationEnum)
+  @IsOptional()
+  result?: ResultSampleEvaluationEnum;
 
   @IsBoolean()
-  @IsNotEmpty()
-  decision_continue: boolean;
+  @IsOptional()
+  decision_continue?: boolean;
 }

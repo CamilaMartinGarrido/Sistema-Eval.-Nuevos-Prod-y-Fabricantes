@@ -4,11 +4,15 @@ export class UpdateDocumentEvaluationDto {
   
   @IsNumber()
   @IsOptional()
-  client_supply_id?: number;
+  evaluation_process_id?: number;
   
   @IsNumber()
   @IsOptional()
   technical_document_id?: number;
+
+  @IsString()
+  @IsOptional()
+  send_date?: string;
   
   @IsString()
   @IsOptional()
@@ -17,8 +21,4 @@ export class UpdateDocumentEvaluationDto {
   @IsBoolean()
   @IsOptional()
   is_approved?: boolean;
-    
-  @IsString()
-  @IsOptional()
-  send_date?: string;
 }

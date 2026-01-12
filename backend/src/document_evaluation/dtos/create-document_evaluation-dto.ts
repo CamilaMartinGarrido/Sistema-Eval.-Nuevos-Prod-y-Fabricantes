@@ -3,11 +3,14 @@ import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-val
 export class CreateDocumentEvaluationDto {
   @IsNumber()
   @IsNotEmpty()
-  client_supply_id: number;
+  evaluation_process_id: number;
 
   @IsNumber()
   @IsNotEmpty()
   technical_document_id: number;
+
+  @IsString()
+  send_date: string;
 
   @IsString()
   @IsOptional()
@@ -16,7 +19,4 @@ export class CreateDocumentEvaluationDto {
   @IsBoolean()
   @IsOptional()
   is_approved?: boolean;
-  
-  @IsString()
-  send_date: string;
 }

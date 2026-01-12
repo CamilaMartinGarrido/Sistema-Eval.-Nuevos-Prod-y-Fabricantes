@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { IndustrialPurchaseEntity } from './industrial_purchase.entity';
-import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
+import { EvaluationProcessEntity } from '../evaluation_process/evaluation_process.entity';
 import { CreateIndustrialPurchaseDto, IndustrialPurchaseResponseDto, UpdateIndustrialPurchaseDto } from './dtos';
 import { toDto } from 'src/common/utils/mapper.util';
 
@@ -12,16 +12,16 @@ export class IndustrialPurchaseService {
     @InjectRepository(IndustrialPurchaseEntity)
     private readonly industrialPurchaseRepository: Repository<IndustrialPurchaseEntity>,
 
-    @InjectRepository(ClientSupplyEntity)
-    private readonly clientSupplyRepository: Repository<ClientSupplyEntity>,
+    @InjectRepository(EvaluationProcessEntity)
+    private readonly evaluationProcessRepository: Repository<EvaluationProcessEntity>,
   ) {}
 
   async create(dto: CreateIndustrialPurchaseDto): Promise<{ message: string; data: IndustrialPurchaseEntity }> {
-    const client_supply = await this.clientSupplyRepository.findOne({ where: { id: dto.client_supply_id } });
-    if (!client_supply) throw new NotFoundException('Client Supply not found');
+    const evaluation_process = await this.evaluationProcessRepository.findOne({ where: { id: dto.evaluation_process_id } });
+    if (!evaluation_process) throw new NotFoundException('Evaluation Process not found');
 
     const purchase = this.industrialPurchaseRepository.create({
-      client_supply,
+      evaluation_process,
       request_date: dto.request_date,
       purchase_status: dto.purchase_status
     });
@@ -39,7 +39,7 @@ export class IndustrialPurchaseService {
       take: limit,
       skip: offset,
       relations: [
-        'client_supply',
+        'evaluation_process',
         'industrial_purchase_observs',
         'industrial_purchase_observs.observation',
       ],
@@ -54,7 +54,7 @@ export class IndustrialPurchaseService {
     const purchase = await this.industrialPurchaseRepository.findOne({
       where: { id },
       relations: [
-        'client_supply',
+        'evaluation_process',
         'industrial_purchase_observs',
         'industrial_purchase_observs.observation',
       ],
@@ -72,17 +72,17 @@ export class IndustrialPurchaseService {
   async update(id: number, dto: UpdateIndustrialPurchaseDto) {
     const purchase = await this.industrialPurchaseRepository.findOne({
       where: { id },
-      relations: ['client_supply'],
+      relations: ['evaluation_process'],
     });
 
     if (!purchase) {
       throw new NotFoundException('Industrial Purchase not found');
     }
 
-    if (dto.client_supply_id) {
-      const client_supply = await this.clientSupplyRepository.findOne({ where: { id: dto.client_supply_id } });
-      if (!client_supply) throw new NotFoundException('Client Supply not found');
-      purchase.client_supply = client_supply;
+    if (dto.evaluation_process_id) {
+      const evaluation_process = await this.evaluationProcessRepository.findOne({ where: { id: dto.evaluation_process_id } });
+      if (!evaluation_process) throw new NotFoundException('Evaluation Process not found');
+      purchase.evaluation_process = evaluation_process;
     }
 
     if (dto.request_date !== undefined) {

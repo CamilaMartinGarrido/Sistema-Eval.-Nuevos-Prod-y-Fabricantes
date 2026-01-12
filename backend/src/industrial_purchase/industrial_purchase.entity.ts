@@ -1,23 +1,24 @@
-import { Entity, PrimaryGeneratedColumn, Column, Unique, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, Unique, ManyToOne, JoinColumn, OneToMany, Index } from 'typeorm';
 import { StateIndustrialPurchasingEnum } from '../enums';
-import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
+import { EvaluationProcessEntity } from '../evaluation_process/evaluation_process.entity';
 import { IndustrialPurchaseObservationEntity } from '../industrial_purchase_observation/industrial_purchase_observation.entity';
 import { IndustrialEvaluationEntity } from '../industrial_evaluation/industrial_evaluation.entity';
 
-@Unique(['client_supply'])
+@Unique(['evaluation_process'])
+@Index('idx_ind_purchase_process', ['evaluation_process'])
 @Entity({ name: 'industrial_purchase' })
 export class IndustrialPurchaseEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @ManyToOne(() => ClientSupplyEntity, (clientSupply) => clientSupply.industrial_purchases, {
+  @ManyToOne(() => EvaluationProcessEntity, (evaluation) => evaluation.industrial_purchases, {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
     onDelete: 'RESTRICT',
   })
-  @JoinColumn({ name: 'client_supply_id' })
-  client_supply: ClientSupplyEntity;
+  @JoinColumn({ name: 'evaluation_process_id' })
+  evaluation_process: EvaluationProcessEntity;
 
   @Column({ type: 'date' })
   request_date: string;

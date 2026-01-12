@@ -3,7 +3,7 @@ import { SampleService } from './sample.service';
 import { SampleController } from './sample.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SampleEntity } from './sample.entity';
-import { SupplyEntity } from '../supply/supply.entity';
+import { SupplyEntity } from 'src/supply/supply.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([SampleEntity, SupplyEntity])],

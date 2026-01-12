@@ -1,23 +1,28 @@
-import { Entity, PrimaryGeneratedColumn, Column, Unique, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
-import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
+import { Entity, PrimaryGeneratedColumn, Column, Unique, ManyToOne, JoinColumn, OneToMany, Index } from 'typeorm';
+import { EvaluationProcessEntity } from '../evaluation_process/evaluation_process.entity';
 import { SampleAnalysisEntity } from '../sample_analysis/sample_analysis.entity';
-import { ClientEntity } from '../client/client.entity';
+import { ResultSampleEvaluationEnum } from 'src/enums';
 import { SampleEvaluationObservationEntity } from '../sample_evaluation_observation/sample_evaluation_observation.entity';
 
-@Unique(['client_supply', 'sample_analysis'])
+@Unique(['evaluation_process', 'sample_analysis'])
+@Index('idx_sample_eval_process', ['evaluation_process'])
+@Index('idx_sample_eval_analysis', ['sample_analysis'])
+@Index('idx_sample_eval_conform', ['result'], {
+  where: `"result" = Conforme`
+})
 @Entity({ name: 'sample_evaluation' })
 export class SampleEvaluationEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @ManyToOne(() => ClientSupplyEntity, (client_supply) => client_supply.sample_evaluations, {
+  @ManyToOne(() => EvaluationProcessEntity, (evaluation) => evaluation.sample_evaluations, {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
-  @JoinColumn({ name: 'client_supply_id' })
-  client_supply: ClientSupplyEntity;
+  @JoinColumn({ name: 'evaluation_process_id' })
+  evaluation_process: EvaluationProcessEntity;
 
   @ManyToOne(() => SampleAnalysisEntity, (sample_analysis) => sample_analysis.sample_evaluations, {
     eager: true,
@@ -31,14 +36,19 @@ export class SampleEvaluationEntity {
   @Column({ type: 'boolean' })
   self_performed: boolean;
 
-  @ManyToOne(() => ClientEntity, (client) => client.sample_evaluations, {
-    eager: true,
-    nullable: false,
-    onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+  @Column({ type: 'date', nullable: true })
+  send_analysis_date: string;
+
+  @Column({ type: 'date', nullable: true })
+  evaluation_date: string;
+
+  @Column({
+    type: 'enum',
+    enum: ResultSampleEvaluationEnum,
+    enumName: 'result_sample_evaluation_enum',
+    nullable: true,
   })
-  @JoinColumn({ name: 'source_client' })
-  source_client: ClientEntity;
+  result: ResultSampleEvaluationEnum;
 
   @Column({ type: 'boolean', nullable: true })
   decision_continue: boolean;

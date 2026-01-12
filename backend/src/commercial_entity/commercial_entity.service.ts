@@ -5,7 +5,7 @@ import { plainToInstance } from 'class-transformer';
 import { CommercialEntityEntity } from './commercial_entity.entity';
 import { CommercialEntityRoleEntity } from './commercial_entity_role.entity';
 import { CreateCommercialEntityDto, UpdateCommercialEntityDto, CommercialEntityResponseDto } from './dtos';
-import { RoleEnum } from 'src/enums';
+import { EntityRoleEnum } from 'src/enums';
 
 @Injectable()
 export class CommercialEntityService {
@@ -174,7 +174,7 @@ export class CommercialEntityService {
     return entity;
   }
 
-  async ensureRole(entityId: number, role: RoleEnum) {
+  async ensureRole(entityId: number, role: EntityRoleEnum) {
     const entity = await this.ceRepository.findOne({
       where: { id: entityId },
       relations: ['roles'],
@@ -193,7 +193,7 @@ export class CommercialEntityService {
     }
   }
 
-  async changeRoles(entityId: number, roles: RoleEnum[]) {
+  async changeRoles(entityId: number, roles: EntityRoleEnum[]) {
     const entity = await this.ceRepository.findOne({
       where: { id: entityId },
       relations: ['roles'],
@@ -228,7 +228,7 @@ export class CommercialEntityService {
     return { message: 'Roles updated successfully' };
   }
 
-  async upsertByIdentity(entity_name: string, entity_country: string, roles: RoleEnum[]): Promise<CommercialEntityEntity> {
+  async upsertByIdentity(entity_name: string, entity_country: string, roles: EntityRoleEnum[]): Promise<CommercialEntityEntity> {
     // 1️⃣ Buscar por identidad
     let entity = await this.ceRepository.findOne({
       where: { entity_name, entity_country },

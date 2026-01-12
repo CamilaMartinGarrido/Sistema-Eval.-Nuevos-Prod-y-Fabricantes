@@ -1,7 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, Unique } from 'typeorm';
 import { ProductTypeEnum } from '../enums';
-import { ApplicationEntity } from '../application/application.entity';
+import { ApplicationProductEntity } from '../application_product/application_product.entity';
 import { MakerProductEntity } from '../maker_product/maker_product.entity';
+import { SupplierPurchaseEntity } from '../supplier_purchase/supplier_purchase.entity';
 
 @Unique(['description', 'product_type'])
 @Entity({ name: 'product' })
@@ -26,9 +27,12 @@ export class ProductEntity {
   @Column({ type: 'int' })
   priority: number;
 
-  @OneToMany(() => ApplicationEntity, (application) => application.product)
-    applications: ApplicationEntity[];
+  @OneToMany(() => ApplicationProductEntity, (app_product) => app_product.product)
+  app_products: ApplicationProductEntity[];
   
   @OneToMany(() => MakerProductEntity, (maker_product) => maker_product.product)
   maker_products: MakerProductEntity[];
+
+  @OneToMany(() => SupplierPurchaseEntity, supplier_purchase => supplier_purchase.product)
+  supplier_purchases: SupplierPurchaseEntity[];
 }

@@ -1,37 +1,42 @@
-import { Entity, PrimaryGeneratedColumn, Column, Unique, ManyToOne, JoinColumn } from 'typeorm';
-import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
+import { Entity, PrimaryGeneratedColumn, Column, Unique, ManyToOne, JoinColumn, Index } from 'typeorm';
+import { EvaluationProcessEntity } from '../evaluation_process/evaluation_process.entity';
 import { TechnicalDocumentEntity } from '../technical_document/technical_document.entity';
 
-@Unique(['client_supply', 'technical_document'])
+@Unique(['evaluation_process', 'technical_document'])
+@Index('idx_doc_eval_process', ['evaluation_process'])
+@Index('idx_doc_eval_tech_doc', ['technical_document'])
+@Index('idx_doc_eval_approve', ['is_approved'], {
+  where: `"is_approved" = true`
+})
 @Entity({ name: 'document_evaluation' })
 export class DocumentEvaluationEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @ManyToOne(() => ClientSupplyEntity, (cs) => cs.document_evals, {
+  @ManyToOne(() => EvaluationProcessEntity, (evaluation) => evaluation.document_evals, {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
-  @JoinColumn({ name: 'client_supply_id' })
-  client_supply: ClientSupplyEntity;
+  @JoinColumn({ name: 'evaluation_process_id' })
+  evaluation_process: EvaluationProcessEntity;
 
   @ManyToOne(() => TechnicalDocumentEntity, (td) => td.document_evals, {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'technical_document_id' })
   technical_document: TechnicalDocumentEntity;
+
+  @Column({ type: 'date' })
+  send_date: string;
 
   @Column({ type: 'date', nullable: true })
   evaluation_date: string;
 
   @Column({ type: 'boolean', nullable: true })
   is_approved: boolean;
-
-  @Column({ type: 'date' })
-  send_date: string;
 }

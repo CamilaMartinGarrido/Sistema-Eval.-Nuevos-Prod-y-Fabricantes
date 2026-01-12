@@ -1,9 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, Unique, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, Unique, OneToMany, Index } from 'typeorm';
 import { DocumentTypeEnum } from '../enums';
 import { SupplyEntity } from '../supply/supply.entity';
 import { DocumentEvaluationEntity } from '../document_evaluation/document_evaluation.entity';
 
-@Unique(['supply', 'document_type', 'version'])
+@Unique(['supply', 'document_name', 'document_type', 'version'])
+@Index('idx_tech_doc_supply', ['supply'])
+@Index('idx_tech_doc_version', ['version'])
 @Entity({ name: 'technical_document' })
 export class TechnicalDocumentEntity {
   @PrimaryGeneratedColumn('increment')
@@ -13,10 +15,13 @@ export class TechnicalDocumentEntity {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'supply_id' })
   supply: SupplyEntity;
+
+  @Column({ type: 'varchar' })
+  document_name: string;
 
   @Column({
     type: 'enum',
@@ -28,6 +33,9 @@ export class TechnicalDocumentEntity {
 
   @Column({ type: 'varchar' })
   version: string;
+
+  @Column({ type: 'varchar', nullable: true })
+  file_path: string;
 
   @Column({ type: 'date', nullable: true })
   request_date: string;

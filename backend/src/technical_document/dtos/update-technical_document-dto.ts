@@ -5,6 +5,10 @@ export class UpdateTechnicalDocumentDto {
   @IsNumber()
   @IsOptional()
   supply_id?: number;
+
+  @IsString()
+  @IsOptional()
+  document_name?: string;
   
   @IsOptional()
   document_type?: DocumentTypeEnum;
@@ -12,6 +16,10 @@ export class UpdateTechnicalDocumentDto {
   @IsString()
   @IsOptional()
   version?: string;
+
+  @IsString()
+  @IsOptional()
+  file_path?: string;
   
   @IsString()
   @IsOptional()

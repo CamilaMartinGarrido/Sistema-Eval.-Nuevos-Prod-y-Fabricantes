@@ -1,10 +1,14 @@
-import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 import { DocumentTypeEnum } from 'src/enums';
 
 export class CreateTechnicalDocumentDto {
   @IsNumber()
   @IsNotEmpty()
   supply_id: number;
+
+  @IsString()
+  @IsNotEmpty()
+  document_name: string;
 
   @IsNotEmpty()
   document_type: DocumentTypeEnum;
@@ -14,8 +18,14 @@ export class CreateTechnicalDocumentDto {
   version: string;
 
   @IsString()
-  request_date: string;
+  @IsOptional()
+  file_path?: string;
 
   @IsString()
-  receipt_date: string;
+  @IsOptional()
+  request_date?: string;
+
+  @IsString()
+  @IsOptional()
+  receipt_date?: string;
 }

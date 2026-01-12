@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsString, IsOptional } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString, IsOptional, IsDecimal } from 'class-validator';
 
 export class CreateSampleDto {
   @IsNumber()
@@ -21,9 +21,9 @@ export class CreateSampleDto {
   @IsOptional()
   date_receipt_client?: string;
 
-  @IsNumber()
+  @IsDecimal({ decimal_digits: '0,2' })
   @IsNotEmpty()
-  quantity: number;
+  quantity: string;
 
   @IsString()
   @IsNotEmpty()

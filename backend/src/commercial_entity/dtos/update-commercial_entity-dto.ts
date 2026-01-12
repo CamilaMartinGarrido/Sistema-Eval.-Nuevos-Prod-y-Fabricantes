@@ -1,5 +1,5 @@
 import { IsString, IsOptional, IsArray, IsEnum } from 'class-validator';
-import { RoleEnum } from 'src/enums';
+import { EntityRoleEnum } from 'src/enums';
 
 export class UpdateCommercialEntityDto {
   @IsString()
@@ -12,6 +12,6 @@ export class UpdateCommercialEntityDto {
 
   @IsOptional()
   @IsArray()
-  @IsEnum(RoleEnum, { each: true })
-  roles?: RoleEnum[]; // Actualización de roles opcional
+  @IsEnum(EntityRoleEnum, { each: true })
+  roles?: EntityRoleEnum[]; // Actualización de roles opcional
 }

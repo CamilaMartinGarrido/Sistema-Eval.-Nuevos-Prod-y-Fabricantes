@@ -1,5 +1,5 @@
 import { Expose, Type } from 'class-transformer';
-import { ClientSupplyResponseDto } from 'src/client_supply/dtos/client_supply-response.dto';
+import { EvaluationProcessResponseDto } from 'src/evaluation_process/dtos/evaluation_process-response.dto';
 import { StateIndustrialPurchasingEnum } from 'src/enums';
 import { IndustrialPurchaseObservationResponseDto } from 'src/industrial_purchase_observation/dtos/industrial_purchase_observation-response.dto';
 
@@ -8,8 +8,8 @@ export class IndustrialPurchaseResponseDto {
   id: number;
 
   @Expose()
-  @Type(() => ClientSupplyResponseDto)
-  client_supply: ClientSupplyResponseDto;
+  @Type(() => EvaluationProcessResponseDto)
+  evaluation_process: EvaluationProcessResponseDto;
 
   @Expose()
   request_date: string;

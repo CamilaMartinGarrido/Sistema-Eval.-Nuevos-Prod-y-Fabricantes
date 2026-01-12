@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, Unique, JoinColumn } from 'typeorm';
 import { CommercialEntityEntity } from './commercial_entity.entity';
-import { RoleEnum } from 'src/enums';
+import { EntityRoleEnum } from 'src/enums';
 
 @Unique(['commercial_entity', 'role_type'])
 @Entity({ name: 'commercial_entity_role' })
@@ -11,6 +11,7 @@ export class CommercialEntityRoleEntity {
   @ManyToOne(() => CommercialEntityEntity, entity => entity.roles, {
     eager: true,
     nullable: false,
+    onUpdate: 'CASCADE',
     onDelete: 'RESTRICT', 
   })
   @JoinColumn({ name: 'commercial_entity' })
@@ -18,9 +19,9 @@ export class CommercialEntityRoleEntity {
 
   @Column({
     type: 'enum',
-    enum: RoleEnum,
+    enum: EntityRoleEnum,
     enumName: 'role_enum',
     nullable: false,
   })
-  role_type: RoleEnum;
+  role_type: EntityRoleEnum;
 }

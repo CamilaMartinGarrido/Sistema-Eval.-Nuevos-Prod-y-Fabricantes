@@ -4,7 +4,7 @@ import { StateIndustrialPurchasingEnum } from 'src/enums';
 export class CreateIndustrialPurchaseDto {
   @IsNumber()
   @IsNotEmpty()
-  client_supply_id: number;
+  evaluation_process_id: number;
 
   @IsString()
   @IsNotEmpty()

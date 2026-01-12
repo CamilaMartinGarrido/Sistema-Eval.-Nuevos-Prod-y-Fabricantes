@@ -1,19 +1,31 @@
-import { IsBoolean, IsNotEmpty, IsNumber, IsOptional } from 'class-validator';
+import { IsBoolean, IsDecimal, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class CreateExploratoryOfferDto {
   @IsNumber()
   @IsNotEmpty()
-  supply_id: number;
+  evaluation_process_id: number;
 
-  @IsNumber()
-  @IsOptional()
-  supplier_price?: number;
+  @IsDecimal({ decimal_digits: '0,2' })
+  @IsNotEmpty()
+  offered_price: string;
     
   @IsNumber()
-  @IsOptional()
-  last_purchase_price?: number;
+  @IsNotEmpty()
+  reference_purchase_id: number;
+
+  @IsDecimal({ decimal_digits: '0,2' })
+  @IsNotEmpty()
+  price_difference: string;
+
+  @IsDecimal({ decimal_digits: '0,2' })
+  @IsNotEmpty()
+  percentage_difference: string;
+
+  @IsString()
+  @IsNotEmpty()
+  analysis_date: string;
 
   @IsBoolean()
-  @IsOptional()
-  is_competitive?: boolean;
+  @IsNotEmpty()
+  is_competitive: boolean;
 }

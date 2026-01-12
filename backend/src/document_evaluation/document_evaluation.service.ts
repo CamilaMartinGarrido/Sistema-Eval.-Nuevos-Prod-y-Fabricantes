@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { DocumentEvaluationEntity } from './document_evaluation.entity';
-import { ClientSupplyEntity } from '../client_supply/client_supply.entity';
+import { EvaluationProcessEntity } from '../evaluation_process/evaluation_process.entity';
 import { TechnicalDocumentEntity } from '../technical_document/technical_document.entity';
 import { CreateDocumentEvaluationDto, DocumentEvaluationResponseDto, UpdateDocumentEvaluationDto } from './dtos';
 import { toDto } from 'src/common/utils/mapper.util';
@@ -13,26 +13,26 @@ export class DocumentEvaluationService {
     @InjectRepository(DocumentEvaluationEntity)
     private readonly documentEvaluationRepository: Repository<DocumentEvaluationEntity>,
 
-    @InjectRepository(ClientSupplyEntity)
-    private readonly clientSupplyRepository: Repository<ClientSupplyEntity>,
+    @InjectRepository(EvaluationProcessEntity)
+    private readonly evaluationProcessRepository: Repository<EvaluationProcessEntity>,
 
     @InjectRepository(TechnicalDocumentEntity)
     private readonly technicalDocumentRepository: Repository<TechnicalDocumentEntity>,
   ) {}
 
   async create(dto: CreateDocumentEvaluationDto): Promise<{ message: string; data: DocumentEvaluationEntity }> {
-    const client_supply = await this.clientSupplyRepository.findOne({ where: { id: dto.client_supply_id } });
-    if (!client_supply) throw new NotFoundException('Client Supply not found');
+    const evaluation_process = await this.evaluationProcessRepository.findOne({ where: { id: dto.evaluation_process_id } });
+    if (!evaluation_process) throw new NotFoundException('Evaluation Process not found');
 
     const technical_document = await this.technicalDocumentRepository.findOne({ where: { id: dto.technical_document_id } });
     if (!technical_document) throw new NotFoundException('Technical Document not found');
 
     const evaluation = this.documentEvaluationRepository.create({
-      client_supply,
+      evaluation_process,
       technical_document,
+      send_date: dto.send_date,
       evaluation_date: dto.evaluation_date,
       is_approved: dto.is_approved,
-      send_date: dto.send_date,
     });
 
     const created = await this.documentEvaluationRepository.save(evaluation);
@@ -47,7 +47,7 @@ export class DocumentEvaluationService {
     const evaluations = await this.documentEvaluationRepository.find({
       take: limit,
       skip: offset,
-      relations: ['client_supply', 'technical_document'],
+      relations: ['evaluation_process', 'technical_document'],
     });
 
     return Promise.all(
@@ -57,7 +57,7 @@ export class DocumentEvaluationService {
 
   async findOne(id: number): Promise<DocumentEvaluationResponseDto> {
     const evaluation = await this.documentEvaluationRepository.findOne({ 
-      where: { id }, relations: ['client_supply', 'technical_document'] });
+      where: { id }, relations: ['evaluation_process', 'technical_document'] });
     if (!evaluation) throw new NotFoundException('Document Evaluation not found');
     
     return this.toResponseDto(evaluation);
@@ -70,17 +70,17 @@ export class DocumentEvaluationService {
   async update(id: number, dto: UpdateDocumentEvaluationDto) {
     const evaluation = await this.documentEvaluationRepository.findOne({
       where: { id },
-      relations: ['client_supply', 'technical_document'],
+      relations: ['evaluation_process', 'technical_document'],
     });
 
     if (!evaluation) {
       throw new NotFoundException('Document Evaluation not found');
     }
 
-    if (dto.client_supply_id) {
-      const client_supply = await this.clientSupplyRepository.findOne({ where: { id: dto.client_supply_id } });
-      if (!client_supply) throw new NotFoundException('Client Supply not found');
-      evaluation.client_supply = client_supply;
+    if (dto.evaluation_process_id) {
+      const evaluation_process = await this.evaluationProcessRepository.findOne({ where: { id: dto.evaluation_process_id } });
+      if (!evaluation_process) throw new NotFoundException('Evaluation Process not found');
+      evaluation.evaluation_process = evaluation_process;
     }
 
     if (dto.technical_document_id) {
@@ -89,16 +89,16 @@ export class DocumentEvaluationService {
       evaluation.technical_document = technical_document;
     }
 
+    if (dto.send_date !== undefined) {
+      evaluation.send_date = dto.send_date;
+    }
+
     if (dto.evaluation_date !== undefined) {
       evaluation.evaluation_date = dto.evaluation_date;
     }
 
     if (dto.is_approved !== undefined) {
       evaluation.is_approved = dto.is_approved;
-    }
-
-    if (dto.send_date !== undefined) {
-      evaluation.send_date = dto.send_date;
     }
 
     const updated = await this.documentEvaluationRepository.save(evaluation);

@@ -10,10 +10,16 @@ export class TechnicalDocumentResponseDto {
   supply: SupplyResponseDto;
 
   @Expose()
+  document_name: string;
+
+  @Expose()
   document_type: string;
 
   @Expose()
   version: string;
+
+  @Expose()
+  file_path: string;
 
   @Expose()
   request_date: string;

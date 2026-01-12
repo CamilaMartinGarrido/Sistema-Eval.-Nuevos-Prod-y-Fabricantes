@@ -1,5 +1,4 @@
-import { IsNotEmpty, IsNumber, IsString, IsOptional, IsEnum } from 'class-validator';
-import { ResultSampleAnalysisEnum } from 'src/enums';
+import { IsNotEmpty, IsNumber, IsString, IsOptional } from 'class-validator';
 
 export class CreateSampleAnalysisDto {
   @IsNumber()
@@ -11,10 +10,18 @@ export class CreateSampleAnalysisDto {
   performed_by_client: number;
 
   @IsString()
-  @IsNotEmpty()
-  analysis_date: string;
+  @IsOptional()
+  analysis_date?: string;
 
-  @IsEnum(ResultSampleAnalysisEnum)
-  @IsNotEmpty()
-  result: ResultSampleAnalysisEnum;
+  @IsString()
+  @IsOptional()
+  analysis_name?: string;
+
+  @IsString()
+  @IsOptional()
+  analysis_result_details?: string;
+
+  @IsString()
+  @IsOptional()
+  raw_data_path?: string;
 }

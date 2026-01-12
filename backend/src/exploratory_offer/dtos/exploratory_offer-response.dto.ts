@@ -1,5 +1,6 @@
 import { Expose, Type } from 'class-transformer';
-import { SupplyResponseDto } from 'src/supply/dtos/supply-response.dto';
+import { EvaluationProcessResponseDto } from 'src/evaluation_process/dtos/evaluation_process-response.dto';
+import { SupplierPurchaseResponseDto } from 'src/supplier_purchase/dtos/supplier_purchase-response.dto';
 import { ExploratoryOfferObservationResponseDto } from 'src/exploratory_offer_observation/dtos/exploratory_offer_observation-response.dto';
 
 export class ExploratoryOfferResponseDto {
@@ -7,14 +8,24 @@ export class ExploratoryOfferResponseDto {
   id: number;
 
   @Expose()
-  @Type(() => SupplyResponseDto)
-  supply: SupplyResponseDto;
+  @Type(() => EvaluationProcessResponseDto)
+  evaluation_process: EvaluationProcessResponseDto;
 
   @Expose()
-  supplier_price: number;
+  offered_price: string;
       
   @Expose()
-  last_purchase_price: number;
+  @Type(() => SupplierPurchaseResponseDto)
+  reference_purchase: SupplierPurchaseResponseDto;
+
+  @Expose()
+  price_difference: string;
+
+  @Expose()
+  percentage_difference: string;
+
+  @Expose()
+  analysis_date: string;
 
   @Expose()
   is_competitive: boolean;

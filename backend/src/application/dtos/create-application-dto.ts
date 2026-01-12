@@ -10,19 +10,15 @@ export class CreateApplicationDto {
   @IsNotEmpty()
   client_id: number;
 
-  @IsNumber()
-  @IsNotEmpty()
-  product_id: number;
-
   @IsEnum(OriginRequestEnum)
   @IsNotEmpty()
-  origin: OriginRequestEnum; // enum validado
+  origin: OriginRequestEnum;
 
   @IsString()
   @IsNotEmpty()
-  receipt_date: string; // ISO date string
+  receipt_date: string;
 
   @IsBoolean()
   @IsOptional()
-  is_selected?: boolean; // opcional al crear
+  is_selected?: boolean;
 }
