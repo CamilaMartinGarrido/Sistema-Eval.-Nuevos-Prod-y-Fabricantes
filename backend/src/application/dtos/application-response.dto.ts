@@ -25,10 +25,6 @@ export class ApplicationResponseDto {
   client: ClientResponseDto;
 
   @Expose()
-  @Type(() => ProductResponseDto)
-  product: ProductResponseDto;
-
-  @Expose()
   @Type(() => RequestObservationResponseDto)
   request_observs: RequestObservationResponseDto[];
 }
