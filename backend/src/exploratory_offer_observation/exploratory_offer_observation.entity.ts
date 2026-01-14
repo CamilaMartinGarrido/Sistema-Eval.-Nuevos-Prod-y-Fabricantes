@@ -1,8 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, Unique } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, Unique, Index } from 'typeorm';
 import { ExploratoryOfferEntity } from '../exploratory_offer/exploratory_offer.entity';
 import { ObservationEntity } from '../observation/observation.entity';
 
-@Unique(['exploratory_offer', 'observation'])
+@Unique('uq_eo_obs', ['exploratory_offer', 'observation'])
+@Index('idx_eo_obs_offer', ['exploratory_offer'])
+@Index('idx_eo_obs_observation', ['observation'])
 @Entity({ name: 'exploratory_offer_observation' })
 export class ExploratoryOfferObservationEntity {
   @PrimaryGeneratedColumn('increment')
@@ -12,7 +14,7 @@ export class ExploratoryOfferObservationEntity {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'exploratory_offer_id' })
   exploratory_offer: ExploratoryOfferEntity;
@@ -21,7 +23,7 @@ export class ExploratoryOfferObservationEntity {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'observation_id' })
   observation: ObservationEntity;

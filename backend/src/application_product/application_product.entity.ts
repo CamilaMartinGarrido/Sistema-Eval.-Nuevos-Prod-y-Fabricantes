@@ -2,10 +2,9 @@ import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToOne, OneToM
 import { ApplicationEntity } from '../application/application.entity';
 import { ProductEntity } from '../product/product.entity';
 
-@Unique(['application_number'])
-@Unique(['application_id', 'product_id'])
-@Index('idx_app_product_app', ['application_id'])
-@Index('idx_app_product_product', ['product_id'])
+@Unique('uq_application_product', ['application', 'product'])
+@Index('idx_app_product_app', ['application'])
+@Index('idx_app_product_product', ['product'])
 @Entity({ name: 'application_product' })
 export class ApplicationProductEntity {
   @PrimaryGeneratedColumn('increment')

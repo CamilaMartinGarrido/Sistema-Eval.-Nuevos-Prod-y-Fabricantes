@@ -7,7 +7,7 @@ import { CommercialEntityEntity } from '../commercial_entity/commercial_entity.e
 import { CommercialEntityService } from '../commercial_entity/commercial_entity.service';
 import { CreateSupplyDto, UpdateSupplyDto, SupplyResponseDto } from './dtos';
 import { toDto } from 'src/common/utils/mapper.util';
-import { RoleEnum } from 'src/enums';
+import { EntityRoleEnum } from 'src/enums';
 
 @Injectable()
 export class SupplyService {
@@ -32,7 +32,7 @@ export class SupplyService {
     if (!supplier_entity) throw new NotFoundException('Supplier not found');
 
     // ✅ Asegura que la CommercialEntity tenga el rol SUPPLIER
-    await this.commercialEntityService.ensureRole(supplier_entity.id, RoleEnum.S);
+    await this.commercialEntityService.ensureRole(supplier_entity.id, EntityRoleEnum.P);
 
     const maker_product = await this.mpRepository.findOne({ where: { id: dto.maker_product_id } });
     if (!maker_product) throw new NotFoundException('MakerProduct not found');
@@ -99,7 +99,7 @@ export class SupplyService {
       if (!newSupplier) throw new NotFoundException('Supplier not found');
 
       // Asegurar rol SUPPLIER
-      await this.commercialEntityService.ensureRole(newSupplier.id, RoleEnum.S);
+      await this.commercialEntityService.ensureRole(newSupplier.id, EntityRoleEnum.P);
 
       supply.supplier_entity = newSupplier;
 
@@ -111,7 +111,7 @@ export class SupplyService {
       if (otherSupplies === 0) {
         const remainingRoles = oldSupplier.roles
           .map(r => r.role_type)
-          .filter(r => r !== RoleEnum.S); // eliminar solo SUPPLIER
+          .filter(r => r !== EntityRoleEnum.P);
         await this.commercialEntityService.changeRoles(oldSupplier.id, remainingRoles);
       }
     }
@@ -141,7 +141,7 @@ export class SupplyService {
     if (otherSupplies === 0) {
       const remainingRoles = oldSupplier.roles
         .map(r => r.role_type)
-        .filter(r => r !== RoleEnum.S); // eliminar solo SUPPLIER
+        .filter(r => r !== EntityRoleEnum.P); // eliminar solo SUPPLIER
       await this.commercialEntityService.changeRoles(oldSupplier.id, remainingRoles);
     }
 

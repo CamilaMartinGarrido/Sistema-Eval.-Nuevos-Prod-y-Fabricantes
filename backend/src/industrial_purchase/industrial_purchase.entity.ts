@@ -4,8 +4,10 @@ import { EvaluationProcessEntity } from '../evaluation_process/evaluation_proces
 import { IndustrialPurchaseObservationEntity } from '../industrial_purchase_observation/industrial_purchase_observation.entity';
 import { IndustrialEvaluationEntity } from '../industrial_evaluation/industrial_evaluation.entity';
 
-@Unique(['evaluation_process'])
+@Unique('uq_industrial_purchase', ['evaluation_process'])
 @Index('idx_ind_purchase_process', ['evaluation_process'])
+@Index('idx_ind_purchase_status', ['purchase_status'])
+@Index('idx_ind_purchase_request_date', ['request_date'])
 @Entity({ name: 'industrial_purchase' })
 export class IndustrialPurchaseEntity {
   @PrimaryGeneratedColumn('increment')
@@ -15,12 +17,12 @@ export class IndustrialPurchaseEntity {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'evaluation_process_id' })
   evaluation_process: EvaluationProcessEntity;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'date', nullable: false })
   request_date: string;
 
   @Column({

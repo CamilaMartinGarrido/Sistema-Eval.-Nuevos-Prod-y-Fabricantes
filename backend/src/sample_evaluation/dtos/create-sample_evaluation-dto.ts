@@ -11,8 +11,8 @@ export class CreateSampleEvaluationDto {
   sample_analysis_id: number;
 
   @IsBoolean()
-  @IsNotEmpty()
-  self_performed: boolean;
+  @IsOptional()
+  self_performed?: boolean;
 
   @IsString()
   @IsOptional()

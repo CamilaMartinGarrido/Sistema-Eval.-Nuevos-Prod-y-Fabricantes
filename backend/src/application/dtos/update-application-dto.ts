@@ -1,4 +1,4 @@
-import { OriginRequestEnum } from 'src/enums';
+import { ArchiveReasonEnum, LifecycleStateEnum, OriginRequestEnum } from 'src/enums';
 import { IsBoolean, IsNumber, IsOptional, IsString, IsEnum } from 'class-validator';
 
 export class UpdateApplicationDto {
@@ -21,4 +21,16 @@ export class UpdateApplicationDto {
   @IsBoolean()
   @IsOptional()
   is_selected?: boolean;
+
+  @IsEnum(LifecycleStateEnum)
+  @IsOptional()
+  lifecycle_state?: LifecycleStateEnum;
+
+  @IsString()
+  @IsOptional()
+  archive_date?: string;
+
+  @IsEnum(ArchiveReasonEnum)
+  @IsOptional()
+  archive_reason?: ArchiveReasonEnum;
 }

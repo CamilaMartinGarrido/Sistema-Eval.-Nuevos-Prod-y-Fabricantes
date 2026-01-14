@@ -55,11 +55,15 @@ export enum ResultIndustrialAnalysisEnum {
 }
 
 // Estado final fabricante
-export enum FinalStateManufacturerEnum {
+export enum EvaluationStateManufacturerEnum {
   APROBADO = 'Aprobado',
   NO_APROBADO = 'No Aprobado',
+  PENDIENTE_EVALUACION = 'Pendiente de Evaluación',
   PENDIENTE_DOCUMENTACION = 'Pendiente de Documentación',
   PENDIENTE_MUESTRA = 'Pendiente de Muestra',
+  PENDIENTE_DECISION_ESCALA_INDUSTRIAL = 'Pendiente de Decisión de Escala Industrial',
+  PENDIENTE_COMPRA_INDUSTRIAL = 'Pendiente de Compra Industrial',
+  PENDIENTE_EVALUACION_INDUSTRIAL = 'Pendiente de Evaluación Industrial',
   PENDIENTE_INFORME = 'Pendiente de Informe',
   CONTRATO_A_RIESGO = 'Contrato a Riesgo (COA o muestras)',
 }
@@ -69,4 +73,22 @@ export enum UserRoleEnum {
   ADMINISTRADOR = 'Administrador',
   OBSERVADOR = 'Observador',
   ADMINISTRADOR_BD = 'Administrador de Base de Datos',
+  ANALISTA_DE_PRECIOS = 'Analista de Precios',
+}
+
+// Estado de ciclo de vida
+export enum LifecycleStateEnum {
+  ACTIVO = 'Activo',
+  ARCHIVADO = 'Archivado',
+}
+
+// Razón de archivado
+export enum ArchiveReasonEnum {
+  SOLICITUD_NO_SELECCIONADA = 'Solicitud no seleccionada para evaluar',
+  OFERTA_NO_COMPETITIVA = 'Oferta no competitiva',
+  EVALUACION_CONCLUIDA = 'Evaluación concluida exitosamente',
+  EVALUACION_CANCELADA = 'Evaluación cancelada',
+  DOCUMENTACION_NO_APROBADA = 'Documentación no aprobada',
+  MUESTRAS_NO_CONFORMES = 'Muestras no conformes',
+  OTRO = 'Otro',
 }

@@ -3,10 +3,11 @@ import { ProductEntity } from '../product/product.entity';
 import { CommercialEntityEntity } from '../commercial_entity/commercial_entity.entity';
 import { ExploratoryOfferEntity } from '../exploratory_offer/exploratory_offer.entity';
 
-@Unique(['product', 'supply'])
+@Unique('uq_supplier_purchase', ['product', 'supplier', 'purchase_date'])
 @Index('idx_supp_purchase_product', ['product'])
 @Index('idx_supp_purchase_supplier', ['supplier'])
 @Index('idx_supp_purchase_date', ['purchase_date'])
+@Index('idx_supp_purchase_price', ['unit_price'])
 @Entity({ name: 'supplier_purchase' })
 export class SupplierPurchaseEntity {
   @PrimaryGeneratedColumn('increment')
@@ -34,10 +35,11 @@ export class SupplierPurchaseEntity {
     type: 'numeric',
     precision: 12,
     scale: 2,
+    nullable: false,
   })
   unit_price: string;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'date', nullable: false })
   purchase_date: string;
 
   @OneToMany(() => ExploratoryOfferEntity, offer => offer.reference_purchase)

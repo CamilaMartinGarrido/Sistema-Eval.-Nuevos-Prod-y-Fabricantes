@@ -1,8 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, Unique, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, Unique, ManyToOne, JoinColumn, Index } from 'typeorm';
 import { ObservationEntity } from '../observation/observation.entity';
 import { SampleAnalysisEntity } from '../sample_analysis/sample_analysis.entity';
 
-@Unique(['sample_analysis', 'observation'])
+@Unique('uq_sa_obs', ['sample_analysis', 'observation'])
+@Index('idx_sa_obs_analysis', ['sample_analysis'])
+@Index('idx_sa_obs_observation', ['observation'])
 @Entity({ name: 'sample_analysis_observation' })
 export class SampleAnalysisObservationEntity {
   @PrimaryGeneratedColumn('increment')
@@ -12,7 +14,7 @@ export class SampleAnalysisObservationEntity {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'sample_analysis_id' })
   sample_analysis: SampleAnalysisEntity;
@@ -21,7 +23,7 @@ export class SampleAnalysisObservationEntity {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'observation_id' })
   observation: ObservationEntity;

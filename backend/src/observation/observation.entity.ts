@@ -1,26 +1,31 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, Index } from 'typeorm';
 import { SampleAnalysisObservationEntity } from '../sample_analysis_observation/sample_analysis_observation.entity';
 import { ExploratoryOfferObservationEntity } from '../exploratory_offer_observation/exploratory_offer_observation.entity';
 import { RequestObservationEntity } from '../request_observation/request_observation.entity';
 import { IndustrialPurchaseObservationEntity } from '../industrial_purchase_observation/industrial_purchase_observation.entity';
 import { IndustrialEvaluationObservationEntity } from '../industrial_evaluation_observation/industrial_evaluation_observation.entity';
+import { DocumentEvaluationObservationEntity } from 'src/document_evaluation_observation/document_evaluation_observation.entity';
 
+@Index('idx_observation_date', ['observation_date'])
 @Entity({ name: 'observation' })
 export class ObservationEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column({ type: 'text' })
+  @Column({ type: 'text', nullable: false })
   observation_text: string;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'date', nullable: false })
   observation_date: string;
-  
-  @OneToMany(() => ExploratoryOfferObservationEntity, (exp_offer_observ) => exp_offer_observ.observation)
-  exploratory_offer_observs: ExploratoryOfferObservationEntity[];
   
   @OneToMany(() => RequestObservationEntity, (request_observ) => request_observ.observation)
   request_observs: RequestObservationEntity[];
+
+  @OneToMany(() => ExploratoryOfferObservationEntity, (exp_offer_observ) => exp_offer_observ.observation)
+  exploratory_offer_observs: ExploratoryOfferObservationEntity[];
+
+  @OneToMany(() => DocumentEvaluationObservationEntity, (doc_eval_observ) => doc_eval_observ.observation)
+  document_evaluation_observs: DocumentEvaluationObservationEntity[];
 
   @OneToMany(() => SampleAnalysisObservationEntity, (sample_analysis_observ) => sample_analysis_observ.observation)
   sample_analysis_observs: SampleAnalysisObservationEntity[];

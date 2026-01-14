@@ -4,11 +4,12 @@ import { SampleAnalysisEntity } from '../sample_analysis/sample_analysis.entity'
 import { ResultSampleEvaluationEnum } from 'src/enums';
 import { SampleEvaluationObservationEntity } from '../sample_evaluation_observation/sample_evaluation_observation.entity';
 
-@Unique(['evaluation_process', 'sample_analysis'])
+@Unique('uq_sample_evaluation', ['evaluation_process', 'sample_analysis'])
 @Index('idx_sample_eval_process', ['evaluation_process'])
 @Index('idx_sample_eval_analysis', ['sample_analysis'])
-@Index('idx_sample_eval_conform', ['result'], {
-  where: `"result" = Conforme`
+@Index('idx_sample_eval_conform', ['result'], { where: `"result" = Conforme` })
+@Index('idx_sample_eval_continue', ['decision_continue'], {
+  where: `"decision_continue" = true`
 })
 @Entity({ name: 'sample_evaluation' })
 export class SampleEvaluationEntity {
@@ -33,7 +34,7 @@ export class SampleEvaluationEntity {
   @JoinColumn({ name: 'sample_analysis_id' })
   sample_analysis: SampleAnalysisEntity;
 
-  @Column({ type: 'boolean' })
+  @Column({ type: 'boolean', nullable: false })
   self_performed: boolean;
 
   @Column({ type: 'date', nullable: true })

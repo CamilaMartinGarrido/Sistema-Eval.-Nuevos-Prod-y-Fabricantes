@@ -1,42 +1,48 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Param,
-  Put,
-  Delete,
-  Query,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Patch, Delete, Query, ParseIntPipe } from '@nestjs/common';
 import { UserAccountService } from './user_account.service';
-import { CreateUserAccountDto } from './dto';
+import { CreateUserAccountDto } from './dtos/create-user_account-dto';
+import { UserAccountEntity } from './user_account.entity';
+import { UserAccountResponseDto } from './dtos/user_account-response-dto';
+import { UpdateUserAccountDto } from './dtos/update-user_account-dto';
 
 @Controller('user_account')
 export class UserAccountController {
-  constructor(private readonly svc: UserAccountService) {}
+  constructor(private readonly userAccountService: UserAccountService) {}
 
   @Post()
-  create(@Body() dto: CreateUserAccountDto) {
-    return this.svc.create(dto);
+  async createUserAccount(
+    @Body() dto: CreateUserAccountDto
+  ): Promise<{ message: string; data: UserAccountEntity; }> {
+    return this.userAccountService.create(dto);
   }
 
   @Get()
-  findAll(@Query('limit') limit: number, @Query('offset') offset: number) {
-    return this.svc.findAll(limit ? +limit : 100, offset ? +offset : 0);
+  async getUserAccounts(
+    @Query('limit', ParseIntPipe) limit = 100,
+    @Query('offset', ParseIntPipe) offset = 0,
+  ): Promise<UserAccountResponseDto[]> {
+    return this.userAccountService.findAll(limit, offset);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.svc.findOne(+id);
+  async getUserAccount(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<UserAccountResponseDto> {
+    return this.userAccountService.findOne(id);
   }
 
-  @Put(':id')
-  update(@Param('id') id: string, @Body() dto: Partial<CreateUserAccountDto>) {
-    return this.svc.update(+id, dto);
+  @Patch(':id')
+  async updateUserAccount(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() dto: UpdateUserAccountDto,
+  ): Promise<{ message: string; }> {
+    return this.userAccountService.update(id, dto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.svc.remove(+id);
+  async deleteUserAccount(
+    @Param('id', ParseIntPipe) id: number,
+  ): Promise<{ message: string }> {
+    return this.userAccountService.remove(id);
   }
 }

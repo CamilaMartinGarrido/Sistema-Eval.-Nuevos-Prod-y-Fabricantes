@@ -1,8 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, Unique } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, Unique, Index } from 'typeorm';
 import { ApplicationEntity } from '../application/application.entity';
 import { ObservationEntity } from '../observation/observation.entity';
 
-@Unique(['application', 'observation'])
+@Unique('uq_req_obs', ['application', 'observation'])
+@Index('idx_req_obs_application', ['application'])
+@Index('idx_req_obs_observation', ['observation'])
 @Entity({ name: 'request_observation' })
 export class RequestObservationEntity {
   @PrimaryGeneratedColumn('increment')
@@ -12,7 +14,7 @@ export class RequestObservationEntity {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'application_id' })
   application: ApplicationEntity;
@@ -21,7 +23,7 @@ export class RequestObservationEntity {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'observation_id' })
   observation: ObservationEntity;

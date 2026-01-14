@@ -1,5 +1,5 @@
 import { IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
-import { FinalStateManufacturerEnum } from 'src/enums';
+import { EvaluationStateManufacturerEnum } from 'src/enums';
 
 export class UpdateManufacturerStatusDto {
   @IsNumber()
@@ -10,11 +10,15 @@ export class UpdateManufacturerStatusDto {
   @IsOptional()
   start_date?: string;
   
-  @IsEnum(FinalStateManufacturerEnum)
+  @IsEnum(EvaluationStateManufacturerEnum)
   @IsOptional()
-  final_state?: FinalStateManufacturerEnum;
+  evaluation_state?: EvaluationStateManufacturerEnum;
 
   @IsString()
   @IsOptional()
   end_date?: string;
+
+  @IsNumber()
+  @IsOptional()
+  evaluation_process_id?: number;
 }

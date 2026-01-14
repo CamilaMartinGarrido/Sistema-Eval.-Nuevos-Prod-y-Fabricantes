@@ -1,13 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column, Unique, ManyToOne, JoinColumn, Index } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, Unique, ManyToOne, JoinColumn, Index, OneToMany } from 'typeorm';
 import { EvaluationProcessEntity } from '../evaluation_process/evaluation_process.entity';
 import { TechnicalDocumentEntity } from '../technical_document/technical_document.entity';
+import { DocumentEvaluationObservationEntity } from '../document_evaluation_observation/document_evaluation_observation.entity';
 
-@Unique(['evaluation_process', 'technical_document'])
+@Unique('uq_document_evaluation', ['evaluation_process', 'technical_document'])
 @Index('idx_doc_eval_process', ['evaluation_process'])
 @Index('idx_doc_eval_tech_doc', ['technical_document'])
-@Index('idx_doc_eval_approve', ['is_approved'], {
-  where: `"is_approved" = true`
-})
+@Index('idx_doc_eval_approve', ['is_approved'], { where: `"is_approved" = true` })
+@Index('idx_doc_eval_send_date', ['send_date'])
 @Entity({ name: 'document_evaluation' })
 export class DocumentEvaluationEntity {
   @PrimaryGeneratedColumn('increment')
@@ -31,7 +31,7 @@ export class DocumentEvaluationEntity {
   @JoinColumn({ name: 'technical_document_id' })
   technical_document: TechnicalDocumentEntity;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'date', nullable: false })
   send_date: string;
 
   @Column({ type: 'date', nullable: true })
@@ -39,4 +39,7 @@ export class DocumentEvaluationEntity {
 
   @Column({ type: 'boolean', nullable: true })
   is_approved: boolean;
+
+  @OneToMany(() => DocumentEvaluationObservationEntity, (doc_eval_observ) => doc_eval_observ.document_evaluation)
+  document_evaluation_observs: DocumentEvaluationObservationEntity[];
 }

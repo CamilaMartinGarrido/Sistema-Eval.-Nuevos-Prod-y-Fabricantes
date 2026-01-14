@@ -1,16 +1,17 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, Unique } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, Unique, Index } from 'typeorm';
 import { ProductTypeEnum } from '../enums';
 import { ApplicationProductEntity } from '../application_product/application_product.entity';
 import { MakerProductEntity } from '../maker_product/maker_product.entity';
 import { SupplierPurchaseEntity } from '../supplier_purchase/supplier_purchase.entity';
 
-@Unique(['description', 'product_type'])
+@Unique('uq_product_ci', ['description', 'product_type'])
+@Index('idx_product_priority', ['priority'])
 @Entity({ name: 'product' })
 export class ProductEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;
 
-  @Column({ type: 'varchar' })
+  @Column({ type: 'varchar', length: 255, nullable: false })
   description: string;
 
   @Column({
@@ -21,10 +22,10 @@ export class ProductEntity {
   })
   product_type: ProductTypeEnum;
 
-  @Column({ type: 'boolean' })
+  @Column({ type: 'boolean', nullable: false })
   exclusive_use: boolean;
 
-  @Column({ type: 'int' })
+  @Column({ type: 'int', nullable: false })
   priority: number;
 
   @OneToMany(() => ApplicationProductEntity, (app_product) => app_product.product)

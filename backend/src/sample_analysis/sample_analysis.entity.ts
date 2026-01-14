@@ -4,8 +4,9 @@ import { ClientEntity } from '../client/client.entity';
 import { SampleAnalysisObservationEntity } from '../sample_analysis_observation/sample_analysis_observation.entity';
 import { SampleEvaluationEntity } from '../sample_evaluation/sample_evaluation.entity';
 
-@Unique(['sample', 'performed_by_client', 'analysis_date'])
+@Unique('uq_sample_analysis', ['sample', 'performed_by_client', 'analysis_date'])
 @Index('idx_sample_analysis_sample', ['sample'])
+@Index('idx_sample_analysis_client', ['performed_by_client'])
 @Index('idx_sample_analysis_date', ['analysis_date'])
 @Entity({ name: 'sample_analysis' })
 export class SampleAnalysisEntity {
@@ -33,13 +34,13 @@ export class SampleAnalysisEntity {
   @Column({ type: 'date', nullable: true })
   analysis_date: string;
 
-  @Column({ type: 'varchar', nullable: true })
+  @Column({ type: 'varchar', length: 200, nullable: true })
   analysis_name: string;
 
   @Column({ type: 'text', nullable: true })
   analysis_result_details: string;
 
-  @Column({ type: 'varchar', nullable: true })
+  @Column({ type: 'varchar', length: 500, nullable: true })
   raw_data_path: string;
 
   @OneToMany(() => SampleAnalysisObservationEntity, (sample_analysis_observ) => sample_analysis_observ.sample_analysis)

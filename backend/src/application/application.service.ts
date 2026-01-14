@@ -13,7 +13,7 @@ export class ApplicationService {
     private readonly applicationRepository: Repository<ApplicationEntity>,
 
     @InjectRepository(ClientEntity)
-    private readonly clientRepository: Repository<ClientEntity>,
+    private readonly clientRepository: Repository<ClientEntity>
   ) {}
 
   async create(dto: CreateApplicationDto): Promise<{ message: string; data: ApplicationEntity }> {
@@ -103,6 +103,18 @@ export class ApplicationService {
 
     if (dto.is_selected !== undefined) {
       application.is_selected = dto.is_selected;
+    }
+
+    if (dto.lifecycle_state !== undefined) {
+      application.lifecycle_state = dto.lifecycle_state;
+    }
+
+    if (dto.archive_date !== undefined) {
+      application.archive_date = dto.archive_date;
+    }
+
+    if (dto.archive_reason !== undefined) {
+      application.archive_reason = dto.archive_reason;
     }
 
     await this.applicationRepository.save(application);

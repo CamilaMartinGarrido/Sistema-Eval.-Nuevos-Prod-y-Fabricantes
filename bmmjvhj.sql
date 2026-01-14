@@ -1,0 +1,1 @@
+SELECT * FROM get_current_manufacturer_status(2, 3);

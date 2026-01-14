@@ -1,8 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Unique, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Unique, ManyToOne, JoinColumn, Index } from 'typeorm';
 import { IndustrialEvaluationEntity } from '../industrial_evaluation/industrial_evaluation.entity';
 import { ObservationEntity } from '../observation/observation.entity';
 
-@Unique(['industrial_evaluation', 'observation'])
+@Unique('uq_ie_obs', ['industrial_evaluation', 'observation'])
+@Index('idx_ie_obs_evaluation', ['industrial_evaluation'])
+@Index('idx_ie_obs_observation', ['observation'])
 @Entity({ name: 'industrial_evaluation_observation' })
 export class IndustrialEvaluationObservationEntity {
   @PrimaryGeneratedColumn('increment')
@@ -12,7 +14,7 @@ export class IndustrialEvaluationObservationEntity {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'industrial_evaluation_id' })
   industrial_evaluation: IndustrialEvaluationEntity;
@@ -21,7 +23,7 @@ export class IndustrialEvaluationObservationEntity {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'observation_id' })
   observation: ObservationEntity;

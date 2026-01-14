@@ -3,12 +3,11 @@ import { SupplyEntity } from 'src/supply/supply.entity';
 import { SampleAnalysisEntity } from '../sample_analysis/sample_analysis.entity';
 import { SampleEvaluationEntity } from '../sample_evaluation/sample_evaluation.entity';
 
-@Unique(['sample_code'])
-@Unique(['supply', 'request_date', 'quantity', 'unit'])
-@Index('idx_sample_process', ['supply'])
+@Unique('uq_sample_code', ['sample_code'])
+@Unique('uq_sample_logical', ['supply', 'request_date', 'quantity', 'unit'])
+@Index('idx_sample_supply', ['supply'])
 @Index('idx_sample_request_date', ['request_date'])
 @Index('idx_sample_receipt_client', ['date_receipt_client'])
-@Index('idx_sample_code', ['sample_code'])
 @Entity({ name: 'sample' })
 export class SampleEntity {
   @PrimaryGeneratedColumn('increment')
@@ -23,7 +22,7 @@ export class SampleEntity {
   @JoinColumn({ name: 'supply_id' })
   supply: SupplyEntity;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'date', nullable: false })
   request_date: string;
 
   @Column({ type: 'date', nullable: true })
@@ -39,13 +38,14 @@ export class SampleEntity {
     type: 'numeric',
     precision: 12,
     scale: 2,
+    nullable: false,
   })
   quantity: string;
 
-  @Column({ type: 'varchar' })
+  @Column({ type: 'varchar', length: 50, nullable: false })
   unit: string;
 
-  @Column({ type: 'varchar' })
+  @Column({ type: 'varchar', length: 100, nullable: false })
   sample_code: string;
 
   @OneToMany(() => SampleAnalysisEntity, analysis => analysis.sample)

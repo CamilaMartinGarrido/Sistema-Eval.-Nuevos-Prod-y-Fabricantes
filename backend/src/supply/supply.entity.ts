@@ -2,14 +2,13 @@ import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany, Uniqu
 import { CommercialEntityEntity } from '../commercial_entity/commercial_entity.entity';
 import { MakerProductEntity } from '../maker_product/maker_product.entity';
 import { EvaluationProcessEntity } from '../evaluation_process/evaluation_process.entity';
-import { ExploratoryOfferEntity } from '../exploratory_offer/exploratory_offer.entity';
 import { TechnicalDocumentEntity } from '../technical_document/technical_document.entity';
 import { SampleEntity } from '../sample/sample.entity';
 
-@Unique(['supplier_entity', 'maker_product'])
-@Entity({ name: 'supply' })
+@Unique('uq_supply', ['supplier_entity', 'maker_product'])
 @Index('idx_supply_supplier', ['supplier_entity'])
 @Index('idx_supply_maker_product', ['maker_product'])
+@Entity({ name: 'supply' })
 export class SupplyEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;

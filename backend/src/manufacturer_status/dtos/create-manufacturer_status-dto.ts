@@ -1,5 +1,5 @@
-import { IsNotEmpty, IsNumber, IsString, IsEnum } from 'class-validator';
-import { FinalStateManufacturerEnum } from 'src/enums';
+import { IsNotEmpty, IsNumber, IsString, IsEnum, IsOptional } from 'class-validator';
+import { EvaluationStateManufacturerEnum } from 'src/enums';
 
 export class CreateManufacturerStatusDto {
   @IsNumber()
@@ -10,11 +10,15 @@ export class CreateManufacturerStatusDto {
   @IsNotEmpty()
   start_date: string;
   
-  @IsEnum(FinalStateManufacturerEnum)
+  @IsEnum(EvaluationStateManufacturerEnum)
   @IsNotEmpty()
-  final_state: FinalStateManufacturerEnum;
+  evaluation_state: EvaluationStateManufacturerEnum;
 
   @IsString()
-  @IsNotEmpty()
-  end_date: string;
+  @IsOptional()
+  end_date?: string;
+
+  @IsNumber()
+  @IsOptional()
+  evaluation_process_id?: number;
 }

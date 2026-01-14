@@ -1,5 +1,6 @@
 import { Expose, Type } from 'class-transformer';
-import { FinalStateManufacturerEnum } from 'src/enums';
+import { EvaluationStateManufacturerEnum } from 'src/enums';
+import { EvaluationProcessResponseDto } from 'src/evaluation_process/dtos';
 import { MakerProductResponseDto } from 'src/maker_product/dtos/maker_product-response.dto';
 
 export class ManufacturerStatusResponseDto {
@@ -14,8 +15,12 @@ export class ManufacturerStatusResponseDto {
   start_date: string;
     
   @Expose()
-  final_state: FinalStateManufacturerEnum;
+  final_state: EvaluationStateManufacturerEnum;
   
   @Expose()
   end_date: string;
+
+  @Expose()
+  @Type(() => EvaluationProcessResponseDto)
+  evaluation_process: EvaluationProcessResponseDto;
 }

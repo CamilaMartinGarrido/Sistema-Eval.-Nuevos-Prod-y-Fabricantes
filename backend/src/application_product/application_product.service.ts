@@ -48,9 +48,7 @@ export class ApplicationProductService {
       skip: offset,
       relations: [
         'application',
-        'product',
-        'request_observs',
-        'request_observs.observation',      
+        'product',   
       ],
     });
 
@@ -65,8 +63,6 @@ export class ApplicationProductService {
       relations: [
         'application',
         'product',
-        'request_observs',
-        'request_observs.observation', 
       ] });
     if (!appProduct) throw new NotFoundException('Application Product not found');
     

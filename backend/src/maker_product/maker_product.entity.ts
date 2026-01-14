@@ -4,10 +4,10 @@ import { ProductEntity } from '../product/product.entity';
 import { SupplyEntity } from '../supply/supply.entity';
 import { ManufacturerStatusEntity } from '../manufacturer_status/manufacturer_status.entity';
 
-@Unique(['product', 'maker_entity'])
-@Entity({ name: 'maker_product' })
+@Unique('uq_maker_product', ['product', 'maker_entity'])
 @Index('idx_maker_product_product', ['product'])
 @Index('idx_maker_product_maker', ['maker_entity'])
+@Entity({ name: 'maker_product' })
 export class MakerProductEntity {
   @PrimaryGeneratedColumn('increment')
   id: number;

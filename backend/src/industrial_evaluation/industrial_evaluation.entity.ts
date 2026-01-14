@@ -3,10 +3,11 @@ import { ResultIndustrialAnalysisEnum } from '../enums';
 import { IndustrialPurchaseEntity } from 'src/industrial_purchase/industrial_purchase.entity';
 import { IndustrialEvaluationObservationEntity } from 'src/industrial_evaluation_observation/industrial_evaluation_observation.entity';
 
-@Unique(['industrial_purchase'])
+@Unique('uq_industrial_evaluation', ['industrial_purchase'])
 @Index('idx_ind_eval_purchase', ['industrial_purchase'])
 @Index('idx_ind_eval_send_date', ['send_batch_date'])
 @Index('idx_ind_eval_report_date', ['report_delivery_date'])
+@Index('idx_ind_eval_result', ['analysis_result'])
 @Entity({ name: 'industrial_evaluation' })
 export class IndustrialEvaluationEntity {
   @PrimaryGeneratedColumn('increment')
@@ -16,12 +17,12 @@ export class IndustrialEvaluationEntity {
     eager: true,
     nullable: false,
     onUpdate: 'CASCADE',
-    onDelete: 'RESTRICT',
+    onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'industrial_purchase_id' })
   industrial_purchase: IndustrialPurchaseEntity;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'date', nullable: false })
   send_batch_date: string;
 
   @Column({ type: 'date', nullable: true })

@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, Unique, JoinColumn }
 import { CommercialEntityEntity } from './commercial_entity.entity';
 import { EntityRoleEnum } from 'src/enums';
 
-@Unique(['commercial_entity', 'role_type'])
+@Unique('uq_entity_role', ['commercial_entity', 'role_type'])
 @Entity({ name: 'commercial_entity_role' })
 export class CommercialEntityRoleEntity {
   @PrimaryGeneratedColumn()

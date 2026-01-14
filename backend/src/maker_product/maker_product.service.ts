@@ -7,7 +7,7 @@ import { CommercialEntityEntity } from '../commercial_entity/commercial_entity.e
 import { CommercialEntityService } from '../commercial_entity/commercial_entity.service';
 import { CreateMakerProductDto, UpdateMakerProductDto, MakerProductResponseDto } from './dtos';
 import { toDto } from 'src/common/utils/mapper.util';
-import { RoleEnum } from 'src/enums';
+import { EntityRoleEnum} from 'src/enums';
 
 @Injectable()
 export class MakerProductService {
@@ -35,7 +35,7 @@ export class MakerProductService {
     if (!maker_entity) throw new NotFoundException('Maker not found');
 
     // ✅ Asegura que la CommercialEntity tenga el rol MAKER
-    await this.commercialEntityService.ensureRole(maker_entity.id, RoleEnum.M);
+    await this.commercialEntityService.ensureRole(maker_entity.id, EntityRoleEnum.F);
 
     const mp = this.makerProductRepository.create({
       product,
@@ -99,7 +99,7 @@ export class MakerProductService {
       if (!newMaker) throw new NotFoundException('New Maker not found');
 
       // Asegurar rol MAKER
-      await this.commercialEntityService.ensureRole(newMaker.id, RoleEnum.M);
+      await this.commercialEntityService.ensureRole(newMaker.id, EntityRoleEnum.F);
 
       mp.maker_entity = newMaker;
       await this.makerProductRepository.save(mp);
@@ -112,7 +112,7 @@ export class MakerProductService {
       if (otherProducts === 0) {
         const remainingRoles = oldMaker.roles
           .map(r => r.role_type)
-          .filter(r => r !== RoleEnum.M); // eliminar solo MAKER
+          .filter(r => r !== EntityRoleEnum.F);
         await this.commercialEntityService.changeRoles(oldMaker.id, remainingRoles);
       }
     } else {
@@ -142,7 +142,7 @@ export class MakerProductService {
     if (otherProducts === 0) {
       const remainingRoles = oldMaker.roles
         .map(r => r.role_type)
-        .filter(r => r !== RoleEnum.M); // eliminar solo MAKER
+        .filter(r => r !== EntityRoleEnum.F);
       await this.commercialEntityService.changeRoles(oldMaker.id, remainingRoles);
     }
 
